@@ -203,22 +203,27 @@ jobs:
             # 썸네일 이미지 찾기
             THUMBNAIL=$(ls -t reports/images/*-thumbnail.png 2>/dev/null | head -1)
 
-            # Issue 본문 준비
-            ISSUE_BODY=$(cat "$REPORT_FILE")
+            # 임시 파일 생성
+            TEMP_BODY=$(mktemp)
 
             # 썸네일이 있으면 상단에 추가
             if [ -f "$THUMBNAIL" ]; then
               THUMBNAIL_URL="https://github.com/${{ github.repository }}/raw/main/$THUMBNAIL"
-              ISSUE_BODY="![AI Trends Thumbnail]($THUMBNAIL_URL)
-
-$ISSUE_BODY"
+              echo "![AI Trends Thumbnail]($THUMBNAIL_URL)" > "$TEMP_BODY"
+              echo "" >> "$TEMP_BODY"
+              cat "$REPORT_FILE" >> "$TEMP_BODY"
+            else
+              cat "$REPORT_FILE" > "$TEMP_BODY"
             fi
 
             # Issue 생성
-            echo "$ISSUE_BODY" | gh issue create \
+            gh issue create \
               --title "🤖 AI 트렌드 - ${{ steps.time.outputs.kst }}" \
-              --body-file - \
+              --body-file "$TEMP_BODY" \
               --label "ai-trends,automated,$(TZ=Asia/Seoul date +'%Y-%m-%d')"
+
+            # 임시 파일 삭제
+            rm -f "$TEMP_BODY"
           else
             echo "⚠️ No report file found"
           fi
