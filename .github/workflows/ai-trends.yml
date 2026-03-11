@@ -57,8 +57,7 @@ jobs:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
 
-          enable_memory: true
-          memory_scope: repo
+          enable_memory: false
           shell_allow_list: recommended
           timeout: 30
 
