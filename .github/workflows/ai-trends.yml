@@ -44,14 +44,20 @@ jobs:
       - name: Run AI Trends Hunter
         uses: langchain-ai/deepagents@main
         with:
-          skills_repo: leaf468/autothreads
           prompt: |
-            /ai-trends-reporter 스킬을 사용하여 AI 트렌드 리포트를 작성하세요.
+            AI 트렌드 리포트를 작성하세요.
 
             현재 시각: ${{ steps.time.outputs.kst }}
-            파일명: reports/${{ steps.time.outputs.timestamp }}.md
+            출력 파일: reports/${{ steps.time.outputs.timestamp }}.md
+            썸네일 프롬프트: thumbnail_prompt.txt
 
-            중복 방지를 위해 reports/ 폴더의 이전 파일들을 먼저 확인하세요.
+            .deepagents/skills/ai-trends-reporter/SKILL.md의 지침을 따르세요.
+
+            중요:
+            1. reports/ 폴더의 이전 파일 확인하여 중복 방지
+            2. 메이저 3개 + 마이너 3개 뉴스 수집
+            3. 모두 한글로 번역
+            4. 출처 필수
 
           model: gpt-5-mini-2025-08-07
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
