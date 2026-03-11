@@ -53,8 +53,8 @@ jobs:
 
             중복 방지를 위해 reports/ 폴더의 이전 파일들을 먼저 확인하세요.
 
-          model: claude-sonnet-4-6
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: gpt-4o
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
 
           enable_memory: true
