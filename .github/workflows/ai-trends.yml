@@ -53,7 +53,7 @@ jobs:
 
             중복 방지를 위해 reports/ 폴더의 이전 파일들을 먼저 확인하세요.
 
-          model: gpt-4o
+          model: gpt-5
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
 
