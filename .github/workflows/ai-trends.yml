@@ -86,8 +86,10 @@ jobs:
       - name: Create GitHub Labels
         run: |
           # 라벨 생성 (이미 있으면 무시)
+          DATE_LABEL=$(TZ=Asia/Seoul date +'%Y-%m-%d')
           gh label create "ai-trends" --description "AI trends automated reports" --color "0E8A16" --force || true
           gh label create "automated" --description "Automated by GitHub Actions" --color "FBCA04" --force || true
+          gh label create "$DATE_LABEL" --description "Report date" --color "BFD4F2" --force || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
