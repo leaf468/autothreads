@@ -44,130 +44,14 @@ jobs:
       - name: Run AI Trends Hunter
         uses: langchain-ai/deepagents@main
         with:
+          skills_repo: leaf468/autothreads
           prompt: |
-            # 🤖 AI 트렌드 헌터 - ${{ steps.time.outputs.kst }}
+            /ai-trends-reporter 스킬을 사용하여 AI 트렌드 리포트를 작성하세요.
 
-            현재 시각은 한국시간 **${{ steps.time.outputs.kst }}** 입니다.
+            현재 시각: ${{ steps.time.outputs.kst }}
+            파일명: reports/${{ steps.time.outputs.timestamp }}.md
 
-            ## 🎯 당신의 임무
-
-            최근 6시간 이내에 나온 AI/ML 관련 뉴스와 트렌드를 수집하고,
-            재미있고 유익한 한글 보고서를 작성하세요.
-
-            ## 📡 검색 소스 전략
-
-            ### 메이저 소스 (2-3개 필수)
-            - **Hacker News**: `site:news.ycombinator.com AI OR "machine learning" OR LLM`
-            - **Reddit**: `site:reddit.com/r/MachineLearning OR site:reddit.com/r/artificial`
-            - **ArXiv**: `site:arxiv.org cat:cs.AI OR cat:cs.LG` (최신 논문)
-            - **TechCrunch AI**: `site:techcrunch.com/category/artificial-intelligence`
-
-            ### 마이너/독특한 소스 (2-3개 필수)
-            - **GitHub Trending**: `site:github.com/trending python AI`
-            - **Hugging Face**: `site:huggingface.co/models` (새 모델)
-            - **ProductHunt**: `site:producthunt.com/topics/artificial-intelligence`
-            - **Individual Blogs**: AI 연구자 개인 블로그
-            - **Twitter/X**: AI 인플루언서 트윗 (검색 가능하면)
-
-            ## 📝 출력 형식
-
-            `reports/${{ steps.time.outputs.timestamp }}.md` 파일을 다음 형식으로 생성하세요:
-
-            ```markdown
-            # 🤖 AI 트렌드 리포트
-
-            **발행 시각:** ${{ steps.time.outputs.kst }}
-            **수집 기간:** 최근 6시간
-
-            ---
-
-            ## 📰 주요 뉴스 (3-4개)
-
-            ### 1. [재미있는 한글 제목]
-
-            > **원제:** [영문 원제]
-            > **출처:** [작성자/매체](URL)
-            > **발행:** [날짜/시간]
-
-            [기사 내용을 재미있고 이해하기 쉽게 한글로 요약. 3-5문단]
-
-            **💡 핵심 포인트**
-            - 중요 포인트 1
-            - 중요 포인트 2
-            - 중요 포인트 3
-
-            **🤔 추가 인사이트**
-
-            [이 뉴스가 왜 중요한지, 업계에 미칠 영향, 한국에서의 의미 등
-            당신만의 분석과 견해를 2-3문단으로]
-
-            ![원본 이미지](이미지 URL)
-            *이미지 출처: [매체명](URL)*
-
-            ---
-
-            ### 2. [다음 메이저 뉴스...]
-
-            [같은 형식 반복]
-
-            ---
-
-            ## 🔍 마이너 발견 (3-4개)
-
-            ### 1. [흥미로운 발견]
-
-            > **출처:** [GitHub/개인블로그/etc](URL)
-
-            [메이저 미디어가 다루지 않은 흥미로운 프로젝트, 논문, 아이디어 소개]
-
-            **왜 주목할까?**
-            [이게 왜 흥미로운지 설명]
-
-            ---
-
-            ## 📊 오늘의 한마디
-
-            [오늘의 AI 트렌드를 위트있게 한 문장으로 요약]
-
-            ---
-
-            ## 🎨 썸네일 프롬프트
-
-            아래 내용을 `thumbnail_prompt.txt`에 저장하세요 (이미지 생성용):
-
-            ```
-            [오늘의 주요 트렌드를 시각적으로 표현할 수 있는
-            DALL-E/Imagen 프롬프트를 영문으로 작성.
-            예: "A futuristic AI laboratory with holographic displays showing neural networks,
-            vibrant colors, modern tech aesthetic, high quality digital art"]
-            ```
-
-            ---
-
-            *🤖 이 리포트는 [DeepAgents](https://github.com/langchain-ai/deepagents)로 자동 생성되었습니다.*
-            *🎨 썸네일 이미지는 Google Gemini Imagen 3 (Nanobanana)로 생성됩니다.*
-            ```
-
-            ## ⚠️ 중요 규칙
-
-            1. **한글 우선**: 모든 외국 기사는 자연스러운 한글로 번역
-            2. **재미있게**: 딱딱한 번역 금지, 읽기 쉽고 흥미롭게
-            3. **출처 필수**: 모든 정보에 원문 링크 포함
-            4. **균형**: 메이저 3-4개 + 마이너 3-4개
-            5. **중복 방지**: `reports/` 폴더의 이전 파일들 확인 (read_file 사용)
-            6. **신선도**: 최근 6시간 이내 콘텐츠 우선
-            7. **이미지**: 원본 기사의 이미지 URL 찾아서 포함
-            8. **썸네일 프롬프트**: 반드시 `thumbnail_prompt.txt` 파일 생성
-
-            ## 🚀 실행 순서
-
-            1. `ls reports/` - 기존 보고서 확인
-            2. 최근 2-3개 파일 읽어서 중복 체크
-            3. 웹 검색 실행 (tavily_search 도구 사용)
-            4. 보고서 작성
-            5. `thumbnail_prompt.txt` 생성
-
-            시작하세요!
+            중복 방지를 위해 reports/ 폴더의 이전 파일들을 먼저 확인하세요.
 
           model: claude-sonnet-4-6
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
