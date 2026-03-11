@@ -73,6 +73,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TIMESTAMP: ${{ steps.time.outputs.timestamp }}
+          TIMESTAMP: ${{ steps.time.outputs.timestamp }}
 
       - name: Commit and push
         run: |
@@ -82,6 +83,14 @@ jobs:
           git add thumbnail_prompt.txt || true
           git commit -m "📰 AI 트렌드 리포트 - ${{ steps.time.outputs.kst }}" || echo "No changes"
           git push
+
+      - name: Create GitHub Labels
+        run: |
+          # 라벨 생성 (이미 있으면 무시)
+          gh label create "ai-trends" --description "AI trends automated reports" --color "0E8A16" --force || true
+          gh label create "automated" --description "Automated by GitHub Actions" --color "FBCA04" --force || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Issue
         run: |

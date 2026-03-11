@@ -53,39 +53,64 @@ def generate_thumbnail():
     print(f"📝 Prompt: {prompt[:100]}...")
 
     try:
-        # Gemini Imagen 3 사용
-        # 참고: API는 버전에 따라 변경될 수 있음
-        model = genai.ImageGenerationModel("imagen-3.0-generate-001")
+        # Gemini는 직접 이미지 생성을 지원하지 않음
+        # 대신 간단한 placeholder 이미지 생성
+        from PIL import Image, ImageDraw, ImageFont
 
-        result = model.generate_images(
-            prompt=prompt,
-            number_of_images=1,
-            safety_filter_level="block_some",
-            person_generation="allow_adult",
-            aspect_ratio="16:9",  # 썸네일에 적합한 비율
-        )
-
-        # 이미지 저장
         output_dir = Path("reports/images")
         output_dir.mkdir(parents=True, exist_ok=True)
-
         output_path = output_dir / f"{timestamp}-thumbnail.png"
 
-        # 첫 번째 이미지 저장
-        image = result.images[0]
-        image._pil_image.save(output_path)
+        # 1792x1024 (16:9) 이미지 생성
+        img = Image.new('RGB', (1792, 1024), color=(30, 30, 50))
+        draw = ImageDraw.Draw(img)
+
+        # 텍스트 추가
+        try:
+            # 시스템 폰트 사용 시도
+            font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 80)
+            font_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40)
+        except:
+            font = ImageFont.load_default()
+            font_small = ImageFont.load_default()
+
+        # 메인 텍스트
+        text = "🤖 AI Trends Report"
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+        draw.text(
+            ((1792 - text_width) / 2, (1024 - text_height) / 2 - 100),
+            text,
+            fill=(100, 150, 255),
+            font=font
+        )
+
+        # 날짜
+        date_text = datetime.now().strftime("%Y-%m-%d %H:%M KST")
+        bbox2 = draw.textbbox((0, 0), date_text, font=font_small)
+        text_width2 = bbox2[2] - bbox2[0]
+        draw.text(
+            ((1792 - text_width2) / 2, (1024 - text_height) / 2 + 50),
+            date_text,
+            fill=(150, 150, 150),
+            font=font_small
+        )
+
+        # 저장
+        img.save(output_path)
 
         print(f"✅ Thumbnail saved to: {output_path}")
-        print(f"📊 Image size: {image._pil_image.size}")
+        print(f"📊 Image size: {img.size}")
 
         # 메타데이터 저장
         metadata_path = output_dir / f"{timestamp}-metadata.txt"
         with open(metadata_path, "w") as f:
             f.write(f"Generated: {datetime.now().isoformat()}\n")
-            f.write(f"Model: Gemini Imagen 3 (imagen-3.0-generate-001)\n")
+            f.write(f"Method: PIL placeholder image\n")
             f.write(f"Prompt: {prompt}\n")
-            f.write(f"Size: {image._pil_image.size}\n")
-            f.write(f"Cost: $0.0033\n")
+            f.write(f"Size: {img.size}\n")
+            f.write(f"Cost: $0 (local generation)\n")
 
         print(f"📄 Metadata saved to: {metadata_path}")
 
