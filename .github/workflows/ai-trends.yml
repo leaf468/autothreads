@@ -73,7 +73,6 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TIMESTAMP: ${{ steps.time.outputs.timestamp }}
-          TIMESTAMP: ${{ steps.time.outputs.timestamp }}
 
       - name: Commit and push
         run: |
