@@ -24,6 +24,7 @@
 - ✅ **자동 수집**: 메이저 + 마이너 AI 뉴스 균형있게
 - ✅ **한글 번역**: 외국 기사를 자연스러운 한글로
 - ✅ **AI 썸네일**: Gemini Imagen 3로 자동 생성 (초저비용)
+- ✅ **SNS 포맷**: Threads & X(Twitter) 스타일 자동 변환
 - ✅ **출처 명시**: 모든 정보에 원문 링크 포함
 - ✅ **중복 방지**: 이전 보고서 자동 체크
 - ✅ **무료 호스팅**: GitHub Actions (public repo)
@@ -138,9 +139,146 @@ Value: tvly-xxxxx
 - [`reports/`](./reports/) 폴더에서 전체 보고서 확인
 - 파일명: `YYYYMMDD-HHMM.md`
 
+### SNS 포맷 파일
+- **Threads 버전**: `reports/YYYYMMDD-HHMM-threads.txt`
+  - 캐주얼한 톤, 짧은 문단, 이모지 활용
+  - Meta Threads에 바로 복붙 가능
+- **X(Twitter) 버전**: `reports/YYYYMMDD-HHMM-twitter.txt`
+  - 280자 제한 준수, 스레드 형식
+  - 트윗 번호 포함, 해시태그 최적화
+
 ### 썸네일 이미지
 - [`reports/images/`](./reports/images/) 폴더
 - Gemini Imagen 3로 생성된 고품질 이미지
+
+## 📱 SNS 포맷 변환
+
+매 리포트마다 자동으로 소셜 미디어 친화적인 버전을 생성합니다.
+
+### Threads 스타일 특징
+- ✍️ 캐주얼하고 친근한 어투 ("~요", "~네요")
+- 📝 짧은 문단 (3-5문장)
+- ✨ 적절한 이모지 활용
+- 🔗 링크는 "댓글 참고" 안내
+- 📏 가독성 최적화
+
+### X(Twitter) 스타일 특징
+- 🐦 280자 제한 엄격 준수
+- 🧵 스레드 형식 (번호 표시)
+- #️⃣ 해시태그 최적화
+- 💡 핵심 포인트만 압축
+- 🔗 마지막 트윗에만 링크
+
+### 수동 변환
+
+기존 마크다운 리포트를 SNS 포맷으로 변환하려면:
+
+```bash
+python scripts/format_to_sns.py reports/20260311-1246.md
+```
+
+출력:
+- `reports/20260311-1246-threads.txt`
+- `reports/20260311-1246-twitter.txt`
+
+### 사용 예시
+
+**Threads에 포스팅**
+1. `reports/YYYYMMDD-HHMM-threads.txt` 열기
+2. 전체 복사 (Cmd/Ctrl + A)
+3. Threads 앱에 붙여넣기
+4. 세로형 이미지 첨부 (선택)
+5. 게시!
+
+**X(Twitter)에 스레드 작성**
+1. `reports/YYYYMMDD-HHMM-twitter.txt` 열기
+2. `---` 구분선으로 각 트윗 분리
+3. 첫 트윗부터 순서대로 작성
+4. "Reply" 버튼으로 스레드 연결
+5. 마지막 트윗에 리포지토리 링크
+
+## 📤 SNS 자동 업로드 (선택사항)
+
+리포트를 Instagram, X(Twitter), Threads에 자동으로 업로드할 수 있습니다.
+
+### 지원 플랫폼
+
+| 플랫폼 | 기능 | 사용 API |
+|--------|------|----------|
+| 📸 **Instagram** | 이미지 + 캡션 | Instagram Graph API |
+| 🐦 **X(Twitter)** | 스레드 게시 | X API v2 |
+| 🧵 **Threads** | 텍스트 게시 | Threads API |
+
+### Instagram 설정
+
+1. **Instagram Business 계정 필요**
+   - Instagram을 Facebook 페이지에 연결
+   - Business 계정으로 전환
+
+2. **Facebook 개발자 앱 생성**
+   - [Meta for Developers](https://developers.facebook.com/) 접속
+   - 새 앱 생성 → Instagram Graph API 추가
+
+3. **액세스 토큰 발급**
+   - Graph API Explorer에서 토큰 생성
+   - 권한: `instagram_basic`, `instagram_content_publish`
+
+4. **GitHub Secrets 추가**
+   ```
+   INSTAGRAM_ACCESS_TOKEN=your_access_token
+   INSTAGRAM_ACCOUNT_ID=your_instagram_business_id
+   ```
+
+### X(Twitter) 설정
+
+1. **X Developer Account 필요**
+   - [X Developer Portal](https://developer.twitter.com/en/portal/dashboard) 접속
+   - 무료 플랜으로 시작 가능
+
+2. **App 생성 및 Bearer Token 발급**
+   - Standalone App 생성
+   - Authentication Settings에서 Bearer Token 복사
+   - Read and Write 권한 설정
+
+3. **GitHub Secrets 추가**
+   ```
+   TWITTER_BEARER_TOKEN=your_bearer_token
+   ```
+
+### Threads 설정
+
+1. **Threads API 액세스 신청**
+   - [Meta for Developers](https://developers.facebook.com/docs/threads) 접속
+   - Threads API 사용 신청
+
+2. **액세스 토큰 및 사용자 ID 발급**
+   - Facebook 앱에서 Threads API 추가
+   - 토큰 및 User ID 발급
+
+3. **GitHub Secrets 추가**
+   ```
+   THREADS_ACCESS_TOKEN=your_access_token
+   THREADS_USER_ID=your_threads_user_id
+   ```
+
+### 자동 업로드 활성화
+
+GitHub Secrets에 API 키를 추가하면 자동으로 활성화됩니다.
+- Secret이 없으면 해당 플랫폼은 건너뜀
+- 에러 발생 시 워크플로우는 계속 진행
+
+### 수동 업로드 (테스트용)
+
+```bash
+# Instagram
+python scripts/post_to_instagram.py reports/20260311-1246.md
+
+# X(Twitter)
+python scripts/post_to_twitter.py reports/20260311-1246-twitter.txt
+
+# Threads
+python scripts/post_to_threads.py reports/20260311-1246-threads.txt
+```
 
 ## 🔧 커스터마이징
 
@@ -169,20 +307,70 @@ model: gemini-2.0-flash
 
 [`.github/workflows/ai-trends.yml`](.github/workflows/ai-trends.yml#L45-L150)에서 프롬프트 수정 가능
 
+## 🔄 자동화 플로우
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  GitHub Actions (하루 6회 자동 실행)                          │
+└─────────────────────────────────────────────────────────────┘
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│  1. AI 트렌드 수집 (DeepAgents)                              │
+│     - 메이저/마이너 뉴스 검색                                 │
+│     - 한글 번역 및 리포트 생성                                │
+│     → reports/YYYYMMDD-HHMM.md                              │
+└─────────────────────────────────────────────────────────────┘
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│  2. AI 썸네일 생성 (Gemini Imagen 3)                         │
+│     - 프롬프트 기반 이미지 생성                               │
+│     → reports/images/YYYYMMDD-HHMM-thumbnail.png            │
+└─────────────────────────────────────────────────────────────┘
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│  3. SNS 포맷 변환                                            │
+│     - Threads 스타일: YYYYMMDD-HHMM-threads.txt             │
+│     - Twitter 스타일: YYYYMMDD-HHMM-twitter.txt             │
+└─────────────────────────────────────────────────────────────┘
+                        ↓
+┌─────────────────────────────────────────────────────────────┐
+│  4. Instagram 이미지 생성                                     │
+│     - 썸네일에 "오늘의 한마디" 텍스트 오버레이                │
+│     → reports/images/YYYYMMDD-HHMM-instagram.png            │
+└─────────────────────────────────────────────────────────────┘
+                        ↓
+┌──────────────┬──────────────┬──────────────┬────────────────┐
+│  📸 Instagram │  🐦 X(Twitter)│  🧵 Threads  │  📝 GitHub     │
+│              │              │              │                │
+│  이미지 +     │  스레드      │  텍스트      │  Issue 생성    │
+│  캡션 자동    │  자동 게시   │  자동 게시   │                │
+│  업로드       │              │              │                │
+└──────────────┴──────────────┴──────────────┴────────────────┘
+```
+
 ## 📊 프로젝트 구조
 
 ```
 ai-trends-kr/
+├── .deepagents/
+│   └── skills/
+│       ├── ai-trends-reporter/     # AI 트렌드 수집 스킬
+│       │   └── SKILL.md
+│       └── sns-formatter/          # SNS 포맷 변환 스킬
+│           └── SKILL.md
 ├── .github/
 │   └── workflows/
-│       └── ai-trends.yml          # GitHub Actions 워크플로우
+│       └── ai-trends.yml           # GitHub Actions 워크플로우
 ├── scripts/
-│   └── generate_thumbnail.py      # Gemini Imagen 3 이미지 생성
+│   ├── generate_thumbnail.py       # Gemini Imagen 3 이미지 생성
+│   └── format_to_sns.py            # SNS 포맷 변환 스크립트
 ├── reports/
 │   ├── images/
 │   │   ├── 20260310-0900-thumbnail.png
 │   │   └── 20260310-0900-metadata.txt
-│   └── 20260310-0900.md            # 마크다운 보고서
+│   ├── 20260310-0900.md            # 마크다운 보고서
+│   ├── 20260310-0900-threads.txt   # Threads 버전
+│   └── 20260310-0900-twitter.txt   # X(Twitter) 버전
 ├── .env.example                    # 환경 변수 예시
 ├── .gitignore
 └── README.md
