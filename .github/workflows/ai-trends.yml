@@ -100,7 +100,7 @@ jobs:
           fi
 
       - name: Post to Instagram
-        if: github.event.inputs.test_mode != 'true' && secrets.INSTAGRAM_ACCESS_TOKEN != ''
+        if: github.event.inputs.test_mode != 'true'
         run: |
           LATEST_REPORT=$(ls -t reports/*.md 2>/dev/null | grep -v 'threads\|twitter' | head -1)
           INSTAGRAM_IMAGE=$(ls -t reports/images/*-instagram.png 2>/dev/null | head -1)
@@ -120,7 +120,7 @@ jobs:
           INSTAGRAM_IMAGE_URL: ${{ secrets.INSTAGRAM_IMAGE_URL }}
 
       - name: Post to X (Twitter)
-        if: github.event.inputs.test_mode != 'true' && secrets.TWITTER_BEARER_TOKEN != ''
+        if: github.event.inputs.test_mode != 'true'
         run: |
           TWITTER_FILE=$(ls -t reports/*-twitter.txt 2>/dev/null | head -1)
 
@@ -134,7 +134,7 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
 
       - name: Post to Threads
-        if: github.event.inputs.test_mode != 'true' && secrets.THREADS_ACCESS_TOKEN != ''
+        if: github.event.inputs.test_mode != 'true'
         run: |
           THREADS_FILE=$(ls -t reports/*-threads.txt 2>/dev/null | head -1)
 
