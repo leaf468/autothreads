@@ -2,30 +2,35 @@
 """
 모든 SNS 플랫폼용 콘텐츠를 로컬 파일로 생성
 API 연결 없이 날짜/시간 기반 파일명으로 저장
+옵션: GitHub 이슈로 자동 등록
 """
 
 import os
 import glob
+import subprocess
 from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
 
 class SNSContentGenerator:
-    """SNS 콘텐츠 로컬 생성"""
+    """SNS 콘텐츠 로컬 생성 및 GitHub 이슈 등록"""
 
-    def __init__(self, source_content: Optional[str] = None):
+    def __init__(self, source_content: Optional[str] = None, create_issue: bool = False):
         """
         초기화
 
         Args:
             source_content: 소스 콘텐츠 (None이면 최신 리포트 사용)
+            create_issue: GitHub 이슈로 등록할지 여부
         """
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.date_str = datetime.now().strftime("%Y년 %m월 %d일 %H:%M")
         self.source_content = source_content or self._find_latest_report()
         self.output_base = Path("sns_output")
         self.output_base.mkdir(exist_ok=True)
+        self.create_issue = create_issue
+        self.generated_files = {}
 
     def _find_latest_report(self) -> str:
         """최신 리포트 파일 찾기"""
@@ -60,6 +65,13 @@ class SNSContentGenerator:
             f.write(content)
 
         print(f"✅ {platform}: {filepath}")
+
+        # 생성된 파일 기록 (이슈 생성용)
+        self.generated_files[platform] = {
+            'filepath': str(filepath),
+            'content': content
+        }
+
         return filepath
 
     def generate_instagram(self):
@@ -306,6 +318,64 @@ Facebook (100-250자 권장)
 """
         self._save_file("all_platforms", content, "txt")
 
+    def create_github_issue(self):
+        """GitHub 이슈 생성"""
+        print("\n" + "="*60)
+        print("📝 GitHub 이슈 생성 중...")
+        print("="*60)
+
+        # gh CLI가 설치되어 있는지 확인
+        try:
+            subprocess.run(["gh", "--version"], capture_output=True, check=True)
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            print("❌ gh CLI가 설치되어 있지 않습니다.")
+            print("   설치 방법: https://cli.github.com/")
+            return
+
+        # 이슈 본문 생성
+        issue_body = f"""## SNS 콘텐츠 생성 완료
+
+생성일시: {self.date_str}
+
+### 생성된 파일
+
+"""
+        for platform, info in self.generated_files.items():
+            if platform != 'all_platforms':
+                filepath = info['filepath']
+                issue_body += f"- **{platform.upper()}**: `{filepath}`\n"
+
+        issue_body += f"\n### 통합 파일\n\n"
+        if 'all_platforms' in self.generated_files:
+            filepath = self.generated_files['all_platforms']['filepath']
+            issue_body += f"- `{filepath}` (모든 플랫폼 통합)\n"
+
+        issue_body += f"\n### 사용 방법\n\n"
+        issue_body += "1. 각 플랫폼별 파일을 열어서 내용 확인\n"
+        issue_body += "2. 내용을 복사 (Cmd+A → Cmd+C / Ctrl+A → Ctrl+C)\n"
+        issue_body += "3. 해당 SNS에서 새 게시물 만들기\n"
+        issue_body += "4. 붙여넣기 (Cmd+V / Ctrl+V)\n"
+        issue_body += "5. 게시!\n"
+
+        issue_body += f"\n---\n\n"
+        issue_body += "✅ 이 이슈는 자동으로 생성되었습니다.\n"
+
+        # 이슈 제목
+        issue_title = f"SNS 콘텐츠 생성 완료 - {self.date_str}"
+
+        # gh CLI로 이슈 생성
+        try:
+            result = subprocess.run(
+                ["gh", "issue", "create", "--title", issue_title, "--body", issue_body, "--label", "sns-content"],
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            issue_url = result.stdout.strip()
+            print(f"✅ GitHub 이슈 생성 완료: {issue_url}")
+        except subprocess.CalledProcessError as e:
+            print(f"❌ GitHub 이슈 생성 실패: {e.stderr}")
+
     def generate_summary(self):
         """생성 완료 요약"""
         print("\n" + "="*60)
@@ -346,17 +416,31 @@ Facebook (100-250자 권장)
 
         self.generate_summary()
 
+        # GitHub 이슈 생성 (옵션)
+        if self.create_issue:
+            self.create_github_issue()
+
 
 def main():
     """메인 함수"""
     import sys
 
+    # 옵션 파싱
+    create_issue = False
+    content_args = []
+
+    for arg in sys.argv[1:]:
+        if arg in ['--issue', '-i']:
+            create_issue = True
+        else:
+            content_args.append(arg)
+
     # 커스텀 콘텐츠를 인자로 받을 수 있음
-    if len(sys.argv) > 1:
-        content = " ".join(sys.argv[1:])
-        generator = SNSContentGenerator(content)
+    if content_args:
+        content = " ".join(content_args)
+        generator = SNSContentGenerator(content, create_issue=create_issue)
     else:
-        generator = SNSContentGenerator()
+        generator = SNSContentGenerator(create_issue=create_issue)
 
     generator.generate_all()
 

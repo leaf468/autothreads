@@ -91,6 +91,31 @@ SNS 콘텐츠 생성 시작
 python scripts/generate_all_sns_content.py "오늘 학습한 AI 에이전트 내용을 공유합니다."
 ```
 
+## GitHub 이슈 자동 생성
+
+생성된 SNS 콘텐츠를 GitHub 이슈로 자동 등록:
+
+```bash
+# 기본 사용 + 이슈 생성
+python scripts/generate_all_sns_content.py --issue
+
+# 또는 짧은 옵션
+python scripts/generate_all_sns_content.py -i
+
+# 커스텀 콘텐츠 + 이슈 생성
+python scripts/generate_all_sns_content.py --issue "오늘 학습한 내용"
+```
+
+**요구사항:**
+- [GitHub CLI (gh)](https://cli.github.com/) 설치 필요
+- GitHub 인증 완료 필요 (`gh auth login`)
+
+**이슈 내용:**
+- 생성된 모든 파일 경로
+- 각 플랫폼별 파일 링크
+- 사용 방법 가이드
+- `sns-content` 라벨 자동 추가
+
 ## 플랫폼별 최적화
 
 각 플랫폼에 맞게 자동 최적화:
