@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # 수동 실행만 가능
   push:
     paths:
-      - '.github/workflows/sns-content-generator.yml'
+      - '.github/workflows/ai-trends.yml'
 
 jobs:
   create-labels:
