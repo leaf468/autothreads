@@ -1,14 +1,13 @@
-# SNS 콘텐츠 생성 및 업로드 스크립트
+# SNS 콘텐츠 생성 스크립트
 
-## 📋 스크립트 종류
+## 📋 개요
 
-### 1. 로컬 파일 생성 (권장) ⭐
 **`generate_all_sns_content.py`** - API 연결 없이 모든 SNS용 콘텐츠를 로컬 파일로 생성
 
-### 2. 자동 업로드 (선택)
-**`post_to_social.py`** / **`post_to_social.sh`** - 환경 변수가 설정된 SNS에만 자동 업로드
+환경 변수 설정이나 API 토큰 없이도 바로 사용 가능합니다.
+생성된 파일을 복사하여 각 SNS에 직접 붙여넣으면 됩니다.
 
-## 빠른 시작 (로컬 파일 생성) ⭐
+## 빠른 시작
 
 ### 모든 SNS 콘텐츠를 한 번에 생성
 
@@ -31,28 +30,10 @@ sns_output/
 
 **사용 방법:**
 1. 각 파일 열기
-2. 내용 복사 (Ctrl+A → Ctrl+C)
+2. 내용 복사 (Cmd+A → Cmd+C / Ctrl+A → Ctrl+C)
 3. 해당 SNS에서 새 게시물 만들기
-4. 붙여넣기 (Ctrl+V)
+4. 붙여넣기 (Cmd+V / Ctrl+V)
 5. 게시!
-
----
-
-## 자동 업로드 (선택사항)
-
-API 연결이 설정된 경우에만 사용
-
-### Python 버전
-
-```bash
-python scripts/post_to_social.py
-```
-
-### Bash 버전
-
-```bash
-bash scripts/post_to_social.sh
-```
 
 ## 지원 플랫폼
 
@@ -61,209 +42,86 @@ bash scripts/post_to_social.sh
 - ✅ LinkedIn
 - ✅ Threads
 - ✅ 네이버 블로그
-
-## 환경 변수 설정
-
-각 플랫폼별로 필요한 환경 변수를 설정하세요. **설정하지 않은 플랫폼은 자동으로 건너뜁니다.**
-
-### Instagram
-
-```bash
-export INSTAGRAM_ACCESS_TOKEN="your-access-token"
-export INSTAGRAM_ACCOUNT_ID="your-account-id"
-export INSTAGRAM_IMAGE_URL="https://example.com/image.png"
-```
-
-[Instagram 설정 가이드](../INSTAGRAM_SETUP.md) 참조
-
-### Twitter/X
-
-```bash
-export TWITTER_API_KEY="your-api-key"
-export TWITTER_API_SECRET="your-api-secret"
-export TWITTER_ACCESS_TOKEN="your-access-token"
-export TWITTER_ACCESS_TOKEN_SECRET="your-access-token-secret"
-```
-
-**참고**: Twitter API v2는 OAuth 1.0a 서명이 필요합니다. `tweepy` 라이브러리 사용 권장.
-
-### LinkedIn
-
-```bash
-export LINKEDIN_ACCESS_TOKEN="your-access-token"
-export LINKEDIN_PERSON_URN="urn:li:person:YOUR_ID"
-```
-
-**LinkedIn Person URN 확인 방법**:
-```bash
-curl -X GET \
-  "https://api.linkedin.com/v2/me" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-```
-
-### Threads
-
-```bash
-export THREADS_ACCESS_TOKEN="your-access-token"
-export THREADS_USER_ID="your-user-id"
-```
-
-**참고**: Threads는 Instagram Graph API를 사용합니다.
-
-### 네이버 블로그
-
-```bash
-export NAVER_CLIENT_ID="your-client-id"
-export NAVER_CLIENT_SECRET="your-client-secret"
-export NAVER_ACCESS_TOKEN="your-access-token"
-```
-
-**네이버 개발자 센터**: https://developers.naver.com/
+- ✅ Facebook
 
 ## 동작 방식
 
-1. **리포트 파일 자동 탐색**: `reports/*.md` 중 최신 파일 사용
-2. **환경 변수 확인**: 각 플랫폼별로 필요한 변수 확인
-3. **선택적 업로드**:
-   - 환경 변수 있음 → 업로드 시도
-   - 환경 변수 없음 → 경고 메시지 출력 후 건너뜀
-4. **에러 허용**: 한 플랫폼 실패해도 다른 플랫폼 계속 진행
-5. **항상 성공 종료**: `exit 0`으로 종료 (워크플로우 중단 방지)
+1. **리포트 파일 자동 탐색**: `reports/*.md` 또는 `linkedin/*/post.md` 중 최신 파일 사용
+2. **콘텐츠 생성**: 각 플랫폼별 최적화된 형식으로 변환
+3. **로컬 저장**: `sns_output/` 디렉토리에 날짜/시간 기반 파일명으로 저장
+4. **통합 파일**: 모든 플랫폼 콘텐츠를 하나의 텍스트 파일로도 제공
 
 ## 출력 예시
 
 ```
 ============================================================
-SNS 자동 업로드 시작
+SNS 콘텐츠 생성 시작
 ============================================================
-📄 리포트 파일: reports/latest.md
 
-📸 Instagram 업로드 확인 중...
-✅ Instagram 업로드 완료
+📸 Instagram 콘텐츠 생성 중...
+✅ instagram: sns_output/instagram/20260316_145616.md
 
-🐦 Twitter/X 업로드 확인 중...
-⚠️  Twitter/X 환경 변수가 설정되지 않았습니다. 건너뜁니다.
-   필요한 변수: TWITTER_API_KEY, TWITTER_API_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET
+💼 LinkedIn 콘텐츠 생성 중...
+✅ linkedin: sns_output/linkedin/20260316_145616.md
 
-💼 LinkedIn 업로드 확인 중...
-⚠️  LinkedIn 환경 변수가 설정되지 않았습니다. 건너뜁니다.
-   필요한 변수: LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN
+🐦 Twitter/X 콘텐츠 생성 중...
+✅ twitter: sns_output/twitter/20260316_145616.md
 
-🧵 Threads 업로드 확인 중...
-⚠️  Threads 환경 변수가 설정되지 않았습니다. 건너뜁니다.
-   필요한 변수: THREADS_ACCESS_TOKEN, THREADS_USER_ID
+🧵 Threads 콘텐츠 생성 중...
+✅ threads: sns_output/threads/20260316_145616.md
 
-📝 네이버 블로그 업로드 확인 중...
-⚠️  네이버 블로그 환경 변수가 설정되지 않았습니다. 건너뜁니다.
-   필요한 변수: NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, NAVER_ACCESS_TOKEN
+📝 네이버 블로그 콘텐츠 생성 중...
+✅ naver_blog: sns_output/naver_blog/20260316_145616.md
 
-============================================================
-업로드 결과 요약
-============================================================
-✅ Instagram: success
-⚠️ Twitter/X: skipped
-⚠️ LinkedIn: skipped
-⚠️ Threads: skipped
-⚠️ 네이버 블로그: skipped
+📘 Facebook 콘텐츠 생성 중...
+✅ facebook: sns_output/facebook/20260316_145616.md
 
-✅ SNS 자동 업로드 프로세스 완료
-설정된 플랫폼에만 업로드되었으며, 나머지는 건너뛰었습니다.
+📋 통합 텍스트 파일 생성 중...
+✅ all_platforms: sns_output/all_platforms/20260316_145616.txt
+
+✅ 모든 SNS 콘텐츠 생성 완료!
+📋 각 파일을 열어서 복사하여 해당 SNS에 붙여넣으세요.
 ```
 
-## GitHub Actions 연동
+## 커스텀 콘텐츠 생성
 
-`.github/workflows/post-to-social.yml` 예시:
-
-```yaml
-name: Post to Social Media
-
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - 'reports/**/*.md'
-
-jobs:
-  post:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Post to Social Media
-        env:
-          # 설정하고 싶은 플랫폼만 환경 변수 추가
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-          INSTAGRAM_IMAGE_URL: ${{ secrets.INSTAGRAM_IMAGE_URL }}
-          # LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-          # LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
-        run: python scripts/post_to_social.py
-```
-
-## 로컬 테스트
-
-환경 변수를 `.env` 파일로 관리:
+명령줄 인자로 직접 콘텐츠 제공 가능:
 
 ```bash
-# .env 파일 생성
-cat > .env << 'EOF'
-INSTAGRAM_ACCESS_TOKEN=your-token
-INSTAGRAM_ACCOUNT_ID=your-id
-INSTAGRAM_IMAGE_URL=https://example.com/image.png
-EOF
-
-# 환경 변수 로드 후 실행
-source .env
-python scripts/post_to_social.py
+python scripts/generate_all_sns_content.py "오늘 학습한 AI 에이전트 내용을 공유합니다."
 ```
 
-## 주의사항
+## 플랫폼별 최적화
 
-1. **API 제한**: 각 플랫폼의 API 호출 제한을 확인하세요
-2. **Access Token 만료**: 정기적으로 갱신 필요
-3. **이미지 URL**: Instagram, Threads는 공개 URL 필요 (로컬 파일 불가)
-4. **콘텐츠 길이**: 각 플랫폼의 제한 준수
-   - Instagram: 2,200자
-   - Threads: 500자
-   - LinkedIn: 3,000자
+각 플랫폼에 맞게 자동 최적화:
+
+- **Instagram**: 캡션 2,200자 제한, 해시태그 5개까지
+- **LinkedIn**: 전체 내용 포함, 전문적 톤
+- **Twitter/X**: 280자씩 스레드로 분할
+- **Threads**: 500자 제한, 진솔한 톤
+- **네이버 블로그**: 긴 형식, 제목 가이드 포함
+- **Facebook**: 100-250자 최적화
 
 ## 문제 해결
 
-### 환경 변수가 설정되었는데도 건너뛰는 경우
+### 리포트 파일을 찾을 수 없는 경우
 
-환경 변수가 실제로 설정되었는지 확인:
+다음 위치에 마크다운 파일이 있는지 확인:
+- `reports/*.md`
+- `linkedin/*/post.md`
 
+샘플 콘텐츠로 테스트:
 ```bash
-echo $INSTAGRAM_ACCESS_TOKEN
+python scripts/generate_all_sns_content.py "테스트 콘텐츠입니다."
 ```
 
-비어있다면:
-```bash
-export INSTAGRAM_ACCESS_TOKEN="your-token"
-```
-
-### API 호출 실패
-
-- Access Token 유효성 확인
-- API 엔드포인트 URL 확인
-- 네트워크 연결 확인
-- 로그 메시지에서 상세 에러 확인
-
-## 추가 개발
+## 추가 기능
 
 새로운 SNS 플랫폼 추가:
 
-1. `post_to_social.py`에 새 메서드 추가
-2. `post_all()` 메서드에 호출 추가
-3. README에 환경 변수 문서 추가
+1. `generate_all_sns_content.py`의 `SNSContentGenerator` 클래스에 새 메서드 추가
+2. `generate_all()` 메서드에 호출 추가
+3. README에 플랫폼 문서 추가
 
 ## 라이선스
 
