@@ -94,62 +94,14 @@ jobs:
             echo "⚠️ Thumbnail or report not found for Instagram image creation"
           fi
 
-      - name: Post to Instagram
-        if: github.event.inputs.test_mode != 'true'
-        run: |
-          LATEST_REPORT=$(ls -t reports/*.md 2>/dev/null | grep -v 'threads\|twitter' | head -1)
-          INSTAGRAM_IMAGE=$(ls -t reports/images/*-instagram.png 2>/dev/null | head -1)
-
-          if [ -f "$LATEST_REPORT" ] && [ -f "$INSTAGRAM_IMAGE" ]; then
-            # 이미지를 GitHub에 업로드하고 공개 URL 생성
-            INSTAGRAM_IMAGE_URL="https://github.com/${{ github.repository }}/raw/main/$INSTAGRAM_IMAGE"
-
-            echo "📸 Posting to Instagram..."
-            python scripts/post_to_instagram.py "$LATEST_REPORT"
-          else
-            echo "⚠️ Instagram image or report not found, skipping Instagram post"
-          fi
-        env:
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-          INSTAGRAM_IMAGE_URL: ${{ secrets.INSTAGRAM_IMAGE_URL }}
-
-      - name: Post to X (Twitter)
-        if: github.event.inputs.test_mode != 'true'
-        run: |
-          TWITTER_FILE=$(ls -t reports/*-twitter.txt 2>/dev/null | head -1)
-
-          if [ -f "$TWITTER_FILE" ]; then
-            echo "🐦 Posting thread to X (Twitter)..."
-            python scripts/post_to_twitter.py "$TWITTER_FILE"
-          else
-            echo "⚠️ Twitter thread file not found, skipping Twitter post"
-          fi
-        env:
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-
-      - name: Post to Threads
-        if: github.event.inputs.test_mode != 'true'
-        run: |
-          THREADS_FILE=$(ls -t reports/*-threads.txt 2>/dev/null | head -1)
-
-          if [ -f "$THREADS_FILE" ]; then
-            echo "🧵 Posting to Threads..."
-            python scripts/post_to_threads.py "$THREADS_FILE"
-          else
-            echo "⚠️ Threads file not found, skipping Threads post"
-          fi
-        env:
-          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
-          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
-
       - name: Commit and push
         run: |
           git config user.name "AI Trends Bot"
           git config user.email "ai-trends-bot@users.noreply.github.com"
           git add reports/ || true
           git add thumbnail_prompt.txt || true
-          git commit -m "📰 AI 트렌드 리포트 - ${{ steps.time.outputs.kst }}" || echo "No changes"
+          git add examples/content-builder-agent/sns_output/ || true
+          git commit -m "📰 AI 트렌드 리포트 + SNS 콘텐츠 - ${{ steps.time.outputs.kst }}" || echo "No changes"
           git push
 
       - name: Create GitHub Labels
