@@ -1,0 +1,89 @@
+name: Setup SNS Labels
+
+on:
+  workflow_dispatch:  # 수동 실행만 가능
+  push:
+    paths:
+      - '.github/workflows/sns-content-generator.yml'
+
+jobs:
+  create-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create SNS content labels
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const labels = [
+              {
+                name: 'sns-content',
+                color: '0E8A16',
+                description: '자동 생성된 SNS 콘텐츠'
+              },
+              {
+                name: 'auto-generated',
+                color: 'FBCA04',
+                description: '봇이 자동으로 생성한 콘텐츠'
+              },
+              {
+                name: 'instagram',
+                color: 'E4405F',
+                description: 'Instagram 콘텐츠'
+              },
+              {
+                name: 'linkedin',
+                color: '0A66C2',
+                description: 'LinkedIn 콘텐츠'
+              },
+              {
+                name: 'twitter',
+                color: '1DA1F2',
+                description: 'Twitter/X 콘텐츠'
+              },
+              {
+                name: 'threads',
+                color: '000000',
+                description: 'Threads 콘텐츠'
+              },
+              {
+                name: 'naver-blog',
+                color: '03C75A',
+                description: '네이버 블로그 콘텐츠'
+              },
+              {
+                name: 'facebook',
+                color: '1877F2',
+                description: 'Facebook 콘텐츠'
+              }
+            ];
+
+            for (const label of labels) {
+              try {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label.name,
+                  color: label.color,
+                  description: label.description
+                });
+                console.log(`✅ Created label: ${label.name}`);
+              } catch (error) {
+                if (error.status === 422) {
+                  console.log(`⚠️  Label already exists: ${label.name}`);
+                  // 라벨 업데이트
+                  await github.rest.issues.updateLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: label.name,
+                    color: label.color,
+                    description: label.description
+                  });
+                  console.log(`✅ Updated label: ${label.name}`);
+                } else {
+                  throw error;
+                }
+              }
+            }
+
+            console.log('\n✅ All labels created/updated successfully!');
