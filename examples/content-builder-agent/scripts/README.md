@@ -19,12 +19,9 @@ python scripts/generate_all_sns_content.py
 **결과물:**
 ```
 sns_output/
-├── instagram/20260316_115717.md
-├── linkedin/20260316_115717.md
-├── twitter/20260316_115717.md
-├── threads/20260316_115717.md
-├── naver_blog/20260316_115717.md
-├── facebook/20260316_115717.md
+├── instagram/20260316_115717.md     (이미지 경로 포함)
+├── twitter/20260316_115717.md       (스레드 형식)
+├── threads/20260316_115717.md       (전문 기술 정리)
 └── all_platforms/20260316_115717.txt  ← 모든 플랫폼 통합본
 ```
 
@@ -37,47 +34,40 @@ sns_output/
 
 ## 지원 플랫폼
 
-- ✅ Instagram
-- ✅ Twitter/X
-- ✅ LinkedIn
-- ✅ Threads
-- ✅ 네이버 블로그
-- ✅ Facebook
+- ✅ Instagram (이미지 자동 연결)
+- ✅ Twitter/X (스레드 형식)
+- ✅ Threads (전문 기술 정리 스타일)
 
 ## 동작 방식
 
 1. **리포트 파일 자동 탐색**: `reports/*.md` 또는 `linkedin/*/post.md` 중 최신 파일 사용
-2. **콘텐츠 생성**: 각 플랫폼별 최적화된 형식으로 변환
-3. **로컬 저장**: `sns_output/` 디렉토리에 날짜/시간 기반 파일명으로 저장
-4. **통합 파일**: 모든 플랫폼 콘텐츠를 하나의 텍스트 파일로도 제공
+2. **이미지 자동 탐색**: Instagram용 이미지 파일 찾기
+   - `reports/images/*-instagram.png` (텍스트 오버레이 포함) 우선
+   - 없으면 `reports/images/*-thumbnail.png` (기본 썸네일) 사용
+3. **콘텐츠 생성**: 각 플랫폼별 최적화된 형식으로 변환
+4. **로컬 저장**: `sns_output/` 디렉토리에 날짜/시간 기반 파일명으로 저장
+5. **통합 파일**: 모든 플랫폼 콘텐츠를 하나의 텍스트 파일로도 제공
 
 ## 출력 예시
 
 ```
+📄 소스 파일: ../../reports/20260312-0912.md
+🖼️  Instagram 이미지: ../../reports/images/20260312-0912-thumbnail.png
 ============================================================
 SNS 콘텐츠 생성 시작
 ============================================================
 
 📸 Instagram 콘텐츠 생성 중...
-✅ instagram: sns_output/instagram/20260316_145616.md
-
-💼 LinkedIn 콘텐츠 생성 중...
-✅ linkedin: sns_output/linkedin/20260316_145616.md
+✅ instagram: sns_output/instagram/20260316_154714.md
 
 🐦 Twitter/X 콘텐츠 생성 중...
-✅ twitter: sns_output/twitter/20260316_145616.md
+✅ twitter: sns_output/twitter/20260316_154714.md
 
 🧵 Threads 콘텐츠 생성 중...
-✅ threads: sns_output/threads/20260316_145616.md
-
-📝 네이버 블로그 콘텐츠 생성 중...
-✅ naver_blog: sns_output/naver_blog/20260316_145616.md
-
-📘 Facebook 콘텐츠 생성 중...
-✅ facebook: sns_output/facebook/20260316_145616.md
+✅ threads: sns_output/threads/20260316_154714.md
 
 📋 통합 텍스트 파일 생성 중...
-✅ all_platforms: sns_output/all_platforms/20260316_145616.txt
+✅ all_platforms: sns_output/all_platforms/20260316_154714.txt
 
 ✅ 모든 SNS 콘텐츠 생성 완료!
 📋 각 파일을 열어서 복사하여 해당 SNS에 붙여넣으세요.
@@ -120,12 +110,20 @@ python scripts/generate_all_sns_content.py --issue "오늘 학습한 내용"
 
 각 플랫폼에 맞게 자동 최적화:
 
-- **Instagram**: 캡션 2,200자 제한, 해시태그 5개까지
-- **LinkedIn**: 전체 내용 포함, 전문적 톤
-- **Twitter/X**: 280자씩 스레드로 분할
-- **Threads**: 500자 제한, 진솔한 톤
-- **네이버 블로그**: 긴 형식, 제목 가이드 포함
-- **Facebook**: 100-250자 최적화
+- **Instagram**:
+  - 📸 이미지 자동 연결 (reports/images/*-instagram.png)
+  - 캡션과 이미지 파일 경로 포함
+  - 작성 가이드: 전문 기술 정리 스타일 (📌💡🔍 이모지 활용)
+
+- **Twitter/X**:
+  - 280자 스레드 형식
+  - 전문 기술 스레드 스타일
+  - 각 트윗에 하나의 개념/포인트
+
+- **Threads**:
+  - 전문 기술 정리 스타일
+  - 구조화된 포맷 (이모지 사용)
+  - 참고: @choi.openai, @unclejobs.ai 등의 스타일
 
 ## 문제 해결
 

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-모든 SNS 플랫폼용 콘텐츠를 로컬 파일로 생성
-API 연결 없이 날짜/시간 기반 파일명으로 저장
-옵션: GitHub 이슈로 자동 등록
+SNS 플랫폼용 기술 콘텐츠 생성
+전문적인 기술 정리 스타일 (Instagram, Twitter, Threads)
 """
 
 import os
@@ -14,7 +13,7 @@ from typing import Optional
 
 
 class SNSContentGenerator:
-    """SNS 콘텐츠 로컬 생성 및 GitHub 이슈 등록"""
+    """SNS 콘텐츠 생성 - 전문 기술 정리 스타일"""
 
     def __init__(self, source_content: Optional[str] = None, create_issue: bool = False):
         """
@@ -31,27 +30,77 @@ class SNSContentGenerator:
         self.output_base.mkdir(exist_ok=True)
         self.create_issue = create_issue
         self.generated_files = {}
+        self.instagram_image = self._find_latest_instagram_image()
 
     def _find_latest_report(self) -> str:
         """최신 리포트 파일 찾기"""
-        reports = glob.glob("reports/*.md")
-        reports = [r for r in reports if "threads" not in r and "twitter" not in r]
+        # 다양한 경로에서 리포트 찾기
+        search_paths = [
+            "reports/*.md",
+            "../../reports/*.md",
+            "../../../reports/*.md"
+        ]
 
-        if reports:
-            latest = max(reports, key=os.path.getmtime)
-            print(f"📄 소스 파일: {latest}")
-            with open(latest, 'r', encoding='utf-8') as f:
-                return f.read()
+        for search_path in search_paths:
+            reports = glob.glob(search_path)
+            reports = [r for r in reports if "threads" not in r and "twitter" not in r]
+
+            if reports:
+                latest = max(reports, key=os.path.getmtime)
+                print(f"📄 소스 파일: {latest}")
+                with open(latest, 'r', encoding='utf-8') as f:
+                    return f.read()
 
         # 리포트 없으면 linkedin에서 찾기
-        linkedin_posts = glob.glob("linkedin/*/post.md")
-        if linkedin_posts:
-            latest = max(linkedin_posts, key=os.path.getmtime)
-            print(f"📄 소스 파일: {latest}")
-            with open(latest, 'r', encoding='utf-8') as f:
-                return f.read()
+        linkedin_paths = [
+            "linkedin/*/post.md",
+            "../../linkedin/*/post.md"
+        ]
+
+        for search_path in linkedin_paths:
+            linkedin_posts = glob.glob(search_path)
+            if linkedin_posts:
+                latest = max(linkedin_posts, key=os.path.getmtime)
+                print(f"📄 소스 파일: {latest}")
+                with open(latest, 'r', encoding='utf-8') as f:
+                    return f.read()
 
         return "샘플 콘텐츠입니다. 실제 콘텐츠로 대체하세요."
+
+    def _find_latest_instagram_image(self) -> Optional[str]:
+        """최신 Instagram 이미지 찾기"""
+        # 현재 디렉토리와 상위 디렉토리에서 모두 확인
+        search_paths = [
+            "reports/images/*-instagram.png",
+            "../../reports/images/*-instagram.png",
+            "../../../reports/images/*-instagram.png"
+        ]
+
+        # Instagram용 텍스트 오버레이 이미지 찾기
+        for search_path in search_paths:
+            instagram_images = glob.glob(search_path)
+            if instagram_images:
+                latest = max(instagram_images, key=os.path.getmtime)
+                print(f"🖼️  Instagram 이미지: {latest}")
+                return latest
+
+        # Instagram 이미지가 없으면 일반 썸네일 찾기
+        thumbnail_paths = [
+            "reports/images/*-thumbnail.png",
+            "../../reports/images/*-thumbnail.png",
+            "../../../reports/images/*-thumbnail.png"
+        ]
+
+        for search_path in thumbnail_paths:
+            thumbnails = glob.glob(search_path)
+            thumbnails = [t for t in thumbnails if "instagram" not in t]
+            if thumbnails:
+                latest = max(thumbnails, key=os.path.getmtime)
+                print(f"🖼️  썸네일 이미지: {latest}")
+                return latest
+
+        print("⚠️  이미지를 찾을 수 없습니다")
+        return None
 
     def _save_file(self, platform: str, content: str, extension: str = "md"):
         """파일 저장"""
@@ -75,244 +124,149 @@ class SNSContentGenerator:
         return filepath
 
     def generate_instagram(self):
-        """Instagram 콘텐츠 생성"""
+        """Instagram 콘텐츠 생성 - 전문 기술 정리 스타일"""
         print("\n📸 Instagram 콘텐츠 생성 중...")
 
-        # Instagram은 캡션 2,200자 제한
-        caption = self.source_content[:2200]
+        # 이미지 정보 섹션
+        image_section = ""
+        if self.instagram_image:
+            image_section = f"""## 📸 이미지
+파일 경로: {self.instagram_image}
 
+**이미지 사용 방법:**
+1. 위 파일을 Instagram 앱에서 선택
+2. 또는 GitHub 리포지토리에서 다운로드하여 사용
+
+"""
+
+        # 사용자가 직접 작성한 콘텐츠 사용 (그대로 저장)
         content = f"""# Instagram 포스트
 생성일시: {self.date_str}
 
-## 캡션
-{caption}
+{image_section}## 캡션
+{self.source_content}
+
+## 작성 가이드
+**전문 기술 정리 스타일:**
+- 📌 핵심 포인트를 구조화
+- 💡 기술적 인사이트 + 실용적 시사점
+- 🔍 전문 용어를 쉽게 설명
+- 이모지로 섹션 구분
+- 간결하면서도 밀도 높은 내용
 
 ## 사용 방법
 1. Instagram 앱 열기
 2. 새 게시물 만들기
-3. 사진 선택 (또는 이미지 생성)
+3. 위 이미지 파일 선택
 4. 위 캡션 복사하여 붙여넣기
-5. 게시
+5. 해시태그 추가 (3-5개 권장)
+6. 게시
 
 ## 주의사항
-- 해시태그는 5개까지만! (2026년 제한)
-- 첫 줄이 가장 중요 (125자 미리보기)
-- 이미지가 80%, 캡션은 20%
+- 첫 문장이 가장 중요 (125자 미리보기)
+- 기술 내용 + 실용적 의미
+- 해시태그: #AI #기술 #개발 등
 """
         self._save_file("instagram", content)
 
-    def generate_linkedin(self):
-        """LinkedIn 콘텐츠 생성"""
-        print("\n💼 LinkedIn 콘텐츠 생성 중...")
+    def generate_twitter(self):
+        """Twitter/X 콘텐츠 생성 - 전문 기술 스레드"""
+        print("\n🐦 Twitter/X 콘텐츠 생성 중...")
 
-        # LinkedIn 최적 길이: 150-300자 (한국어)
-        # 전체 내용 포함하되 가이드 추가
-        content = f"""# LinkedIn 포스트
+        # 사용자가 직접 작성한 콘텐츠 사용 (그대로 저장)
+        content = f"""# Twitter/X 스레드
+생성일시: {self.date_str}
+
+## 스레드 내용
+{self.source_content}
+
+## 작성 가이드
+**전문 기술 스레드 스타일:**
+- 첫 트윗에 핵심 요약
+- 각 트윗은 하나의 개념/포인트
+- 📌 bullet point 활용
+- 💡 인사이트 강조
+- 기술 용어 + 쉬운 설명
+- 280자 내외로 분할
+
+## 사용 방법
+1. Twitter/X 앱/웹 열기
+2. 새 트윗 작성
+3. 첫 트윗에 "🧵 스레드" 표시
+4. "+" 버튼으로 스레드 추가
+5. 순서대로 내용 작성
+6. 전체 게시
+
+## 최적화 팁
+- 각 트윗 280자 이내
+- 첫 트윗이 가장 중요 (RT 결정)
+- 해시태그 1-2개만
+- 이모지로 가독성 향상
+"""
+        self._save_file("twitter", content)
+
+    def generate_threads(self):
+        """Threads 콘텐츠 생성 - 전문 기술 정리"""
+        print("\n🧵 Threads 콘텐츠 생성 중...")
+
+        # 사용자가 직접 작성한 콘텐츠 사용 (그대로 저장)
+        content = f"""# Threads 포스트
 생성일시: {self.date_str}
 
 ## 포스트 내용
 {self.source_content}
 
-## 사용 방법
-1. LinkedIn 앱/웹 열기
-2. "게시물 시작하기" 클릭
-3. 위 내용 복사하여 붙여넣기
-4. 게시
+## 작성 가이드
+**전문 기술 정리 스타일:**
+- 핵심 포인트를 섹션별로 정리
+- 📌 구조화된 포맷 (이모지 사용)
+- 💡 기술적 인사이트
+- 🔍 실용적 시사점
+- 전문성 + 접근성
 
-## 최적화 팁
-- 첫 두 줄이 가장 중요 (미리보기)
-- 해시태그는 1-2개만 (선택사항)
-- 전문적이지만 진솔하게
-- 댓글 참여 유도
-"""
-        self._save_file("linkedin", content)
-
-    def generate_twitter(self):
-        """Twitter/X 콘텐츠 생성"""
-        print("\n🐦 Twitter/X 콘텐츠 생성 중...")
-
-        # 280자씩 나눠서 스레드 생성
-        lines = self.source_content.split('\n')
-        tweets = []
-        current_tweet = ""
-
-        for line in lines:
-            if len(current_tweet) + len(line) + 1 <= 270:  # 280자 여유
-                current_tweet += line + "\n"
-            else:
-                if current_tweet.strip():
-                    tweets.append(current_tweet.strip())
-                current_tweet = line + "\n"
-
-        if current_tweet.strip():
-            tweets.append(current_tweet.strip())
-
-        # 스레드 번호 추가
-        thread_content = ""
-        for i, tweet in enumerate(tweets[:10], 1):  # 최대 10개 트윗
-            if i == 1:
-                thread_content += f"{i}/🧵\n{tweet}\n\n"
-            else:
-                thread_content += f"{i}/\n{tweet}\n\n"
-
-        content = f"""# Twitter/X 스레드
-생성일시: {self.date_str}
-
-## 스레드 내용 (총 {min(len(tweets), 10)}개 트윗)
-{thread_content}
-
-## 사용 방법
-1. Twitter/X 앱/웹 열기
-2. 새 트윗 작성
-3. 첫 번째 트윗 (1/🧵) 작성
-4. "+" 버튼으로 스레드 추가
-5. 순서대로 복사하여 붙여넣기
-6. 전체 게시
-
-## 최적화 팁
-- 각 트윗 280자 이내
-- 해시태그 1-3개
-- 이모지 활용
-- 첫 트윗이 가장 중요
-"""
-        self._save_file("twitter", content)
-
-    def generate_threads(self):
-        """Threads 콘텐츠 생성"""
-        print("\n🧵 Threads 콘텐츠 생성 중...")
-
-        # Threads는 500자 제한
-        main_content = self.source_content[:500]
-
-        content = f"""# Threads 포스트
-생성일시: {self.date_str}
-
-## 포스트 내용
-{main_content}
+**참고 스타일:**
+- @choi.openai - AI 기술 정리
+- @unclejobs.ai - AI 워크플로우
+- 기술 블로거들의 간결한 설명
 
 ## 사용 방법
 1. Threads 앱 열기
 2. 새 스레드 작성
 3. 위 내용 복사하여 붙여넣기
-4. 게시
-
-## 최적화 팁
-- 해시태그는 1개만! (2026년 중요)
-- 맥락 내 키워드 자연스럽게 포함
-- 솔직하고 투명한 톤
-- 과정과 경험 공유
-"""
-        self._save_file("threads", content)
-
-    def generate_naver_blog(self):
-        """네이버 블로그 콘텐츠 생성"""
-        print("\n📝 네이버 블로그 콘텐츠 생성 중...")
-
-        # 블로그는 긴 형식
-        content = f"""# 네이버 블로그 포스트
-생성일시: {self.date_str}
-
-## 제목 (23-24자로 수정 필요)
-[핵심 키워드를 앞쪽에] AI 에이전트 활용법
-
-## 본문
-{self.source_content}
-
-## 마무리
-지금까지 내용을 정리해드렸습니다. 도움이 되셨기를 바랍니다!
-
-## 사용 방법
-1. 네이버 블로그 접속
-2. "글쓰기" 클릭
-3. 제목 입력 (23-24자)
-4. 본문 복사하여 붙여넣기
-5. 이미지 5장 이상 추가
-6. 해시태그 5-10개 추가
-7. 발행
-
-## 최적화 팁
-- 제목 23-24자, 키워드 앞쪽
-- 첫 두 문장에 키워드 포함
-- 소제목(H2, H3) 활용
-- 이미지 최소 5장
-- 해시태그: #키워드1 #키워드2 #키워드3 (5-10개)
-"""
-        self._save_file("naver_blog", content)
-
-    def generate_facebook(self):
-        """Facebook 콘텐츠 생성"""
-        print("\n📘 Facebook 콘텐츠 생성 중...")
-
-        # Facebook은 100-250자 최적
-        short_content = '\n'.join(self.source_content.split('\n')[:5])
-
-        content = f"""# Facebook 포스트
-생성일시: {self.date_str}
-
-## 포스트 내용
-{short_content}
-
-## 사용 방법
-1. Facebook 앱/웹 열기
-2. "무슨 생각을 하고 계신가요?" 클릭
-3. 위 내용 복사하여 붙여넣기
-4. 사진/동영상 추가 (선택)
+4. 해시태그 1-2개 추가
 5. 게시
 
 ## 최적화 팁
-- 첫 3줄이 미리보기에 노출
-- 해시태그 1-3개 (선택)
-- 영상 콘텐츠 효과적
-- 질문으로 댓글 유도
+- 해시태그는 1-2개만 (2026년 중요)
+- 맥락 내 키워드 자연스럽게 포함
+- 전문적이면서 읽기 쉽게
+- 구조화된 정보 전달
 """
-        self._save_file("facebook", content)
+        self._save_file("threads", content)
 
     def generate_all_platforms_txt(self):
-        """모든 플랫폼 한 번에 텍스트 파일로"""
+        """모든 플랫폼 통합 텍스트 파일"""
         print("\n📋 통합 텍스트 파일 생성 중...")
 
         content = f"""═══════════════════════════════════════════════════════════
-SNS 콘텐츠 모음
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
 생성일시: {self.date_str}
 ═══════════════════════════════════════════════════════════
 
 {'='*60}
-Instagram (캡션 2,200자 제한)
-{'='*60}
-{self.source_content[:2200]}
-
-{'='*60}
-LinkedIn (150-300자 권장)
+Instagram
 {'='*60}
 {self.source_content}
 
 {'='*60}
-Twitter/X (280자씩 스레드)
+Twitter/X 스레드
 {'='*60}
-1/🧵
-{self.source_content[:270]}
-
-2/
-(계속...)
-
-{'='*60}
-Threads (500자 제한)
-{'='*60}
-{self.source_content[:500]}
-
-{'='*60}
-네이버 블로그
-{'='*60}
-제목: [23-24자로 작성]
-
 {self.source_content}
 
-해시태그: #키워드1 #키워드2 #키워드3 #키워드4 #키워드5
-
 {'='*60}
-Facebook (100-250자 권장)
+Threads
 {'='*60}
-{self.source_content[:250]}
+{self.source_content}
 
 ═══════════════════════════════════════════════════════════
 """
@@ -337,7 +291,19 @@ Facebook (100-250자 권장)
 
 생성일시: {self.date_str}
 
-### 생성된 파일
+"""
+        # Instagram 이미지 추가
+        if self.instagram_image:
+            # GitHub 리포지토리에서 이미지 URL 생성 (리포지토리명은 환경에 따라 다를 수 있음)
+            issue_body += f"""### 📸 Instagram 이미지
+
+![Instagram Image]({self.instagram_image})
+
+**이미지 파일:** `{self.instagram_image}`
+
+"""
+
+        issue_body += f"""### 생성된 파일
 
 """
         for platform, info in self.generated_files.items():
@@ -352,10 +318,11 @@ Facebook (100-250자 권장)
 
         issue_body += f"\n### 사용 방법\n\n"
         issue_body += "1. 각 플랫폼별 파일을 열어서 내용 확인\n"
-        issue_body += "2. 내용을 복사 (Cmd+A → Cmd+C / Ctrl+A → Ctrl+C)\n"
-        issue_body += "3. 해당 SNS에서 새 게시물 만들기\n"
-        issue_body += "4. 붙여넣기 (Cmd+V / Ctrl+V)\n"
-        issue_body += "5. 게시!\n"
+        issue_body += "2. Instagram: 위 이미지 다운로드하여 사용\n"
+        issue_body += "3. 내용을 복사 (Cmd+A → Cmd+C / Ctrl+A → Ctrl+C)\n"
+        issue_body += "4. 해당 SNS에서 새 게시물 만들기\n"
+        issue_body += "5. 붙여넣기 (Cmd+V / Ctrl+V)\n"
+        issue_body += "6. 게시!\n"
 
         issue_body += f"\n---\n\n"
         issue_body += "✅ 이 이슈는 자동으로 생성되었습니다.\n"
@@ -384,15 +351,9 @@ Facebook (100-250자 권장)
         print(f"📂 {self.output_base.absolute()}/")
         print(f"   ├── instagram/")
         print(f"   │   └── {self.timestamp}.md")
-        print(f"   ├── linkedin/")
-        print(f"   │   └── {self.timestamp}.md")
         print(f"   ├── twitter/")
         print(f"   │   └── {self.timestamp}.md")
         print(f"   ├── threads/")
-        print(f"   │   └── {self.timestamp}.md")
-        print(f"   ├── naver_blog/")
-        print(f"   │   └── {self.timestamp}.md")
-        print(f"   ├── facebook/")
         print(f"   │   └── {self.timestamp}.md")
         print(f"   └── all_platforms/")
         print(f"       └── {self.timestamp}.txt (모든 플랫폼 통합)")
@@ -407,11 +368,8 @@ Facebook (100-250자 권장)
         print("="*60)
 
         self.generate_instagram()
-        self.generate_linkedin()
         self.generate_twitter()
         self.generate_threads()
-        self.generate_naver_blog()
-        self.generate_facebook()
         self.generate_all_platforms_txt()
 
         self.generate_summary()
