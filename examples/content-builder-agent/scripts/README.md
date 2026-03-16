@@ -1,10 +1,48 @@
-# SNS 자동 업로드 스크립트
+# SNS 콘텐츠 생성 및 업로드 스크립트
 
-환경 변수가 설정된 SNS에만 자동으로 업로드하고, 설정되지 않은 SNS는 건너뜁니다.
+## 📋 스크립트 종류
 
-## 사용 방법
+### 1. 로컬 파일 생성 (권장) ⭐
+**`generate_all_sns_content.py`** - API 연결 없이 모든 SNS용 콘텐츠를 로컬 파일로 생성
 
-### Python 버전 (권장)
+### 2. 자동 업로드 (선택)
+**`post_to_social.py`** / **`post_to_social.sh`** - 환경 변수가 설정된 SNS에만 자동 업로드
+
+## 빠른 시작 (로컬 파일 생성) ⭐
+
+### 모든 SNS 콘텐츠를 한 번에 생성
+
+```bash
+cd examples/content-builder-agent
+python scripts/generate_all_sns_content.py
+```
+
+**결과물:**
+```
+sns_output/
+├── instagram/20260316_115717.md
+├── linkedin/20260316_115717.md
+├── twitter/20260316_115717.md
+├── threads/20260316_115717.md
+├── naver_blog/20260316_115717.md
+├── facebook/20260316_115717.md
+└── all_platforms/20260316_115717.txt  ← 모든 플랫폼 통합본
+```
+
+**사용 방법:**
+1. 각 파일 열기
+2. 내용 복사 (Ctrl+A → Ctrl+C)
+3. 해당 SNS에서 새 게시물 만들기
+4. 붙여넣기 (Ctrl+V)
+5. 게시!
+
+---
+
+## 자동 업로드 (선택사항)
+
+API 연결이 설정된 경우에만 사용
+
+### Python 버전
 
 ```bash
 python scripts/post_to_social.py
