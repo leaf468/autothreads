@@ -98,13 +98,24 @@ jobs:
         run: |
           git config user.name "AI Trends Bot"
           git config user.email "ai-trends-bot@users.noreply.github.com"
+
+          # 변경사항 추가
           git add reports/ || true
           git add examples/content-builder-agent/sns_output/ || true
-          git commit -m "📰 AI 트렌드 리포트 + SNS 콘텐츠 - ${{ steps.time.outputs.kst }}" || echo "No changes"
 
-          # 원격 변경사항과 동기화 후 푸시
-          git pull --rebase origin main || true
-          git push
+          # 변경사항이 있으면 커밋
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "📰 AI 트렌드 리포트 + SNS 콘텐츠 - ${{ steps.time.outputs.kst }}"
+
+            # 원격 변경사항 가져오기 및 리베이스
+            git fetch origin main
+            git rebase origin/main
+
+            # 푸시
+            git push origin main
+          fi
 
       - name: Create GitHub Labels
         run: |
