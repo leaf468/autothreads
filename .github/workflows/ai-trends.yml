@@ -99,9 +99,11 @@ jobs:
           git config user.name "AI Trends Bot"
           git config user.email "ai-trends-bot@users.noreply.github.com"
           git add reports/ || true
-          git add thumbnail_prompt.txt || true
           git add examples/content-builder-agent/sns_output/ || true
           git commit -m "📰 AI 트렌드 리포트 + SNS 콘텐츠 - ${{ steps.time.outputs.kst }}" || echo "No changes"
+
+          # 원격 변경사항과 동기화 후 푸시
+          git pull --rebase origin main || true
           git push
 
       - name: Create GitHub Labels
@@ -111,6 +113,10 @@ jobs:
           gh label create "ai-trends" --description "AI trends automated reports" --color "0E8A16" --force || true
           gh label create "automated" --description "Automated by GitHub Actions" --color "FBCA04" --force || true
           gh label create "$DATE_LABEL" --description "Report date" --color "BFD4F2" --force || true
+
+          # SNS 콘텐츠용 라벨 생성
+          gh label create "sns-content" --description "자동 생성된 SNS 콘텐츠" --color "0E8A16" --force || true
+          gh label create "auto-generated" --description "봇이 자동으로 생성한 콘텐츠" --color "FBCA04" --force || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
