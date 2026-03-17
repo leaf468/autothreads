@@ -1,0 +1,5 @@
+Generated: 2026-03-17T10:00:43.596623
+Method: PIL placeholder image
+Prompt: A stylized futuristic newsroom thumbnail: vibrant neon, holographic neural network diagrams, diverse people reading AI headlines on floating screens, clean editorial typography, cinematic lighting
+Size: (1792, 1024)
+Cost: $0 (local generation)
