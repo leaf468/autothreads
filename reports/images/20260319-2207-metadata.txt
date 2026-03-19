@@ -1,0 +1,5 @@
+Generated: 2026-03-19T13:10:06.852263
+Method: PIL placeholder image
+Prompt: A dynamic, futuristic thumbnail showing a digital cityscape powered by AI agents and neural network visualizations, vibrant neon colors, subtle Korean flag motif, cinematic lighting, high detail, digital art
+Size: (1792, 1024)
+Cost: $0 (local generation)
