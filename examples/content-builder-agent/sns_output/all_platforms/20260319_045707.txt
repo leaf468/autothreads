@@ -1,0 +1,390 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 03월 19일 04:57
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-03-19 13:55 KST
+**수집 기간:** 최근 6시간 (우선), 필요시 최신 48시간 범위까지 보완
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 에이전트가 스스로 진화한다 — "AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse"
+
+> **원제:** AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
+> **출처:** Zhang Zhang et al. (arXiv) — https://arxiv.org/abs/2603.18000
+> **발행:** 2026-03-19
+
+최근 arXiv에 올라온 AgentFactory 논문은 '실행 가능한(subagent) 모듈을 누적·재사용해 에이전트 집단이 스스로 진화한다'는 아이디어를 제시합니다. 연구진은 작은 실행 단위(subagent)를 생성하고, 이들을 조합·재활용해 더 복잡한 작업을 수행하는 프레임워크를 제안합니다. 핵심은 단일 거대 모델에 의존하지 않고, 기능별로 실행 가능한 구성 요소들을 쌓아 올려 점진적으로 능력을 확장하는 방식입니다.
+
+실험에서는 다양한 베이스 에이전트들이 환경과 상호작용하면서 유용한 subagent를 자동 생성·수집하고, 이를 다른 에이전트들이 재사용해 새로운 작업을 빠르게 학습하는 모습을 보였습니다. 특히 코드 실행, 계획 수립, 기억 관리 등의 모듈화가 성능과 샘플 효율을 높였습니다.
+
+**💡 핵심 포인트**
+- 에이전트 능력의 모듈화(실행 가능한 subagent)로 재사용성과 확장성 확보
+- 단일 대형 모델 의존도를 낮추고 분산형 적응 학습을 촉진
+- 코드·데이터·환경 간 상호운용성에 초점
+
+**🤔 추가 인사이트**
+한국 기업·연구기관 관점에서 AgentFactory는 산업용 에이전트(예: 제조 자동화, 로보틱스 협업, 고객 응대 에이전트)에서 모듈화된 기능을 빠르게 재사용해 도입 비용과 위험을 줄이는 길을 제공합니다. 규제·안전성 관점에서는 모듈별 검증이 가능해 추적성과 감사가 쉬워질 수 있습니다.
+
+![이미지](https://arxiv.org/pdf/2603.18000.pdf)
+*출처: arXiv (https://arxiv.org/abs/2603.18000)*
+
+---
+
+### 2. 개발자 도구로서의 'Cook' — 쿠키 커맨드형 툴의 등장 (Hacker News 트렌드)
+
+> **원제:** Cook: A simple CLI for orchestrating Claude Code
+> **출처:** rjcorwin.github.io/cook/ (소개 페이지), Hacker News 링크: https://news.ycombinator.com/item?id=47434024
+> **발행:** 2026-03 (Hacker News: 2시간 전)
+
+'Cook'은 Claude Code(에이전트/플러그인) 중심 워크플로를 간단한 CLI로 오케스트레이션하는 도구입니다. 개발자가 복잡한 에이전트 실행, 플러그인 연결, 작업 파이프라인을 터미널에서 손쉽게 조종할 수 있도록 설계됐습니다. HN에서 빠르게 확산되며 '작지만 실용적'이라는 평가를 받았습니다.
+
+요점은 에이전트·플러그인 생태계가 도구와 플로우 중심으로 성숙하고 있다는 점입니다. 에이전트 플랫폼들이 많아질수록 이를 통합·관리하는 경량 툴 수요가 커지고 있고, Cook은 그 수요에 부합합니다. 커뮤니티 반응으로는 사용성, 보안(명령·플러그인 권한), 재현성(reproducibility) 관련 토론이 활발합니다.
+
+**💡 핵심 포인트**
+- 에이전트/플러그인 오케스트레이션을 CLI 수준으로 단순화
+- 개발자 체감 생산성 향상에 기여
+- 보안·권한 모델 설계가 채택 관건
+
+**🤔 추가 인사이트**
+한국 스타트업들이 에이전트 기반 제품을 만들 때, 경량 오케스트레이션 툴을 내부 CI/CD와 엮으면 개발·운영 비용을 줄일 수 있습니다. 동시에 내부 규정(예: 개인정보 처리)을 고려한 권한 통제가 필수입니다.
+
+*출처: https://rjcorwin.github.io/cook/  (Hacker News 토론: https://news.ycombinator.com/item?id=47434024)*
+
+---
+
+### 3. Nvidia의 네트워킹 확장 — 반도체 넘어 통합 인프라로 (TechCrunch)
+
+> **원제:** Nvidia networking division building a multibillion-dollar behemoth to rival its chips business
+> **출처:** TechCrunch — https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/
+> **발행:** 2026-03-18
+
+TechCrunch는 엔비디아가 단순한 GPU 제조사를 넘어 '네트워킹·소프트웨어·데이터센터 스택'을 통합하는 전략을 강화하고 있다고 보도했습니다. 네트워크 스택(소프트웨어 정의 네트워킹, 고성능 RDMA/DPDK 계열 기술)과 AI 소프트웨어를 결합해 데이터센터 전반의 성능 최적화를 목표로 합니다. 이는 AI 인프라의 전체 스택을 장악하려는 행보로 풀이됩니다.
+
+이 전략은 단순히 칩 판매에서 나아가 서비스·솔루션으로 수익 모델을 다변화하려는 움직임입니다. 경쟁사(예: 전통적 네트워킹 기업, 클라우드 사업자)와의 경쟁 구도도 새로 형성됩니다. 또한 에너지·전력관리, 데이터센터 토폴로지 설계까지 영향을 줄 수 있습니다.
+
+**💡 핵심 포인트**
+- 엔비디아의 비즈니스 확장: 칩 → 네트워킹·소프트웨어·서비스
+- AI 데이터센터의 수직 통합 가속화
+- 한국의 데이터센터·클라우드 업체에게 파트너 기회 및 경쟁 압력 동시 제공
+
+**🤔 추가 인사이트**
+한국 기업(통신사·클라우드·칩 설계사)은 엔비디아의 플랫폼 전략을 면밀히 관찰해야 합니다. 협업으로는 최적화된 AI 워크로드 도입이 가능하지만, 종속성(특정 스택에의 락인) 리스크도 커집니다. 규모의 경제와 에너지 효율 측면에서 미리 대응 전략을 마련할 필요가 있습니다.
+
+![이미지](https://techcrunch.com/wp-content/uploads/2024/09/tc-lockup.svg)
+*출처: TechCrunch (https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/)*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Claude HUD — 개발자용 대시보드 툴 (GitHub Trending)
+
+> **출처:** GitHub: https://github.com/jarrodwatts/claude-hud
+
+JarrodWatts의 'claude-hud'가 GitHub Trending에 올라왔습니다(오늘 다수 스타 획득). 이 프로젝트는 Claude Code 기반 에이전트의 상태, 토큰 사용량, 도구 실행 현황 등을 시각화하는 경량 대시보드입니다. 오픈소스 생태계에서 에이전트 가시성(visibility)을 제공하는 좋은 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 에이전트 운영의 투명성 확보: 디버깅·비용관리 용이
+- 커뮤니티 플러그인 확장으로 기업 내부 도구와 연결 가능
+
+---
+
+### 2. GLM-5-FP8 (Hugging Face) — FP8 양자화 모델의 인기 (Hugging Face)
+
+> **출처:** Hugging Face: https://huggingface.co/zai-org/GLM-5-FP8
+
+Hugging Face에서 'GLM-5-FP8' 같은 FP8(초저정밀) 양자화 모델이 주목 받고 있습니다. FP8 양자화는 메모리·추론 비용을 크게 줄이면서도 실무에서 쓸 만한 성능을 유지하려는 트렌드를 반영합니다. 특히 온프레미스 추론이나 엣지 디바이스 배포에서 비용 효율을 크게 개선합니다.
+
+왜 주목할까?
+- 한국 기업의 자체 추론 인프라(온프레미스/엣지)가 비용 효율성으로 경쟁력 확보 가능
+- 양자화된 모델의 품질 검증(정확도·안정성)과 서포트 툴체인이 중요
+
+---
+
+### 3. unsloth/unsloth — 오픈모델 로컬 실행 UI (GitHub Trending)
+
+> **출처:** GitHub Trending: https://github.com/unslothai/unsloth
+
+'unsloth'는 로컬에서 오픈 모델(예: Qwen, Gemma 등)을 훈련·배포·운영할 수 있는 통합 UI 툴입니다. 개발자와 연구자가 대형 클라우드에 의존하지 않고도 실험을 반복할 수 있도록 환경을 제공합니다.
+
+왜 주목할까?
+- 데이터·규제 요건상 클라우드 사용이 어려운 경우 로컬 대안으로 활용 가능
+- 국내 연구소·기업의 자체 실험 인프라 구축 비용을 낮출 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+에이전트의 ‘모듈화·오케스트레이션’과 인프라의 ‘수직 통합’이 동시에 가속화되며, 실무 도입의 문턱은 낮아지지만 플랫폼 종속성·보안·검증 요구는 더 커지고 있다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침을 따라 자동 생성되었습니다.*
+*출처 링크는 각 항목에 포함되어 있습니다.*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-03-19 13:55 KST
+**수집 기간:** 최근 6시간 (우선), 필요시 최신 48시간 범위까지 보완
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 에이전트가 스스로 진화한다 — "AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse"
+
+> **원제:** AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
+> **출처:** Zhang Zhang et al. (arXiv) — https://arxiv.org/abs/2603.18000
+> **발행:** 2026-03-19
+
+최근 arXiv에 올라온 AgentFactory 논문은 '실행 가능한(subagent) 모듈을 누적·재사용해 에이전트 집단이 스스로 진화한다'는 아이디어를 제시합니다. 연구진은 작은 실행 단위(subagent)를 생성하고, 이들을 조합·재활용해 더 복잡한 작업을 수행하는 프레임워크를 제안합니다. 핵심은 단일 거대 모델에 의존하지 않고, 기능별로 실행 가능한 구성 요소들을 쌓아 올려 점진적으로 능력을 확장하는 방식입니다.
+
+실험에서는 다양한 베이스 에이전트들이 환경과 상호작용하면서 유용한 subagent를 자동 생성·수집하고, 이를 다른 에이전트들이 재사용해 새로운 작업을 빠르게 학습하는 모습을 보였습니다. 특히 코드 실행, 계획 수립, 기억 관리 등의 모듈화가 성능과 샘플 효율을 높였습니다.
+
+**💡 핵심 포인트**
+- 에이전트 능력의 모듈화(실행 가능한 subagent)로 재사용성과 확장성 확보
+- 단일 대형 모델 의존도를 낮추고 분산형 적응 학습을 촉진
+- 코드·데이터·환경 간 상호운용성에 초점
+
+**🤔 추가 인사이트**
+한국 기업·연구기관 관점에서 AgentFactory는 산업용 에이전트(예: 제조 자동화, 로보틱스 협업, 고객 응대 에이전트)에서 모듈화된 기능을 빠르게 재사용해 도입 비용과 위험을 줄이는 길을 제공합니다. 규제·안전성 관점에서는 모듈별 검증이 가능해 추적성과 감사가 쉬워질 수 있습니다.
+
+![이미지](https://arxiv.org/pdf/2603.18000.pdf)
+*출처: arXiv (https://arxiv.org/abs/2603.18000)*
+
+---
+
+### 2. 개발자 도구로서의 'Cook' — 쿠키 커맨드형 툴의 등장 (Hacker News 트렌드)
+
+> **원제:** Cook: A simple CLI for orchestrating Claude Code
+> **출처:** rjcorwin.github.io/cook/ (소개 페이지), Hacker News 링크: https://news.ycombinator.com/item?id=47434024
+> **발행:** 2026-03 (Hacker News: 2시간 전)
+
+'Cook'은 Claude Code(에이전트/플러그인) 중심 워크플로를 간단한 CLI로 오케스트레이션하는 도구입니다. 개발자가 복잡한 에이전트 실행, 플러그인 연결, 작업 파이프라인을 터미널에서 손쉽게 조종할 수 있도록 설계됐습니다. HN에서 빠르게 확산되며 '작지만 실용적'이라는 평가를 받았습니다.
+
+요점은 에이전트·플러그인 생태계가 도구와 플로우 중심으로 성숙하고 있다는 점입니다. 에이전트 플랫폼들이 많아질수록 이를 통합·관리하는 경량 툴 수요가 커지고 있고, Cook은 그 수요에 부합합니다. 커뮤니티 반응으로는 사용성, 보안(명령·플러그인 권한), 재현성(reproducibility) 관련 토론이 활발합니다.
+
+**💡 핵심 포인트**
+- 에이전트/플러그인 오케스트레이션을 CLI 수준으로 단순화
+- 개발자 체감 생산성 향상에 기여
+- 보안·권한 모델 설계가 채택 관건
+
+**🤔 추가 인사이트**
+한국 스타트업들이 에이전트 기반 제품을 만들 때, 경량 오케스트레이션 툴을 내부 CI/CD와 엮으면 개발·운영 비용을 줄일 수 있습니다. 동시에 내부 규정(예: 개인정보 처리)을 고려한 권한 통제가 필수입니다.
+
+*출처: https://rjcorwin.github.io/cook/  (Hacker News 토론: https://news.ycombinator.com/item?id=47434024)*
+
+---
+
+### 3. Nvidia의 네트워킹 확장 — 반도체 넘어 통합 인프라로 (TechCrunch)
+
+> **원제:** Nvidia networking division building a multibillion-dollar behemoth to rival its chips business
+> **출처:** TechCrunch — https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/
+> **발행:** 2026-03-18
+
+TechCrunch는 엔비디아가 단순한 GPU 제조사를 넘어 '네트워킹·소프트웨어·데이터센터 스택'을 통합하는 전략을 강화하고 있다고 보도했습니다. 네트워크 스택(소프트웨어 정의 네트워킹, 고성능 RDMA/DPDK 계열 기술)과 AI 소프트웨어를 결합해 데이터센터 전반의 성능 최적화를 목표로 합니다. 이는 AI 인프라의 전체 스택을 장악하려는 행보로 풀이됩니다.
+
+이 전략은 단순히 칩 판매에서 나아가 서비스·솔루션으로 수익 모델을 다변화하려는 움직임입니다. 경쟁사(예: 전통적 네트워킹 기업, 클라우드 사업자)와의 경쟁 구도도 새로 형성됩니다. 또한 에너지·전력관리, 데이터센터 토폴로지 설계까지 영향을 줄 수 있습니다.
+
+**💡 핵심 포인트**
+- 엔비디아의 비즈니스 확장: 칩 → 네트워킹·소프트웨어·서비스
+- AI 데이터센터의 수직 통합 가속화
+- 한국의 데이터센터·클라우드 업체에게 파트너 기회 및 경쟁 압력 동시 제공
+
+**🤔 추가 인사이트**
+한국 기업(통신사·클라우드·칩 설계사)은 엔비디아의 플랫폼 전략을 면밀히 관찰해야 합니다. 협업으로는 최적화된 AI 워크로드 도입이 가능하지만, 종속성(특정 스택에의 락인) 리스크도 커집니다. 규모의 경제와 에너지 효율 측면에서 미리 대응 전략을 마련할 필요가 있습니다.
+
+![이미지](https://techcrunch.com/wp-content/uploads/2024/09/tc-lockup.svg)
+*출처: TechCrunch (https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/)*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Claude HUD — 개발자용 대시보드 툴 (GitHub Trending)
+
+> **출처:** GitHub: https://github.com/jarrodwatts/claude-hud
+
+JarrodWatts의 'claude-hud'가 GitHub Trending에 올라왔습니다(오늘 다수 스타 획득). 이 프로젝트는 Claude Code 기반 에이전트의 상태, 토큰 사용량, 도구 실행 현황 등을 시각화하는 경량 대시보드입니다. 오픈소스 생태계에서 에이전트 가시성(visibility)을 제공하는 좋은 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 에이전트 운영의 투명성 확보: 디버깅·비용관리 용이
+- 커뮤니티 플러그인 확장으로 기업 내부 도구와 연결 가능
+
+---
+
+### 2. GLM-5-FP8 (Hugging Face) — FP8 양자화 모델의 인기 (Hugging Face)
+
+> **출처:** Hugging Face: https://huggingface.co/zai-org/GLM-5-FP8
+
+Hugging Face에서 'GLM-5-FP8' 같은 FP8(초저정밀) 양자화 모델이 주목 받고 있습니다. FP8 양자화는 메모리·추론 비용을 크게 줄이면서도 실무에서 쓸 만한 성능을 유지하려는 트렌드를 반영합니다. 특히 온프레미스 추론이나 엣지 디바이스 배포에서 비용 효율을 크게 개선합니다.
+
+왜 주목할까?
+- 한국 기업의 자체 추론 인프라(온프레미스/엣지)가 비용 효율성으로 경쟁력 확보 가능
+- 양자화된 모델의 품질 검증(정확도·안정성)과 서포트 툴체인이 중요
+
+---
+
+### 3. unsloth/unsloth — 오픈모델 로컬 실행 UI (GitHub Trending)
+
+> **출처:** GitHub Trending: https://github.com/unslothai/unsloth
+
+'unsloth'는 로컬에서 오픈 모델(예: Qwen, Gemma 등)을 훈련·배포·운영할 수 있는 통합 UI 툴입니다. 개발자와 연구자가 대형 클라우드에 의존하지 않고도 실험을 반복할 수 있도록 환경을 제공합니다.
+
+왜 주목할까?
+- 데이터·규제 요건상 클라우드 사용이 어려운 경우 로컬 대안으로 활용 가능
+- 국내 연구소·기업의 자체 실험 인프라 구축 비용을 낮출 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+에이전트의 ‘모듈화·오케스트레이션’과 인프라의 ‘수직 통합’이 동시에 가속화되며, 실무 도입의 문턱은 낮아지지만 플랫폼 종속성·보안·검증 요구는 더 커지고 있다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침을 따라 자동 생성되었습니다.*
+*출처 링크는 각 항목에 포함되어 있습니다.*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-03-19 13:55 KST
+**수집 기간:** 최근 6시간 (우선), 필요시 최신 48시간 범위까지 보완
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 에이전트가 스스로 진화한다 — "AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse"
+
+> **원제:** AgentFactory: A Self-Evolving Framework Through Executable Subagent Accumulation and Reuse
+> **출처:** Zhang Zhang et al. (arXiv) — https://arxiv.org/abs/2603.18000
+> **발행:** 2026-03-19
+
+최근 arXiv에 올라온 AgentFactory 논문은 '실행 가능한(subagent) 모듈을 누적·재사용해 에이전트 집단이 스스로 진화한다'는 아이디어를 제시합니다. 연구진은 작은 실행 단위(subagent)를 생성하고, 이들을 조합·재활용해 더 복잡한 작업을 수행하는 프레임워크를 제안합니다. 핵심은 단일 거대 모델에 의존하지 않고, 기능별로 실행 가능한 구성 요소들을 쌓아 올려 점진적으로 능력을 확장하는 방식입니다.
+
+실험에서는 다양한 베이스 에이전트들이 환경과 상호작용하면서 유용한 subagent를 자동 생성·수집하고, 이를 다른 에이전트들이 재사용해 새로운 작업을 빠르게 학습하는 모습을 보였습니다. 특히 코드 실행, 계획 수립, 기억 관리 등의 모듈화가 성능과 샘플 효율을 높였습니다.
+
+**💡 핵심 포인트**
+- 에이전트 능력의 모듈화(실행 가능한 subagent)로 재사용성과 확장성 확보
+- 단일 대형 모델 의존도를 낮추고 분산형 적응 학습을 촉진
+- 코드·데이터·환경 간 상호운용성에 초점
+
+**🤔 추가 인사이트**
+한국 기업·연구기관 관점에서 AgentFactory는 산업용 에이전트(예: 제조 자동화, 로보틱스 협업, 고객 응대 에이전트)에서 모듈화된 기능을 빠르게 재사용해 도입 비용과 위험을 줄이는 길을 제공합니다. 규제·안전성 관점에서는 모듈별 검증이 가능해 추적성과 감사가 쉬워질 수 있습니다.
+
+![이미지](https://arxiv.org/pdf/2603.18000.pdf)
+*출처: arXiv (https://arxiv.org/abs/2603.18000)*
+
+---
+
+### 2. 개발자 도구로서의 'Cook' — 쿠키 커맨드형 툴의 등장 (Hacker News 트렌드)
+
+> **원제:** Cook: A simple CLI for orchestrating Claude Code
+> **출처:** rjcorwin.github.io/cook/ (소개 페이지), Hacker News 링크: https://news.ycombinator.com/item?id=47434024
+> **발행:** 2026-03 (Hacker News: 2시간 전)
+
+'Cook'은 Claude Code(에이전트/플러그인) 중심 워크플로를 간단한 CLI로 오케스트레이션하는 도구입니다. 개발자가 복잡한 에이전트 실행, 플러그인 연결, 작업 파이프라인을 터미널에서 손쉽게 조종할 수 있도록 설계됐습니다. HN에서 빠르게 확산되며 '작지만 실용적'이라는 평가를 받았습니다.
+
+요점은 에이전트·플러그인 생태계가 도구와 플로우 중심으로 성숙하고 있다는 점입니다. 에이전트 플랫폼들이 많아질수록 이를 통합·관리하는 경량 툴 수요가 커지고 있고, Cook은 그 수요에 부합합니다. 커뮤니티 반응으로는 사용성, 보안(명령·플러그인 권한), 재현성(reproducibility) 관련 토론이 활발합니다.
+
+**💡 핵심 포인트**
+- 에이전트/플러그인 오케스트레이션을 CLI 수준으로 단순화
+- 개발자 체감 생산성 향상에 기여
+- 보안·권한 모델 설계가 채택 관건
+
+**🤔 추가 인사이트**
+한국 스타트업들이 에이전트 기반 제품을 만들 때, 경량 오케스트레이션 툴을 내부 CI/CD와 엮으면 개발·운영 비용을 줄일 수 있습니다. 동시에 내부 규정(예: 개인정보 처리)을 고려한 권한 통제가 필수입니다.
+
+*출처: https://rjcorwin.github.io/cook/  (Hacker News 토론: https://news.ycombinator.com/item?id=47434024)*
+
+---
+
+### 3. Nvidia의 네트워킹 확장 — 반도체 넘어 통합 인프라로 (TechCrunch)
+
+> **원제:** Nvidia networking division building a multibillion-dollar behemoth to rival its chips business
+> **출처:** TechCrunch — https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/
+> **발행:** 2026-03-18
+
+TechCrunch는 엔비디아가 단순한 GPU 제조사를 넘어 '네트워킹·소프트웨어·데이터센터 스택'을 통합하는 전략을 강화하고 있다고 보도했습니다. 네트워크 스택(소프트웨어 정의 네트워킹, 고성능 RDMA/DPDK 계열 기술)과 AI 소프트웨어를 결합해 데이터센터 전반의 성능 최적화를 목표로 합니다. 이는 AI 인프라의 전체 스택을 장악하려는 행보로 풀이됩니다.
+
+이 전략은 단순히 칩 판매에서 나아가 서비스·솔루션으로 수익 모델을 다변화하려는 움직임입니다. 경쟁사(예: 전통적 네트워킹 기업, 클라우드 사업자)와의 경쟁 구도도 새로 형성됩니다. 또한 에너지·전력관리, 데이터센터 토폴로지 설계까지 영향을 줄 수 있습니다.
+
+**💡 핵심 포인트**
+- 엔비디아의 비즈니스 확장: 칩 → 네트워킹·소프트웨어·서비스
+- AI 데이터센터의 수직 통합 가속화
+- 한국의 데이터센터·클라우드 업체에게 파트너 기회 및 경쟁 압력 동시 제공
+
+**🤔 추가 인사이트**
+한국 기업(통신사·클라우드·칩 설계사)은 엔비디아의 플랫폼 전략을 면밀히 관찰해야 합니다. 협업으로는 최적화된 AI 워크로드 도입이 가능하지만, 종속성(특정 스택에의 락인) 리스크도 커집니다. 규모의 경제와 에너지 효율 측면에서 미리 대응 전략을 마련할 필요가 있습니다.
+
+![이미지](https://techcrunch.com/wp-content/uploads/2024/09/tc-lockup.svg)
+*출처: TechCrunch (https://techcrunch.com/2026/03/18/nvidia-networking-division-building-a-multibillion-dollar-behemoth-to-rival-its-chips-business/)*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Claude HUD — 개발자용 대시보드 툴 (GitHub Trending)
+
+> **출처:** GitHub: https://github.com/jarrodwatts/claude-hud
+
+JarrodWatts의 'claude-hud'가 GitHub Trending에 올라왔습니다(오늘 다수 스타 획득). 이 프로젝트는 Claude Code 기반 에이전트의 상태, 토큰 사용량, 도구 실행 현황 등을 시각화하는 경량 대시보드입니다. 오픈소스 생태계에서 에이전트 가시성(visibility)을 제공하는 좋은 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 에이전트 운영의 투명성 확보: 디버깅·비용관리 용이
+- 커뮤니티 플러그인 확장으로 기업 내부 도구와 연결 가능
+
+---
+
+### 2. GLM-5-FP8 (Hugging Face) — FP8 양자화 모델의 인기 (Hugging Face)
+
+> **출처:** Hugging Face: https://huggingface.co/zai-org/GLM-5-FP8
+
+Hugging Face에서 'GLM-5-FP8' 같은 FP8(초저정밀) 양자화 모델이 주목 받고 있습니다. FP8 양자화는 메모리·추론 비용을 크게 줄이면서도 실무에서 쓸 만한 성능을 유지하려는 트렌드를 반영합니다. 특히 온프레미스 추론이나 엣지 디바이스 배포에서 비용 효율을 크게 개선합니다.
+
+왜 주목할까?
+- 한국 기업의 자체 추론 인프라(온프레미스/엣지)가 비용 효율성으로 경쟁력 확보 가능
+- 양자화된 모델의 품질 검증(정확도·안정성)과 서포트 툴체인이 중요
+
+---
+
+### 3. unsloth/unsloth — 오픈모델 로컬 실행 UI (GitHub Trending)
+
+> **출처:** GitHub Trending: https://github.com/unslothai/unsloth
+
+'unsloth'는 로컬에서 오픈 모델(예: Qwen, Gemma 등)을 훈련·배포·운영할 수 있는 통합 UI 툴입니다. 개발자와 연구자가 대형 클라우드에 의존하지 않고도 실험을 반복할 수 있도록 환경을 제공합니다.
+
+왜 주목할까?
+- 데이터·규제 요건상 클라우드 사용이 어려운 경우 로컬 대안으로 활용 가능
+- 국내 연구소·기업의 자체 실험 인프라 구축 비용을 낮출 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+에이전트의 ‘모듈화·오케스트레이션’과 인프라의 ‘수직 통합’이 동시에 가속화되며, 실무 도입의 문턱은 낮아지지만 플랫폼 종속성·보안·검증 요구는 더 커지고 있다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침을 따라 자동 생성되었습니다.*
+*출처 링크는 각 항목에 포함되어 있습니다.*
+
+
+═══════════════════════════════════════════════════════════

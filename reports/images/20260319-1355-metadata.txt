@@ -1,0 +1,5 @@
+Generated: 2026-03-19T04:57:07.328874
+Method: PIL placeholder image
+Prompt: A futuristic AI control room showing modular agents (subagents) assembling into larger systems, vibrant neon colors, Korean tech-news aesthetic, digital dashboard overlays, cinematic lighting, detailed, wide-angle
+Size: (1792, 1024)
+Cost: $0 (local generation)
