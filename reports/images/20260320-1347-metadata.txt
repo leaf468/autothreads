@@ -1,0 +1,5 @@
+Generated: 2026-03-20T04:50:25.088064
+Method: PIL placeholder image
+Prompt: A futuristic data center and AI laboratory blending neural network visualizations, high-density server racks with glowing interconnects, vibrant digital art style, cinematic lighting, clean vectors — poster composition
+Size: (1792, 1024)
+Cost: $0 (local generation)
