@@ -1,0 +1,5 @@
+Generated: 2026-03-22T04:59:09.816979
+Method: PIL placeholder image
+Prompt: A futuristic AI news collage: a globe made of neural-network circuits, floating models (LLMs) in translucent panels, vibrant neon colors, bold typography "AI Trends 2026", high-detail digital art, cinematic lighting, editorial magazine cover style
+Size: (1792, 1024)
+Cost: $0 (local generation)
