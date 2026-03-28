@@ -1,0 +1,5 @@
+Generated: 2026-03-28T09:41:04.746742
+Method: PIL placeholder image
+Prompt: A futuristic collage representing today's AI trends: multi-modal scientific models, agent orchestration, and cascaded model stacks. Neon-blue lab, neural network diagrams, researchers collaborating, cascading model layers, and subtle Korean city skyline in background. Digital art, high detail, cinematic lighting.
+Size: (1792, 1024)
+Cost: $0 (local generation)
