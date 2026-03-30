@@ -1,0 +1,5 @@
+Generated: 2026-03-30T07:45:39.328434
+Method: PIL placeholder image
+Prompt: A vibrant futuristic thumbnail showing an abstract neural network and speech waveforms merging — colorful digital art, Korean text overlay: "AI 트렌드 2026-03-30", cinematic lighting, clean composition, high detail
+Size: (1792, 1024)
+Cost: $0 (local generation)
