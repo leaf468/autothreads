@@ -1,0 +1,5 @@
+Generated: 2026-03-31T05:13:15.955306
+Method: PIL placeholder image
+Prompt: A vibrant futuristic thumbnail: a sleek smartphone and laptop displaying multi-modal AI interfaces (camera, waveforms, and search bars), neon KST clock showing '14:10', Korean text overlay 'AI 트렌드 리포트', cinematic lighting, digital art style
+Size: (1792, 1024)
+Cost: $0 (local generation)
