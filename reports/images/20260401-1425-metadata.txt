@@ -1,0 +1,5 @@
+Generated: 2026-04-01T05:28:19.048380
+Method: PIL placeholder image
+Prompt: A dramatic, futuristic thumbnail: a dimly-lit server room with neon blue and magenta lighting, holographic neural network graphs floating above racks, a torn source map file overlayed with warning icons, and a subtle silhouette of an AI agent — digital art, high contrast, cinematic angle, 4:3
+Size: (1792, 1024)
+Cost: $0 (local generation)
