@@ -1,0 +1,5 @@
+Generated: 2026-04-02T13:20:05.043205
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic thumbnail: a local desktop computer running AI models, with neon neural network lines connecting to icons for text, image, and speech; warm Korean colors, high-contrast digital art, cinematic lighting, 16:9
+Size: (1792, 1024)
+Cost: $0 (local generation)
