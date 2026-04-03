@@ -1,0 +1,5 @@
+Generated: 2026-04-03T09:56:41.819239
+Method: PIL placeholder image
+Prompt: A futuristic thumbnail showing a dynamic collage: a server rack, a stylized neural network, and a globe wrapped in data streams — vibrant cyberpunk colors, cinematic lighting, digital art, high detail
+Size: (1792, 1024)
+Cost: $0 (local generation)
