@@ -1,0 +1,5 @@
+Generated: 2026-04-05T14:38:15.522485
+Method: PIL placeholder image
+Prompt: A dynamic, futuristic AI control room visualizing three themes: code takedowns and legal tension, train-to-test scaling laws (training vs inference cost), and model-ops transparency; vibrant neon palette, cyberpunk, detailed holographic screens, people collaborating — digital art, cinematic lighting
+Size: (1792, 1024)
+Cost: $0 (local generation)
