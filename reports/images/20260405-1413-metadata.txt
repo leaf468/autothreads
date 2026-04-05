@@ -1,0 +1,5 @@
+Generated: 2026-04-05T05:14:25.052113
+Method: PIL placeholder image
+Prompt: A futuristic Korean AI control room, multimodal interfaces, long-context neural visualizations, vibrant neon colors, digital art
+Size: (1792, 1024)
+Cost: $0 (local generation)
