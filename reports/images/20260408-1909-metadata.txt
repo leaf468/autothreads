@@ -1,0 +1,5 @@
+Generated: 2026-04-08T10:11:17.770619
+Method: PIL placeholder image
+Prompt: A vibrant, modern digital collage visualizing today's AI trends: reliability benchmarking, on-device LLMs, and agent rollback tools. Show a stylized neural network, a smartphone with glowing circuits, and a safety shield/rollback icon. Futuristic color palette (neon blue, purple, teal), high-detail digital art, cinematic lighting, 16:9
+Size: (1792, 1024)
+Cost: $0 (local generation)
