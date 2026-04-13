@@ -1,0 +1,5 @@
+Generated: 2026-04-13T05:46:12.347078
+Method: PIL placeholder image
+Prompt: A dramatic, cinematic futuristic scene showing AI systems under scrutiny: a courtroom-like data center with floating neural network diagrams, lawyers and engineers examining transparent model internals, cool blue and neon accents, high-detail digital art
+Size: (1792, 1024)
+Cost: $0 (local generation)
