@@ -1,0 +1,5 @@
+Generated: 2026-04-14T13:31:21.998605
+Method: PIL placeholder image
+Prompt: A bold, modern thumbnail: a stylized South Korea map made of neural network circuits, glowing neon blue and magenta, with a central AI brain icon and floating data streams — high detail, cinematic lighting, digital art
+Size: (1792, 1024)
+Cost: $0 (local generation)
