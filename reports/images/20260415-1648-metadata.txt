@@ -1,0 +1,5 @@
+Generated: 2026-04-15T07:50:28.180010
+Method: PIL placeholder image
+Prompt: A futuristic collage showing: developers reading modular AI routines on transparent screens, a student with adaptive learning overlays, and a split scene of a VLM under attack—vivid neon palette, digital art, cinematic lighting, high detail
+Size: (1792, 1024)
+Cost: $0 (local generation)
