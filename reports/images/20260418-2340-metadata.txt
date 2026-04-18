@@ -1,0 +1,5 @@
+Generated: 2026-04-18T14:42:08.224636
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic collage showing mobile apps, neural network diagrams, and a stylized App Store storefront; bright colors, digital art, Korean text accents, high detail, cinematic lighting
+Size: (1792, 1024)
+Cost: $0 (local generation)
