@@ -1,0 +1,5 @@
+Generated: 2026-04-19T07:23:06.872407
+Method: PIL placeholder image
+Prompt: A vibrant futuristic collage showing: (1) a UI for rapid image generation labeled "Claude Design", (2) schematic of sparse attention layers and fast matrix kernels, (3) a retro typewriter symbolizing AI-era education debates; style: cinematic neon, digital art, high detail, 16:9 composition.
+Size: (1792, 1024)
+Cost: $0 (local generation)
