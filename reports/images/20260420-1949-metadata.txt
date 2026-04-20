@@ -1,0 +1,5 @@
+Generated: 2026-04-20T10:50:59.403739
+Method: PIL placeholder image
+Prompt: A dynamic, futuristic thumbnail: an abstract collage combining a neural network diagram, glowing tokens and stars, and a server rack silhouette — vibrant tech colors, cinematic lighting, digital-art style.
+Size: (1792, 1024)
+Cost: $0 (local generation)
