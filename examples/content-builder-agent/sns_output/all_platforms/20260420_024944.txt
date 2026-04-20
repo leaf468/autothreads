@@ -1,0 +1,363 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 04월 20일 02:49
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-04-20 11:48 KST
+**수집 기간:** 최근 6시간 (단, 일부 중요 소식은 1주 이내로 범위를 넓혀 포함함 — 근거: 주요 발표/분석의 지속적 영향)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 클로드(Opus) 4.7의 시스템 프롬프트 변경 — 대화·도구 사용·안전성에 초점
+
+> **원제:** Changes in the system prompt between Claude Opus 4.6 and 4.7
+> **출처:** Simon Willison (블로그) (https://simonwillison.net/2026/Apr/18/opus-system-prompt/)
+> **발행:** 2026-04-18
+
+Simon Willison이 정리한 글에 따르면 Anthropic의 Claude Opus 4.7(배포: 2026-04-16)은 시스템 프롬프트(모델 운영 지침)에 중요한 변경을 담고 있다. 변경 사항은 도구(tool) 사용 명시, 아동 안전 지침 강화, 대화 중간에 사용자를 귀찮게 하지 않는 '간결성' 권장, 그리고 모호한 요청에 대해 도구로 해결을 시도하도록 하는 전략 등이다. 또한 ‘Claude in Powerpoint’ 등의 새로운 도구 언급과, 툴 검색(tool_search)을 호출해 사용 가능한 도구를 확인한 뒤 행동하라는 지침이 추가되었다.
+
+💡 핵심 포인트
+- 도구 중심 작동(도구 검색 후 가능한 경우 도구 사용 권장) 강조
+- 아동 안전 및 특정 위험 영역에 대한 지침 확대
+- 응답을 간결하게 유지하도록 시스템 프롬프트에서 명시적 권고
+
+🤔 추가 인사이트
+한국 기업/서비스 관점에서 보면, Claude 계열의 운용 지침 강화는 엔터프라이즈용 에이전트 통합 전략에 영향을 준다. 예: 내부 문서·스프레드시트·웹 도구와의 안전한 연동을 설계할 때 시스템 프롬프트 기반 정책(예: 거부·후속 처리 규칙)을 미리 규정해야 한다.
+
+---
+
+### 2. 글로벌 RAM(메모리) 부족 — AI 데이터센터 수요가 장기화 전망
+
+> **원제:** The RAM shortage could last years
+> **출처:** Terrence O'Brien / The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)
+> **발행:** 2026-04-18
+
+글로벌 메모리(특히 DRAM/HBM) 공급이 2027년 말까지 수요를 충분히 맞추지 못할 가능성이 제기되었다. 주요 메모리 제조사(Samsung, SK Hynix, Micron)는 HBM(고대역폭 메모리) 중심으로 증설을 계획 중이나, 대부분의 신규 팹 가동은 2027~2028년 이후에나 본격화된다. AI 워크로드 증가는 HBM 수요를 더욱 가속화해 소비자용 DRAM 가격·공급에도 압력을 가할 전망이다.
+
+💡 핵심 포인트
+- 메모리 공급 증설 지연으로 2027년까지 부족 상황 지속 가능성
+- HBM 우선 생산으로 소비자 DRAM(폰/노트북) 쪽 압박 우려
+- 한국 반도체 투자·정책(생산 라인 가동 시점)이 향후 시장 안정에 중요
+
+🤔 추가 인사이트
+한국의 대형 메모리 제조사들이 HBM 생산을 확대하면 AI 데이터센터 경쟁에서 유리하지만, 소비자 디바이스 생태계(가격 민감도)에는 단기적으로 부정적 영향이 예상된다. 국내 AI 스타트업은 모델·시스템 설계에서 메모리 효율(예: 양자화, 메모리 계층화)을 우선 고려해야 한다.
+
+![The Verge 이미지](https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg)
+*출처: The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)*
+
+---
+
+### 3. 파산한 AI 기업 전(前)경영진 형사기소 보도 — 책임·규제 재부상
+
+> **원제:** Ex-CEO, ex-CFO of bankrupt AI company charged with fraud
+> **출처:** Reuters (https://www.reuters.com/legal/government/ex-ceo-ex-cfo-bankrupt-ai-company-charged-with-fraud-2026-04-17/)
+> **발행:** 2026-04-17
+
+파산한 AI 회사의 전(前) CEO와 전 CFO가 사기 혐의로 기소되었다는 보도가 나왔다. 사건은 AI 사업의 재무·운영 투명성 문제와 맞물려 업계 신뢰에 부정적 영향을 미칠 수 있다. 투자자 보호 및 회계 투명성 요구가 커지는 가운데, 규제 기관의 조사와 법적 조치가 증가할 가능성이 있다.
+
+💡 핵심 포인트
+- AI 기업의 재무 부정 사례는 업계 전체 신뢰에 악영향
+- 규제·감시 강화 및 투자자 실사(Due Diligence) 강화 필요
+- 기술적 성과 외에 거버넌스·컴플라이언스가 투자 판단의 주요 요소로 부상
+
+🤔 추가 인사이트
+한국 내 AI 스타트업·벤처투자 생태계는 기술 과대평가와 재무 건전성 간 균형을 재점검할 필요가 있다. 특히 정부 보조금·사업 지원 심사에서 재무·윤리적 검증 기준이 강화될 가능성이 있다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. TRELLIS.2 Mac 포팅 — Apple Silicon에서 이미지→3D (깃허브)
+
+> **출처:** GitHub - shivampkumar/trellis-mac (https://github.com/shivampkumar/trellis-mac)
+
+Microsoft의 TRELLIS.2 이미지→3D 모델을 Apple Silicon(M1/M2/M4 등)용으로 포팅한 프로젝트가 공개되었다. CUDA 의존성을 PyTorch MPS/순수 파이썬 백엔드로 대체해 Mac에서 로컬 추론이 가능하도록 한 것이 핵심이다. 성능은 CUDA 환경 대비 느리지만, 애플 실리콘 사용자가 로컬에서 3D 생성 실험을 해볼 수 있는 접근성을 크게 높였다.
+
+왜 주목할까?
+- 토이 프로젝트를 넘어 로컬에서 대형 생성 모델 실험을 가능하게 해 개발자 경험(UX)을 확장
+- Mac 기반 연구·프로토타이핑 비용을 낮춤
+
+---
+
+### 2. API 과금 없이 에이전트 간 통신하는 경량 패턴 (블로그)
+
+> **원제:** A lightweight way to make agents talk without paying for API usage
+> **출처:** Juan Pablo AJ (https://juanpabloaj.com/2026/04/16/a-lightweight-way-to-make-agents-talk-without-paying-for-api-usage/)
+
+CLI 재개(resume) 방식이나 tmux를 이용해 서로 다른 LLM 에이전트(예: Claude, Codex, Gemini)를 비용을 크게 들이지 않고 연계하는 실용적 패턴을 소개한다. 비상업적 실험이나 빠른 프로토타이핑에 유용하다.
+
+왜 주목할까?
+- 멀티모델 워크플로우 실험 비용을 낮추어 연구·프로토타입 반복 속도 향상
+- 다중 모델 관점(크로스체크)에 따른 결과 품질 검증에 도움
+
+---
+
+### 3. ‘에이전트를 위한 CAPTCHA’ — Browser Use의 리버스 CAPTCHA (제품 블로그)
+
+> **원제:** Prove You Are a Robot: CAPTCHAs for Agents
+> **출처:** Browser Use 블로그 (https://browser-use.com/posts/prove-you-are-a-robot)
+
+Agent(봇) 가입을 허용하고 사람을 배제하는 역방향 CAPTCHA 설계 사례. 문제를 난독화해 자동화 에이전트가 풀도록 유도하는 방식으로, 에이전트 전용 인증·온보딩 시나리오에 활용된다.
+
+왜 주목할까?
+- 에이전트 생태계(Agent-native UX)가 성장하면서 인증·보안 패턴 전환 필요
+- 에이전트 상호작용을 전제로 한 인증 수단은 새로운 보안·프라이버시 이슈를 야기할 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+AI 인프라(메모리)·운영(시스템 프롬프트)·거버넌스(투명성)가 동시에 핵심 이슈로 부상 — 기술 혁신 못지않게 운영·거버넌스 설계가 경쟁력의 분수령이다.
+
+---
+
+*🤖 이 보고서는 자동 수집·요약 규칙(.deepagents/skills/ai-trends-reporter/SKILL.md)에 따라 작성되었습니다.*
+*출처 링크는 본문에 표기되어 있습니다.*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-04-20 11:48 KST
+**수집 기간:** 최근 6시간 (단, 일부 중요 소식은 1주 이내로 범위를 넓혀 포함함 — 근거: 주요 발표/분석의 지속적 영향)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 클로드(Opus) 4.7의 시스템 프롬프트 변경 — 대화·도구 사용·안전성에 초점
+
+> **원제:** Changes in the system prompt between Claude Opus 4.6 and 4.7
+> **출처:** Simon Willison (블로그) (https://simonwillison.net/2026/Apr/18/opus-system-prompt/)
+> **발행:** 2026-04-18
+
+Simon Willison이 정리한 글에 따르면 Anthropic의 Claude Opus 4.7(배포: 2026-04-16)은 시스템 프롬프트(모델 운영 지침)에 중요한 변경을 담고 있다. 변경 사항은 도구(tool) 사용 명시, 아동 안전 지침 강화, 대화 중간에 사용자를 귀찮게 하지 않는 '간결성' 권장, 그리고 모호한 요청에 대해 도구로 해결을 시도하도록 하는 전략 등이다. 또한 ‘Claude in Powerpoint’ 등의 새로운 도구 언급과, 툴 검색(tool_search)을 호출해 사용 가능한 도구를 확인한 뒤 행동하라는 지침이 추가되었다.
+
+💡 핵심 포인트
+- 도구 중심 작동(도구 검색 후 가능한 경우 도구 사용 권장) 강조
+- 아동 안전 및 특정 위험 영역에 대한 지침 확대
+- 응답을 간결하게 유지하도록 시스템 프롬프트에서 명시적 권고
+
+🤔 추가 인사이트
+한국 기업/서비스 관점에서 보면, Claude 계열의 운용 지침 강화는 엔터프라이즈용 에이전트 통합 전략에 영향을 준다. 예: 내부 문서·스프레드시트·웹 도구와의 안전한 연동을 설계할 때 시스템 프롬프트 기반 정책(예: 거부·후속 처리 규칙)을 미리 규정해야 한다.
+
+---
+
+### 2. 글로벌 RAM(메모리) 부족 — AI 데이터센터 수요가 장기화 전망
+
+> **원제:** The RAM shortage could last years
+> **출처:** Terrence O'Brien / The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)
+> **발행:** 2026-04-18
+
+글로벌 메모리(특히 DRAM/HBM) 공급이 2027년 말까지 수요를 충분히 맞추지 못할 가능성이 제기되었다. 주요 메모리 제조사(Samsung, SK Hynix, Micron)는 HBM(고대역폭 메모리) 중심으로 증설을 계획 중이나, 대부분의 신규 팹 가동은 2027~2028년 이후에나 본격화된다. AI 워크로드 증가는 HBM 수요를 더욱 가속화해 소비자용 DRAM 가격·공급에도 압력을 가할 전망이다.
+
+💡 핵심 포인트
+- 메모리 공급 증설 지연으로 2027년까지 부족 상황 지속 가능성
+- HBM 우선 생산으로 소비자 DRAM(폰/노트북) 쪽 압박 우려
+- 한국 반도체 투자·정책(생산 라인 가동 시점)이 향후 시장 안정에 중요
+
+🤔 추가 인사이트
+한국의 대형 메모리 제조사들이 HBM 생산을 확대하면 AI 데이터센터 경쟁에서 유리하지만, 소비자 디바이스 생태계(가격 민감도)에는 단기적으로 부정적 영향이 예상된다. 국내 AI 스타트업은 모델·시스템 설계에서 메모리 효율(예: 양자화, 메모리 계층화)을 우선 고려해야 한다.
+
+![The Verge 이미지](https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg)
+*출처: The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)*
+
+---
+
+### 3. 파산한 AI 기업 전(前)경영진 형사기소 보도 — 책임·규제 재부상
+
+> **원제:** Ex-CEO, ex-CFO of bankrupt AI company charged with fraud
+> **출처:** Reuters (https://www.reuters.com/legal/government/ex-ceo-ex-cfo-bankrupt-ai-company-charged-with-fraud-2026-04-17/)
+> **발행:** 2026-04-17
+
+파산한 AI 회사의 전(前) CEO와 전 CFO가 사기 혐의로 기소되었다는 보도가 나왔다. 사건은 AI 사업의 재무·운영 투명성 문제와 맞물려 업계 신뢰에 부정적 영향을 미칠 수 있다. 투자자 보호 및 회계 투명성 요구가 커지는 가운데, 규제 기관의 조사와 법적 조치가 증가할 가능성이 있다.
+
+💡 핵심 포인트
+- AI 기업의 재무 부정 사례는 업계 전체 신뢰에 악영향
+- 규제·감시 강화 및 투자자 실사(Due Diligence) 강화 필요
+- 기술적 성과 외에 거버넌스·컴플라이언스가 투자 판단의 주요 요소로 부상
+
+🤔 추가 인사이트
+한국 내 AI 스타트업·벤처투자 생태계는 기술 과대평가와 재무 건전성 간 균형을 재점검할 필요가 있다. 특히 정부 보조금·사업 지원 심사에서 재무·윤리적 검증 기준이 강화될 가능성이 있다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. TRELLIS.2 Mac 포팅 — Apple Silicon에서 이미지→3D (깃허브)
+
+> **출처:** GitHub - shivampkumar/trellis-mac (https://github.com/shivampkumar/trellis-mac)
+
+Microsoft의 TRELLIS.2 이미지→3D 모델을 Apple Silicon(M1/M2/M4 등)용으로 포팅한 프로젝트가 공개되었다. CUDA 의존성을 PyTorch MPS/순수 파이썬 백엔드로 대체해 Mac에서 로컬 추론이 가능하도록 한 것이 핵심이다. 성능은 CUDA 환경 대비 느리지만, 애플 실리콘 사용자가 로컬에서 3D 생성 실험을 해볼 수 있는 접근성을 크게 높였다.
+
+왜 주목할까?
+- 토이 프로젝트를 넘어 로컬에서 대형 생성 모델 실험을 가능하게 해 개발자 경험(UX)을 확장
+- Mac 기반 연구·프로토타이핑 비용을 낮춤
+
+---
+
+### 2. API 과금 없이 에이전트 간 통신하는 경량 패턴 (블로그)
+
+> **원제:** A lightweight way to make agents talk without paying for API usage
+> **출처:** Juan Pablo AJ (https://juanpabloaj.com/2026/04/16/a-lightweight-way-to-make-agents-talk-without-paying-for-api-usage/)
+
+CLI 재개(resume) 방식이나 tmux를 이용해 서로 다른 LLM 에이전트(예: Claude, Codex, Gemini)를 비용을 크게 들이지 않고 연계하는 실용적 패턴을 소개한다. 비상업적 실험이나 빠른 프로토타이핑에 유용하다.
+
+왜 주목할까?
+- 멀티모델 워크플로우 실험 비용을 낮추어 연구·프로토타입 반복 속도 향상
+- 다중 모델 관점(크로스체크)에 따른 결과 품질 검증에 도움
+
+---
+
+### 3. ‘에이전트를 위한 CAPTCHA’ — Browser Use의 리버스 CAPTCHA (제품 블로그)
+
+> **원제:** Prove You Are a Robot: CAPTCHAs for Agents
+> **출처:** Browser Use 블로그 (https://browser-use.com/posts/prove-you-are-a-robot)
+
+Agent(봇) 가입을 허용하고 사람을 배제하는 역방향 CAPTCHA 설계 사례. 문제를 난독화해 자동화 에이전트가 풀도록 유도하는 방식으로, 에이전트 전용 인증·온보딩 시나리오에 활용된다.
+
+왜 주목할까?
+- 에이전트 생태계(Agent-native UX)가 성장하면서 인증·보안 패턴 전환 필요
+- 에이전트 상호작용을 전제로 한 인증 수단은 새로운 보안·프라이버시 이슈를 야기할 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+AI 인프라(메모리)·운영(시스템 프롬프트)·거버넌스(투명성)가 동시에 핵심 이슈로 부상 — 기술 혁신 못지않게 운영·거버넌스 설계가 경쟁력의 분수령이다.
+
+---
+
+*🤖 이 보고서는 자동 수집·요약 규칙(.deepagents/skills/ai-trends-reporter/SKILL.md)에 따라 작성되었습니다.*
+*출처 링크는 본문에 표기되어 있습니다.*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-04-20 11:48 KST
+**수집 기간:** 최근 6시간 (단, 일부 중요 소식은 1주 이내로 범위를 넓혀 포함함 — 근거: 주요 발표/분석의 지속적 영향)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. 클로드(Opus) 4.7의 시스템 프롬프트 변경 — 대화·도구 사용·안전성에 초점
+
+> **원제:** Changes in the system prompt between Claude Opus 4.6 and 4.7
+> **출처:** Simon Willison (블로그) (https://simonwillison.net/2026/Apr/18/opus-system-prompt/)
+> **발행:** 2026-04-18
+
+Simon Willison이 정리한 글에 따르면 Anthropic의 Claude Opus 4.7(배포: 2026-04-16)은 시스템 프롬프트(모델 운영 지침)에 중요한 변경을 담고 있다. 변경 사항은 도구(tool) 사용 명시, 아동 안전 지침 강화, 대화 중간에 사용자를 귀찮게 하지 않는 '간결성' 권장, 그리고 모호한 요청에 대해 도구로 해결을 시도하도록 하는 전략 등이다. 또한 ‘Claude in Powerpoint’ 등의 새로운 도구 언급과, 툴 검색(tool_search)을 호출해 사용 가능한 도구를 확인한 뒤 행동하라는 지침이 추가되었다.
+
+💡 핵심 포인트
+- 도구 중심 작동(도구 검색 후 가능한 경우 도구 사용 권장) 강조
+- 아동 안전 및 특정 위험 영역에 대한 지침 확대
+- 응답을 간결하게 유지하도록 시스템 프롬프트에서 명시적 권고
+
+🤔 추가 인사이트
+한국 기업/서비스 관점에서 보면, Claude 계열의 운용 지침 강화는 엔터프라이즈용 에이전트 통합 전략에 영향을 준다. 예: 내부 문서·스프레드시트·웹 도구와의 안전한 연동을 설계할 때 시스템 프롬프트 기반 정책(예: 거부·후속 처리 규칙)을 미리 규정해야 한다.
+
+---
+
+### 2. 글로벌 RAM(메모리) 부족 — AI 데이터센터 수요가 장기화 전망
+
+> **원제:** The RAM shortage could last years
+> **출처:** Terrence O'Brien / The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)
+> **발행:** 2026-04-18
+
+글로벌 메모리(특히 DRAM/HBM) 공급이 2027년 말까지 수요를 충분히 맞추지 못할 가능성이 제기되었다. 주요 메모리 제조사(Samsung, SK Hynix, Micron)는 HBM(고대역폭 메모리) 중심으로 증설을 계획 중이나, 대부분의 신규 팹 가동은 2027~2028년 이후에나 본격화된다. AI 워크로드 증가는 HBM 수요를 더욱 가속화해 소비자용 DRAM 가격·공급에도 압력을 가할 전망이다.
+
+💡 핵심 포인트
+- 메모리 공급 증설 지연으로 2027년까지 부족 상황 지속 가능성
+- HBM 우선 생산으로 소비자 DRAM(폰/노트북) 쪽 압박 우려
+- 한국 반도체 투자·정책(생산 라인 가동 시점)이 향후 시장 안정에 중요
+
+🤔 추가 인사이트
+한국의 대형 메모리 제조사들이 HBM 생산을 확대하면 AI 데이터센터 경쟁에서 유리하지만, 소비자 디바이스 생태계(가격 민감도)에는 단기적으로 부정적 영향이 예상된다. 국내 AI 스타트업은 모델·시스템 설계에서 메모리 효율(예: 양자화, 메모리 계층화)을 우선 고려해야 한다.
+
+![The Verge 이미지](https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg)
+*출처: The Verge (https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years)*
+
+---
+
+### 3. 파산한 AI 기업 전(前)경영진 형사기소 보도 — 책임·규제 재부상
+
+> **원제:** Ex-CEO, ex-CFO of bankrupt AI company charged with fraud
+> **출처:** Reuters (https://www.reuters.com/legal/government/ex-ceo-ex-cfo-bankrupt-ai-company-charged-with-fraud-2026-04-17/)
+> **발행:** 2026-04-17
+
+파산한 AI 회사의 전(前) CEO와 전 CFO가 사기 혐의로 기소되었다는 보도가 나왔다. 사건은 AI 사업의 재무·운영 투명성 문제와 맞물려 업계 신뢰에 부정적 영향을 미칠 수 있다. 투자자 보호 및 회계 투명성 요구가 커지는 가운데, 규제 기관의 조사와 법적 조치가 증가할 가능성이 있다.
+
+💡 핵심 포인트
+- AI 기업의 재무 부정 사례는 업계 전체 신뢰에 악영향
+- 규제·감시 강화 및 투자자 실사(Due Diligence) 강화 필요
+- 기술적 성과 외에 거버넌스·컴플라이언스가 투자 판단의 주요 요소로 부상
+
+🤔 추가 인사이트
+한국 내 AI 스타트업·벤처투자 생태계는 기술 과대평가와 재무 건전성 간 균형을 재점검할 필요가 있다. 특히 정부 보조금·사업 지원 심사에서 재무·윤리적 검증 기준이 강화될 가능성이 있다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. TRELLIS.2 Mac 포팅 — Apple Silicon에서 이미지→3D (깃허브)
+
+> **출처:** GitHub - shivampkumar/trellis-mac (https://github.com/shivampkumar/trellis-mac)
+
+Microsoft의 TRELLIS.2 이미지→3D 모델을 Apple Silicon(M1/M2/M4 등)용으로 포팅한 프로젝트가 공개되었다. CUDA 의존성을 PyTorch MPS/순수 파이썬 백엔드로 대체해 Mac에서 로컬 추론이 가능하도록 한 것이 핵심이다. 성능은 CUDA 환경 대비 느리지만, 애플 실리콘 사용자가 로컬에서 3D 생성 실험을 해볼 수 있는 접근성을 크게 높였다.
+
+왜 주목할까?
+- 토이 프로젝트를 넘어 로컬에서 대형 생성 모델 실험을 가능하게 해 개발자 경험(UX)을 확장
+- Mac 기반 연구·프로토타이핑 비용을 낮춤
+
+---
+
+### 2. API 과금 없이 에이전트 간 통신하는 경량 패턴 (블로그)
+
+> **원제:** A lightweight way to make agents talk without paying for API usage
+> **출처:** Juan Pablo AJ (https://juanpabloaj.com/2026/04/16/a-lightweight-way-to-make-agents-talk-without-paying-for-api-usage/)
+
+CLI 재개(resume) 방식이나 tmux를 이용해 서로 다른 LLM 에이전트(예: Claude, Codex, Gemini)를 비용을 크게 들이지 않고 연계하는 실용적 패턴을 소개한다. 비상업적 실험이나 빠른 프로토타이핑에 유용하다.
+
+왜 주목할까?
+- 멀티모델 워크플로우 실험 비용을 낮추어 연구·프로토타입 반복 속도 향상
+- 다중 모델 관점(크로스체크)에 따른 결과 품질 검증에 도움
+
+---
+
+### 3. ‘에이전트를 위한 CAPTCHA’ — Browser Use의 리버스 CAPTCHA (제품 블로그)
+
+> **원제:** Prove You Are a Robot: CAPTCHAs for Agents
+> **출처:** Browser Use 블로그 (https://browser-use.com/posts/prove-you-are-a-robot)
+
+Agent(봇) 가입을 허용하고 사람을 배제하는 역방향 CAPTCHA 설계 사례. 문제를 난독화해 자동화 에이전트가 풀도록 유도하는 방식으로, 에이전트 전용 인증·온보딩 시나리오에 활용된다.
+
+왜 주목할까?
+- 에이전트 생태계(Agent-native UX)가 성장하면서 인증·보안 패턴 전환 필요
+- 에이전트 상호작용을 전제로 한 인증 수단은 새로운 보안·프라이버시 이슈를 야기할 수 있음
+
+---
+
+## 📊 오늘의 한마디
+
+AI 인프라(메모리)·운영(시스템 프롬프트)·거버넌스(투명성)가 동시에 핵심 이슈로 부상 — 기술 혁신 못지않게 운영·거버넌스 설계가 경쟁력의 분수령이다.
+
+---
+
+*🤖 이 보고서는 자동 수집·요약 규칙(.deepagents/skills/ai-trends-reporter/SKILL.md)에 따라 작성되었습니다.*
+*출처 링크는 본문에 표기되어 있습니다.*
+
+
+═══════════════════════════════════════════════════════════
