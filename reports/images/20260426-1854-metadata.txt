@@ -1,0 +1,5 @@
+Generated: 2026-04-26T09:57:16.698453
+Method: PIL placeholder image
+Prompt: A futuristic, vibrant thumbnail showing an AI brain made of glowing circuits, neural network diagrams, and floating research papers; bold Korean title overlay: "AI 트렌드 — 2026.04.26"; cinematic lighting, high contrast, digital art, 16:9
+Size: (1792, 1024)
+Cost: $0 (local generation)
