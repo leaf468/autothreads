@@ -1,0 +1,5 @@
+Generated: 2026-04-27T05:57:24.735719
+Method: PIL placeholder image
+Prompt: A futuristic collage showing "AI Super App" — central holographic AI hub connecting mobile apps, edge devices, and servers; neon colors, dynamic data flows, Korean urban skyline in background, cinematic lighting, digital art, 4k
+Size: (1792, 1024)
+Cost: $0 (local generation)
