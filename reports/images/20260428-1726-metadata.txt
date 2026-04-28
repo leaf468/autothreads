@@ -1,0 +1,5 @@
+Generated: 2026-04-28T08:28:56.548757
+Method: PIL placeholder image
+Prompt: A modern editorial thumbnail: a split-screen composition showing (left) a stylized token-meter and billing dashboard, (center) a cracked padlock over a waveform representing a voice data breach, (right) a vintage sepia-toned typewriter surrounded by 1930s books and a glowing "13B" label; vibrant cyberpunk colors, high contrast, vector + digital art, 3000x2000
+Size: (1792, 1024)
+Cost: $0 (local generation)
