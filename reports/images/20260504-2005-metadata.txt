@@ -1,0 +1,5 @@
+Generated: 2026-05-04T11:09:12.643344
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic collage: multi-agent AI orchestration (agents as glowing avatars and flow lines), neural-network visualizations and matrix-like embeddings, a legal scale and padlock symbolising governance, and a CAD model/blueprint overlay — cinematic lighting, high-detail digital art, vivid neon colors, poster composition
+Size: (1792, 1024)
+Cost: $0 (local generation)
