@@ -1,0 +1,5 @@
+Generated: 2026-05-09T13:21:57.924694
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic illustration showing a desktop AI agent (a sleek holographic assistant) surrounded by floating elements: a partially corrupted document with red warning highlights, a formal TLA+ specification with checkmarks and X's, and a Mac laptop displaying a Personal Computer agent. Use neon blues and purples, high contrast, cinematic lighting, digital-art style, 16:9 composition.
+Size: (1792, 1024)
+Cost: $0 (local generation)
