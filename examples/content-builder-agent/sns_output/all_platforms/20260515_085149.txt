@@ -1,0 +1,390 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 05월 15일 08:51
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-15 17:50 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. OpenAI, Apple과의 ‘흐려진’ Siri 파트너십으로 법적 대응 검토
+
+> **원제:** OpenAI Considering Legal Action Against Apple Over 'Strained' Siri Partnership
+> **출처:** MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)  
+> **발행:** 2026-05-14
+
+MacRumors가 Bloomberg 보도를 인용해 OpenAI가 Apple과의 파트너십이 기대에 못 미친다고 판단해 법적 조치를 검토 중이라고 보도했습니다. 2024년 체결된 협약은 iOS·macOS 전반에 ChatGPT 통합을 목표로 했으나, OpenAI 쪽은 iPhone 내 노출·광고·통합 깊이가 부족해 기대했던 구독·수익 효과가 크게 줄었다고 주장합니다. OpenAI는 우선 계약 위반을 지적하는 내용증명(법적 경고) 발송을 포함한 여러 옵션을 저울질하고 있으나, 여전히 외부에서 합의를 원한다고 전합니다.
+
+**💡 핵심 포인트**
+- OpenAI는 Apple이 통합을 충분히 홍보·지원하지 않았다고 불만
+- 계약상 기대했던 상업적 효과(구독·가시성) 미실현으로 법적 선택지 고려
+- 소송보다는 합의(또는 경고장 발송)를 우선으로 검토하는 단계로 보임
+
+**🤔 추가 인사이트**
+한국 기업 관점에서 보면, 플랫폼 사업자(예: 삼성, 카카오)와의 전략적 제휴에서도 유사한 리스크가 존재합니다. AI 업체는 통합 수준(탑재 위치·UI 가시성·수익 배분)과 측정 지표를 계약서에 보다 명확히 포함해야 하며, 플랫폼의 수익 공유 정책 변화에 대비한 조항(성과 기반 재협상 등)을 설계해야 합니다.
+
+![MacRumors 이미지](https://images.macrumors.com/t/D_yG89mjqSV8dvZtssQh55_-Gek=/400x0/article-new/2026/05/OpenAI-vs-Apple-Feature-scaled.jpg)
+*출처: MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)*
+
+---
+
+### 2. Anthropic: 2028년 AI 패권 시나리오 — 민주주의 주도 vs 권위주의 주도
+
+> **원제:** 2028: Two scenarios for global AI leadership
+> **출처:** Anthropic (https://www.anthropic.com/research/2028-ai-leadership)  
+> **발행:** 2026-05-14
+
+Anthropic이 공개한 리서치 포스트는 2028년을 가리키며 미국·민주진영이 AI 컴퓨트(고성능 칩) 우위를 지키는 시나리오와, 그렇지 못해 중국 등 권위주의 체제가 근접하거나 주도권을 쥐는 시나리오를 대조합니다. 핵심 변수는 ‘컴퓨트 접근성’으로, 수출 통제·밀수·원격 컴퓨트 접근·distillation(모델 표절 공격) 등이 경쟁 구도에 영향을 미칠 수 있다고 분석합니다. Anthropic은 민주 진영이 정책·수출통제·거버넌스 등을 통해 우위를 유지해야 한다고 주장합니다.
+
+**💡 핵심 포인트**
+- 컴퓨트(고성능 칩)가 AI 패권의 결정적 요소
+- 밀수·원격 데이터센터 접근·distillation 공격이 권위주의 국가의 추격 수단
+- 정책(수출통제·집행)과 국제 협력이 민주 진영의 리드 확보에 중요
+
+**🤔 추가 인사이트**
+한국은 반도체·파운드리·글로벌 클라우드 인프라의 공급망 참여자로서 이 논의에 직결됩니다. 수출통제·보안 준수는 기업·정부 협력으로 접근해야 하며, 국내 AI 산업 정책은 ‘컴퓨트 접근성’과 동시에 윤리·안전 평가 인프라를 강화하는 방향으로 설계할 필요가 있습니다.
+
+![Anthropic 일러스트](https://www-cdn.anthropic.com/images/4zrzovbb/website/92f0be286703b4b8c906bcf1c95c7f3bbee5bd38-1000x1000.svg)
+*출처: Anthropic (https://www.anthropic.com/research/2028-ai-leadership)*
+
+---
+
+### 3. arXiv: FutureSim — 적응형 에이전트 평가용 ‘세계 이벤트 재생’ 프레임워크
+
+> **원제:** FutureSim: Replaying World Events to Evaluate Adaptive Agents (arXiv:2605.15188)
+> **출처:** arXiv (https://arxiv.org/abs/2605.15188)  
+> **발행:** 2026-05-15
+
+새 논문은 현실 세계 이벤트 기록을 재생(replay)해 적응형 에이전트(agent)의 성능을 평가하는 프레임워크인 FutureSim을 제안합니다. 단일 시뮬레이션이 아닌 과거 사건들의 연속을 재현해 에이전트가 장기적·비정형적 변화에 어떻게 대응하는지를 측정할 수 있도록 설계되었습니다. 저자들은 다양한 재생 시나리오에서 행동 안정성, 회복력, 장기 목표 달성 능력 등을 정량적으로 비교하는 실험 결과를 제시합니다.
+
+**💡 핵심 포인트**
+- 과거 사건 재생을 통한 현실성 높은 에이전트 평가 방법 제안
+- 장기 적응성·회복력 측정에 유리해 안전성·거버넌스 연구에 활용 가능
+- 공개 벤치마크로 확장 시 산업용 에이전트·로보틱스 검증에 기여할 전망
+
+**🤔 추가 인사이트**
+기업의 에이전트 도입(고객지원·운영 자동화 등)에 있어, 기존 벤치마크는 보통 단기·정형 상황에 치우쳐 있습니다. FutureSim과 같은 접근은 한국 기업이 에이전트의 ‘운영 리스크(드리프트·악화 상황 대응)’를 사전에 검증하는 데 유용합니다. 내부 로그·이벤트를 익명화해 재생 벤치로 활용하는 시도도 가능해 보입니다.
+
+출처(논문): https://arxiv.org/abs/2605.15188
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. tinyhumansai/openhuman — 개인용 프라이빗 AI 플랫폼(깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/tinyhumansai/openhuman)
+
+OpenHuman은 개인이 프라이빗하게 사용할 수 있는 ‘퍼스널 AI’ 스택을 목표로 하는 프로젝트입니다. 로컬·프라이빗 데이터와 모델을 결합해 사용자 맞춤형 비서·에이전트 기능을 제공하려는 시도로, 개인정보 보호와 사용자 통제성에 초점을 맞춥니다.
+
+왜 주목할까?
+- 개인화·프라이버시 중심 AI 수요 증가에 대응하는 오픈스택 사례
+- 한국 사용자·기업 대상 온프레미스·프라이빗 SaaS 전략에 참고 가능
+
+링크: https://github.com/tinyhumansai/openhuman
+
+---
+
+### 2. supertone-inc/supertonic — 온디바이스 멀티언어 TTS (깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/supertone-inc/supertonic)
+
+SuperTonic은 ONNX 네이티브로 동작하는 고속 멀티언어 TTS 엔진으로, 온디바이스 음성 합성을 목표로 합니다. 저지연·저전력 환경에서의 자연스러운 음성 출력에 초점을 두어 모바일·임베디드 서비스에 적합합니다.
+
+왜 주목할까?
+- 서버 비용·지연을 줄이는 온디바이스 AI 확대 추세와 부합
+- 한국어 품질 개선 시 국내 음성 서비스(네이버·카카오 등)에서 즉시 활용 가능성
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+### 3. NVIDIA-AI-Blueprints/video-search-and-summarization — 영상 검색·요약 레퍼런스 아키텍처
+
+> **출처:** GitHub Trending (https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization)
+
+NVIDIA의 레퍼런스 아키텍처로, GPU 가속 비전·멀티모달 파이프라인(비디오 인덱싱·검색·요약)을 구현하는 템플릿을 제공합니다. 대용량 미디어 처리에 최적화된 예시와 배포 가이드가 포함되어 있어 미디어 기업·보안 분석 등에서 활용도가 높습니다.
+
+왜 주목할까?
+- 멀티미디어 AI 서비스(뉴스 편집, 보안 감시, 미디어 분석)에 바로 적용 가능한 설계
+- GPU 최적화 패턴 및 엔지니어링 참고 자료로 실무 도입 속도 단축
+
+링크: https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization
+
+---
+
+## 📊 오늘의 한마디
+
+컴퓨트(고성능 칩)와 ‘실제 운영 검증(재생 벤치·온디바이스 솔루션)’이 AI 경쟁의 핵심으로 부상하고 있습니다. 정책·공급망·현장 검증이 동시에 맞물려 업계의 향방을 좌우할 것입니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-15 17:50 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. OpenAI, Apple과의 ‘흐려진’ Siri 파트너십으로 법적 대응 검토
+
+> **원제:** OpenAI Considering Legal Action Against Apple Over 'Strained' Siri Partnership
+> **출처:** MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)  
+> **발행:** 2026-05-14
+
+MacRumors가 Bloomberg 보도를 인용해 OpenAI가 Apple과의 파트너십이 기대에 못 미친다고 판단해 법적 조치를 검토 중이라고 보도했습니다. 2024년 체결된 협약은 iOS·macOS 전반에 ChatGPT 통합을 목표로 했으나, OpenAI 쪽은 iPhone 내 노출·광고·통합 깊이가 부족해 기대했던 구독·수익 효과가 크게 줄었다고 주장합니다. OpenAI는 우선 계약 위반을 지적하는 내용증명(법적 경고) 발송을 포함한 여러 옵션을 저울질하고 있으나, 여전히 외부에서 합의를 원한다고 전합니다.
+
+**💡 핵심 포인트**
+- OpenAI는 Apple이 통합을 충분히 홍보·지원하지 않았다고 불만
+- 계약상 기대했던 상업적 효과(구독·가시성) 미실현으로 법적 선택지 고려
+- 소송보다는 합의(또는 경고장 발송)를 우선으로 검토하는 단계로 보임
+
+**🤔 추가 인사이트**
+한국 기업 관점에서 보면, 플랫폼 사업자(예: 삼성, 카카오)와의 전략적 제휴에서도 유사한 리스크가 존재합니다. AI 업체는 통합 수준(탑재 위치·UI 가시성·수익 배분)과 측정 지표를 계약서에 보다 명확히 포함해야 하며, 플랫폼의 수익 공유 정책 변화에 대비한 조항(성과 기반 재협상 등)을 설계해야 합니다.
+
+![MacRumors 이미지](https://images.macrumors.com/t/D_yG89mjqSV8dvZtssQh55_-Gek=/400x0/article-new/2026/05/OpenAI-vs-Apple-Feature-scaled.jpg)
+*출처: MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)*
+
+---
+
+### 2. Anthropic: 2028년 AI 패권 시나리오 — 민주주의 주도 vs 권위주의 주도
+
+> **원제:** 2028: Two scenarios for global AI leadership
+> **출처:** Anthropic (https://www.anthropic.com/research/2028-ai-leadership)  
+> **발행:** 2026-05-14
+
+Anthropic이 공개한 리서치 포스트는 2028년을 가리키며 미국·민주진영이 AI 컴퓨트(고성능 칩) 우위를 지키는 시나리오와, 그렇지 못해 중국 등 권위주의 체제가 근접하거나 주도권을 쥐는 시나리오를 대조합니다. 핵심 변수는 ‘컴퓨트 접근성’으로, 수출 통제·밀수·원격 컴퓨트 접근·distillation(모델 표절 공격) 등이 경쟁 구도에 영향을 미칠 수 있다고 분석합니다. Anthropic은 민주 진영이 정책·수출통제·거버넌스 등을 통해 우위를 유지해야 한다고 주장합니다.
+
+**💡 핵심 포인트**
+- 컴퓨트(고성능 칩)가 AI 패권의 결정적 요소
+- 밀수·원격 데이터센터 접근·distillation 공격이 권위주의 국가의 추격 수단
+- 정책(수출통제·집행)과 국제 협력이 민주 진영의 리드 확보에 중요
+
+**🤔 추가 인사이트**
+한국은 반도체·파운드리·글로벌 클라우드 인프라의 공급망 참여자로서 이 논의에 직결됩니다. 수출통제·보안 준수는 기업·정부 협력으로 접근해야 하며, 국내 AI 산업 정책은 ‘컴퓨트 접근성’과 동시에 윤리·안전 평가 인프라를 강화하는 방향으로 설계할 필요가 있습니다.
+
+![Anthropic 일러스트](https://www-cdn.anthropic.com/images/4zrzovbb/website/92f0be286703b4b8c906bcf1c95c7f3bbee5bd38-1000x1000.svg)
+*출처: Anthropic (https://www.anthropic.com/research/2028-ai-leadership)*
+
+---
+
+### 3. arXiv: FutureSim — 적응형 에이전트 평가용 ‘세계 이벤트 재생’ 프레임워크
+
+> **원제:** FutureSim: Replaying World Events to Evaluate Adaptive Agents (arXiv:2605.15188)
+> **출처:** arXiv (https://arxiv.org/abs/2605.15188)  
+> **발행:** 2026-05-15
+
+새 논문은 현실 세계 이벤트 기록을 재생(replay)해 적응형 에이전트(agent)의 성능을 평가하는 프레임워크인 FutureSim을 제안합니다. 단일 시뮬레이션이 아닌 과거 사건들의 연속을 재현해 에이전트가 장기적·비정형적 변화에 어떻게 대응하는지를 측정할 수 있도록 설계되었습니다. 저자들은 다양한 재생 시나리오에서 행동 안정성, 회복력, 장기 목표 달성 능력 등을 정량적으로 비교하는 실험 결과를 제시합니다.
+
+**💡 핵심 포인트**
+- 과거 사건 재생을 통한 현실성 높은 에이전트 평가 방법 제안
+- 장기 적응성·회복력 측정에 유리해 안전성·거버넌스 연구에 활용 가능
+- 공개 벤치마크로 확장 시 산업용 에이전트·로보틱스 검증에 기여할 전망
+
+**🤔 추가 인사이트**
+기업의 에이전트 도입(고객지원·운영 자동화 등)에 있어, 기존 벤치마크는 보통 단기·정형 상황에 치우쳐 있습니다. FutureSim과 같은 접근은 한국 기업이 에이전트의 ‘운영 리스크(드리프트·악화 상황 대응)’를 사전에 검증하는 데 유용합니다. 내부 로그·이벤트를 익명화해 재생 벤치로 활용하는 시도도 가능해 보입니다.
+
+출처(논문): https://arxiv.org/abs/2605.15188
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. tinyhumansai/openhuman — 개인용 프라이빗 AI 플랫폼(깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/tinyhumansai/openhuman)
+
+OpenHuman은 개인이 프라이빗하게 사용할 수 있는 ‘퍼스널 AI’ 스택을 목표로 하는 프로젝트입니다. 로컬·프라이빗 데이터와 모델을 결합해 사용자 맞춤형 비서·에이전트 기능을 제공하려는 시도로, 개인정보 보호와 사용자 통제성에 초점을 맞춥니다.
+
+왜 주목할까?
+- 개인화·프라이버시 중심 AI 수요 증가에 대응하는 오픈스택 사례
+- 한국 사용자·기업 대상 온프레미스·프라이빗 SaaS 전략에 참고 가능
+
+링크: https://github.com/tinyhumansai/openhuman
+
+---
+
+### 2. supertone-inc/supertonic — 온디바이스 멀티언어 TTS (깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/supertone-inc/supertonic)
+
+SuperTonic은 ONNX 네이티브로 동작하는 고속 멀티언어 TTS 엔진으로, 온디바이스 음성 합성을 목표로 합니다. 저지연·저전력 환경에서의 자연스러운 음성 출력에 초점을 두어 모바일·임베디드 서비스에 적합합니다.
+
+왜 주목할까?
+- 서버 비용·지연을 줄이는 온디바이스 AI 확대 추세와 부합
+- 한국어 품질 개선 시 국내 음성 서비스(네이버·카카오 등)에서 즉시 활용 가능성
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+### 3. NVIDIA-AI-Blueprints/video-search-and-summarization — 영상 검색·요약 레퍼런스 아키텍처
+
+> **출처:** GitHub Trending (https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization)
+
+NVIDIA의 레퍼런스 아키텍처로, GPU 가속 비전·멀티모달 파이프라인(비디오 인덱싱·검색·요약)을 구현하는 템플릿을 제공합니다. 대용량 미디어 처리에 최적화된 예시와 배포 가이드가 포함되어 있어 미디어 기업·보안 분석 등에서 활용도가 높습니다.
+
+왜 주목할까?
+- 멀티미디어 AI 서비스(뉴스 편집, 보안 감시, 미디어 분석)에 바로 적용 가능한 설계
+- GPU 최적화 패턴 및 엔지니어링 참고 자료로 실무 도입 속도 단축
+
+링크: https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization
+
+---
+
+## 📊 오늘의 한마디
+
+컴퓨트(고성능 칩)와 ‘실제 운영 검증(재생 벤치·온디바이스 솔루션)’이 AI 경쟁의 핵심으로 부상하고 있습니다. 정책·공급망·현장 검증이 동시에 맞물려 업계의 향방을 좌우할 것입니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-15 17:50 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. OpenAI, Apple과의 ‘흐려진’ Siri 파트너십으로 법적 대응 검토
+
+> **원제:** OpenAI Considering Legal Action Against Apple Over 'Strained' Siri Partnership
+> **출처:** MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)  
+> **발행:** 2026-05-14
+
+MacRumors가 Bloomberg 보도를 인용해 OpenAI가 Apple과의 파트너십이 기대에 못 미친다고 판단해 법적 조치를 검토 중이라고 보도했습니다. 2024년 체결된 협약은 iOS·macOS 전반에 ChatGPT 통합을 목표로 했으나, OpenAI 쪽은 iPhone 내 노출·광고·통합 깊이가 부족해 기대했던 구독·수익 효과가 크게 줄었다고 주장합니다. OpenAI는 우선 계약 위반을 지적하는 내용증명(법적 경고) 발송을 포함한 여러 옵션을 저울질하고 있으나, 여전히 외부에서 합의를 원한다고 전합니다.
+
+**💡 핵심 포인트**
+- OpenAI는 Apple이 통합을 충분히 홍보·지원하지 않았다고 불만
+- 계약상 기대했던 상업적 효과(구독·가시성) 미실현으로 법적 선택지 고려
+- 소송보다는 합의(또는 경고장 발송)를 우선으로 검토하는 단계로 보임
+
+**🤔 추가 인사이트**
+한국 기업 관점에서 보면, 플랫폼 사업자(예: 삼성, 카카오)와의 전략적 제휴에서도 유사한 리스크가 존재합니다. AI 업체는 통합 수준(탑재 위치·UI 가시성·수익 배분)과 측정 지표를 계약서에 보다 명확히 포함해야 하며, 플랫폼의 수익 공유 정책 변화에 대비한 조항(성과 기반 재협상 등)을 설계해야 합니다.
+
+![MacRumors 이미지](https://images.macrumors.com/t/D_yG89mjqSV8dvZtssQh55_-Gek=/400x0/article-new/2026/05/OpenAI-vs-Apple-Feature-scaled.jpg)
+*출처: MacRumors (https://www.macrumors.com/2026/05/14/openai-considering-legal-action-against-apple/)*
+
+---
+
+### 2. Anthropic: 2028년 AI 패권 시나리오 — 민주주의 주도 vs 권위주의 주도
+
+> **원제:** 2028: Two scenarios for global AI leadership
+> **출처:** Anthropic (https://www.anthropic.com/research/2028-ai-leadership)  
+> **발행:** 2026-05-14
+
+Anthropic이 공개한 리서치 포스트는 2028년을 가리키며 미국·민주진영이 AI 컴퓨트(고성능 칩) 우위를 지키는 시나리오와, 그렇지 못해 중국 등 권위주의 체제가 근접하거나 주도권을 쥐는 시나리오를 대조합니다. 핵심 변수는 ‘컴퓨트 접근성’으로, 수출 통제·밀수·원격 컴퓨트 접근·distillation(모델 표절 공격) 등이 경쟁 구도에 영향을 미칠 수 있다고 분석합니다. Anthropic은 민주 진영이 정책·수출통제·거버넌스 등을 통해 우위를 유지해야 한다고 주장합니다.
+
+**💡 핵심 포인트**
+- 컴퓨트(고성능 칩)가 AI 패권의 결정적 요소
+- 밀수·원격 데이터센터 접근·distillation 공격이 권위주의 국가의 추격 수단
+- 정책(수출통제·집행)과 국제 협력이 민주 진영의 리드 확보에 중요
+
+**🤔 추가 인사이트**
+한국은 반도체·파운드리·글로벌 클라우드 인프라의 공급망 참여자로서 이 논의에 직결됩니다. 수출통제·보안 준수는 기업·정부 협력으로 접근해야 하며, 국내 AI 산업 정책은 ‘컴퓨트 접근성’과 동시에 윤리·안전 평가 인프라를 강화하는 방향으로 설계할 필요가 있습니다.
+
+![Anthropic 일러스트](https://www-cdn.anthropic.com/images/4zrzovbb/website/92f0be286703b4b8c906bcf1c95c7f3bbee5bd38-1000x1000.svg)
+*출처: Anthropic (https://www.anthropic.com/research/2028-ai-leadership)*
+
+---
+
+### 3. arXiv: FutureSim — 적응형 에이전트 평가용 ‘세계 이벤트 재생’ 프레임워크
+
+> **원제:** FutureSim: Replaying World Events to Evaluate Adaptive Agents (arXiv:2605.15188)
+> **출처:** arXiv (https://arxiv.org/abs/2605.15188)  
+> **발행:** 2026-05-15
+
+새 논문은 현실 세계 이벤트 기록을 재생(replay)해 적응형 에이전트(agent)의 성능을 평가하는 프레임워크인 FutureSim을 제안합니다. 단일 시뮬레이션이 아닌 과거 사건들의 연속을 재현해 에이전트가 장기적·비정형적 변화에 어떻게 대응하는지를 측정할 수 있도록 설계되었습니다. 저자들은 다양한 재생 시나리오에서 행동 안정성, 회복력, 장기 목표 달성 능력 등을 정량적으로 비교하는 실험 결과를 제시합니다.
+
+**💡 핵심 포인트**
+- 과거 사건 재생을 통한 현실성 높은 에이전트 평가 방법 제안
+- 장기 적응성·회복력 측정에 유리해 안전성·거버넌스 연구에 활용 가능
+- 공개 벤치마크로 확장 시 산업용 에이전트·로보틱스 검증에 기여할 전망
+
+**🤔 추가 인사이트**
+기업의 에이전트 도입(고객지원·운영 자동화 등)에 있어, 기존 벤치마크는 보통 단기·정형 상황에 치우쳐 있습니다. FutureSim과 같은 접근은 한국 기업이 에이전트의 ‘운영 리스크(드리프트·악화 상황 대응)’를 사전에 검증하는 데 유용합니다. 내부 로그·이벤트를 익명화해 재생 벤치로 활용하는 시도도 가능해 보입니다.
+
+출처(논문): https://arxiv.org/abs/2605.15188
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. tinyhumansai/openhuman — 개인용 프라이빗 AI 플랫폼(깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/tinyhumansai/openhuman)
+
+OpenHuman은 개인이 프라이빗하게 사용할 수 있는 ‘퍼스널 AI’ 스택을 목표로 하는 프로젝트입니다. 로컬·프라이빗 데이터와 모델을 결합해 사용자 맞춤형 비서·에이전트 기능을 제공하려는 시도로, 개인정보 보호와 사용자 통제성에 초점을 맞춥니다.
+
+왜 주목할까?
+- 개인화·프라이버시 중심 AI 수요 증가에 대응하는 오픈스택 사례
+- 한국 사용자·기업 대상 온프레미스·프라이빗 SaaS 전략에 참고 가능
+
+링크: https://github.com/tinyhumansai/openhuman
+
+---
+
+### 2. supertone-inc/supertonic — 온디바이스 멀티언어 TTS (깃허브 트렌딩)
+
+> **출처:** GitHub Trending (https://github.com/supertone-inc/supertonic)
+
+SuperTonic은 ONNX 네이티브로 동작하는 고속 멀티언어 TTS 엔진으로, 온디바이스 음성 합성을 목표로 합니다. 저지연·저전력 환경에서의 자연스러운 음성 출력에 초점을 두어 모바일·임베디드 서비스에 적합합니다.
+
+왜 주목할까?
+- 서버 비용·지연을 줄이는 온디바이스 AI 확대 추세와 부합
+- 한국어 품질 개선 시 국내 음성 서비스(네이버·카카오 등)에서 즉시 활용 가능성
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+### 3. NVIDIA-AI-Blueprints/video-search-and-summarization — 영상 검색·요약 레퍼런스 아키텍처
+
+> **출처:** GitHub Trending (https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization)
+
+NVIDIA의 레퍼런스 아키텍처로, GPU 가속 비전·멀티모달 파이프라인(비디오 인덱싱·검색·요약)을 구현하는 템플릿을 제공합니다. 대용량 미디어 처리에 최적화된 예시와 배포 가이드가 포함되어 있어 미디어 기업·보안 분석 등에서 활용도가 높습니다.
+
+왜 주목할까?
+- 멀티미디어 AI 서비스(뉴스 편집, 보안 감시, 미디어 분석)에 바로 적용 가능한 설계
+- GPU 최적화 패턴 및 엔지니어링 참고 자료로 실무 도입 속도 단축
+
+링크: https://github.com/NVIDIA-AI-Blueprints/video-search-and-summarization
+
+---
+
+## 📊 오늘의 한마디
+
+컴퓨트(고성능 칩)와 ‘실제 운영 검증(재생 벤치·온디바이스 솔루션)’이 AI 경쟁의 핵심으로 부상하고 있습니다. 정책·공급망·현장 검증이 동시에 맞물려 업계의 향방을 좌우할 것입니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+═══════════════════════════════════════════════════════════
