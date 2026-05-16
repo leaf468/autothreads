@@ -1,0 +1,396 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 05월 16일 06:07
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-16 15:05 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Orthrus — 병렬·무손실 생성으로 LLM 추론 속도 띄우기
+
+> **원제:** Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion
+> **출처:** GitHub / 논문(ArXiv) (https://github.com/chiennv2000/orthrus, https://arxiv.org/abs/2605.12825)
+> **발행:** 2026-05 (레포/리드미 업데이트)
+
+Orthrus는 ‘듀얼 뷰(diffusion + autoregressive)를 이용한 병렬 토큰 생성’로, 기존 순차적 디코딩 병목을 깨고 LLM 생성 속도를 크게 올리면서도 원본 모델의 출력 분포와 일치하도록 설계됐습니다. 구현체와 모델 체크포인트(Orthrus-Qwen3 계열)가 공개되었고, HuggingFace에 여러 경량·실험적 체크포인트가 올라와 빠른 실험·검증이 가능합니다. 핵심은 두 뷰가 동일한 KV 캐시를 공유해 메모리 오버헤드를 거의 늘리지 않고도 병렬 검증(acceptance) 구조를 유지한다는 점입니다.
+
+이 기술은 긴 컨텍스트·실시간 스트리밍·에지 배포 시 큰 이점을 줍니다. 논문·리포지토리에서 제시한 벤치마크는 Qwen3 기반 모델에서 수배에서 수십배(예: 4–7×) 속도 향상을 보고하며, 생성의 ‘무손실(lossless)’ 보장을 강조합니다. 다만 실제 서비스 적용시에는 안정성·보안(투표·합의 메커니즘의 취약성), 그리고 다양한 하드웨어·서빙 스택(vLLM, SGLang 등)과의 통합 비용을 검증해야 합니다.
+
+**💡 핵심 포인트**
+- 병렬 토큰 생성으로 순차 디코딩 한계 극복(실험상 4–7× 속도 향상)
+- 동일 KV 캐시 공유로 메모리 오버헤드 최소화
+- 무손실 생성(원본 모델 분포 일치)을 목표로 설계
+
+**🤔 추가 인사이트**
+한국 기업·연구팀은 Orthrus 같은 ‘inference-side’ 혁신을 통해 클라우드 비용을 줄이면서도 응답성 요구가 높은 서비스(챗봇·실시간 요약·문서 에이전트)에 빠르게 적용해볼 만합니다. 그러나 운영 안정성 검증(acceptance 실패율, 롤백 전략)과 라이선스·배포(허깅페이스 모델 사용 조건)를 조기 점검해야 합니다.
+
+![Orthrus 이미지](https://raw.githubusercontent.com/chiennv2000/orthrus/main/assets/orthrus.png)
+*출처: https://github.com/chiennv2000/orthrus*
+
+---
+
+### 2. arXiv: "Widening the Gap" — 양자화(quantization) 악용 가능성 경고
+
+> **원제:** Widening the Gap: Exploiting LLM Quantization via Outlier Injection
+> **출처:** arXiv (https://arxiv.org/abs/2605.15152)
+> **발행:** 2026-05-14
+
+최근 논문은 대중적으로 쓰이는 고급 양자화 기법(AWQ, GPTQ, GGUF 등)에 대해 '아웃라이어 주입(outlier injection)' 공격을 제안합니다. 핵심 아이디어는 일부 큰 값(outlier)을 특정 블록에 주입하면 양자화 과정에서 다른 가중치가 0으로 반올림되어 예측 동작이 의도치 않게 변할 수 있다는 점입니다. 연구진은 다양한 시나리오에서 기존 공격이 실패하던 양자화 방식들에도 높은 성공률로 악성 행동을 유발할 수 있음을 보였습니다.
+
+이는 오픈소스 모델 배포·다운로드·로컬 양자화가 일반화된 현재의 생태계에서 실용적 위험을 제기합니다. 즉, '풀프리시전(원본)에서는 정상'해 보이지만 사용자가 로컬에서 변환·양자화하면 악성 행위가 드러나는 경우가 현실적 위협이 될 수 있습니다.
+
+**💡 핵심 포인트**
+- 아웃라이어 주입으로 양자화 결과를 조작해 악성 동작 유발 가능
+- AWQ/GPTQ/GGUF 등 널리 쓰이는 방법에서도 효과를 보임
+- 모델 호스팅·공유·다운로드 파이프라인의 신뢰성 재검토 필요
+
+**🤔 추가 인사이트**
+한국 기업은 배포용 모델에 대해 ‘양자화 전·후’ 동작 보증 테스트를 표준 절차로 도입해야 합니다. 모델 허브에서 내려받은 가중치를 그대로 신뢰하기보다, 서명·체크섬·사전/사후 검증(예: 특정 입력에 대한 예측 정상성 테스트)을 통해 서플라이체인 공격을 방지해야 합니다.
+
+출처: https://arxiv.org/abs/2605.15152
+
+---
+
+### 3. TechCrunch — OpenAI와 Apple의 제휴 균열 가능성: 법적 대응 검토
+
+> **원제:** OpenAI is reportedly preparing legal action against Apple; it wouldn't be the first partner to feel burned
+> **출처:** TechCrunch (https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/)
+> **발행:** 2026-05-14
+
+TechCrunch는 Bloomberg 보도를 인용해, OpenAI가 Apple과의 통합(시스템 내 ChatGPT 노출 등)에서 기대했던 구독·노출 효과가 나오지 않자 외부 법률사무소를 동원해 계약 위반 가능성을 검토하고 있다고 전했습니다. 보도에 따르면 OpenAI는 통합 기능이 숨겨져 있고 상호수익(구독) 유입이 목표에 못 미친다고 불만을 표하고 있으며, Apple은 개인정보·하드웨어 전략 우려 등을 이유로 다른 관점이 있다고 합니다.
+
+이 사안은 단순한 파트너십 갈등을 넘어 대형 플랫폼(Apple)과 AI 제공자(OpenAI) 간의 권력·노출·수익 배분 문제를 드러냅니다. 국내 앱·서비스 사업자들도 플랫폼 종속 리스크(검색·OS 네이티브 통합·가시성)를 다시 점검해야 합니다.
+
+**💡 핵심 포인트**
+- OpenAI가 Apple과의 통합 결과에 불만, 법적 조치 검토 보도
+- 플랫폼 통제권이 파트너 수익·노출에 결정적 영향
+- 계약상 가시성·성과 지표(SLA) 조항의 중요성 재확인
+
+**🤔 추가 인사이트**
+한국 기업은 글로벌 플랫폼과의 제휴 계약에서 가시성·성과(트래픽·구독 기여)와 관련한 명확한 측정·보고 조항을 포함시키고, 기술 통합 후의 KPI 검증 절차를 계약 초기부터 설계해야 합니다.
+
+출처: https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Hugging Face 트렌드 — Qwen3.6 변종·GGUF 배포 증가
+
+> **출처:** Hugging Face (https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF)
+
+Qwen3.6의 커뮤니티·유저 변종(unsloth 등)이 GGUF·MTP(다중 초안) 방식으로 활발히 배포되고 있습니다. 실사용자들은 MTP speculative decoding으로 로컬·경량화된 추론 속도를 얻는 것이 가능해졌고, 다양한 양자화·speculative 옵션으로 배포 유연성이 커졌습니다.
+
+왜 주목할까?
+- 모델 배포·로컬 서빙 도구가 성숙해지며, 기업의 온프레·에지 활용 가능성이 늘어남
+
+링크: https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF
+
+---
+
+### 2. Product Hunt — AI Browser: 브라우저 자동화 에이전트
+
+> **출처:** Product Hunt (https://www.producthunt.com/products/ai-browser)
+
+AI Browser는 ‘한 줄 프롬프트로 웹/브라우저 작업을 자동화’하는 툴입니다(로그인·클릭·폼 작성 등). 에이전트형 브라우저 자동화가 성장하면서 성장·운영 리스크(계정 보안, 캡차·로그인 차단) 관리가 핵심 과제로 떠오릅니다.
+
+왜 주목할까?
+- 노코드/로우코드 환경에서 에이전트 자동화가 빠르게 확산되고 있어 업무 자동화 채택 가속화 가능
+
+링크: https://www.producthunt.com/products/ai-browser
+
+---
+
+### 3. GitHub — Supertonic: 온디바이스 다국어 TTS 강화
+
+> **출처:** GitHub (https://github.com/supertone-inc/supertonic)
+
+Supertonic은 ONNX 기반의 경량·온디바이스 TTS로 Supertonic 3에서 31개 언어 지원을 발표했습니다. 로컬·프라이버시 민감한 TTS 적용(읽기·접근성·앱 내 음성 기능)에 유용합니다.
+
+왜 주목할까?
+- 온디바이스 TTS로 서버 비용·프라이버시 이슈를 동시에 해결할 수 있어 모바일·임베디드 서비스에 적합
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+## 📊 오늘의 한마디
+
+생산성·배포·비용을 동시에 해결하는 ‘추론 단계(서빙) 혁신’과 플랫폼·서플라이체인 신뢰성(양자화·제휴)이 2026년 중·단기 AI 경쟁의 핵심 변수가 될 것이다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 수집·작성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-16 15:05 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Orthrus — 병렬·무손실 생성으로 LLM 추론 속도 띄우기
+
+> **원제:** Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion
+> **출처:** GitHub / 논문(ArXiv) (https://github.com/chiennv2000/orthrus, https://arxiv.org/abs/2605.12825)
+> **발행:** 2026-05 (레포/리드미 업데이트)
+
+Orthrus는 ‘듀얼 뷰(diffusion + autoregressive)를 이용한 병렬 토큰 생성’로, 기존 순차적 디코딩 병목을 깨고 LLM 생성 속도를 크게 올리면서도 원본 모델의 출력 분포와 일치하도록 설계됐습니다. 구현체와 모델 체크포인트(Orthrus-Qwen3 계열)가 공개되었고, HuggingFace에 여러 경량·실험적 체크포인트가 올라와 빠른 실험·검증이 가능합니다. 핵심은 두 뷰가 동일한 KV 캐시를 공유해 메모리 오버헤드를 거의 늘리지 않고도 병렬 검증(acceptance) 구조를 유지한다는 점입니다.
+
+이 기술은 긴 컨텍스트·실시간 스트리밍·에지 배포 시 큰 이점을 줍니다. 논문·리포지토리에서 제시한 벤치마크는 Qwen3 기반 모델에서 수배에서 수십배(예: 4–7×) 속도 향상을 보고하며, 생성의 ‘무손실(lossless)’ 보장을 강조합니다. 다만 실제 서비스 적용시에는 안정성·보안(투표·합의 메커니즘의 취약성), 그리고 다양한 하드웨어·서빙 스택(vLLM, SGLang 등)과의 통합 비용을 검증해야 합니다.
+
+**💡 핵심 포인트**
+- 병렬 토큰 생성으로 순차 디코딩 한계 극복(실험상 4–7× 속도 향상)
+- 동일 KV 캐시 공유로 메모리 오버헤드 최소화
+- 무손실 생성(원본 모델 분포 일치)을 목표로 설계
+
+**🤔 추가 인사이트**
+한국 기업·연구팀은 Orthrus 같은 ‘inference-side’ 혁신을 통해 클라우드 비용을 줄이면서도 응답성 요구가 높은 서비스(챗봇·실시간 요약·문서 에이전트)에 빠르게 적용해볼 만합니다. 그러나 운영 안정성 검증(acceptance 실패율, 롤백 전략)과 라이선스·배포(허깅페이스 모델 사용 조건)를 조기 점검해야 합니다.
+
+![Orthrus 이미지](https://raw.githubusercontent.com/chiennv2000/orthrus/main/assets/orthrus.png)
+*출처: https://github.com/chiennv2000/orthrus*
+
+---
+
+### 2. arXiv: "Widening the Gap" — 양자화(quantization) 악용 가능성 경고
+
+> **원제:** Widening the Gap: Exploiting LLM Quantization via Outlier Injection
+> **출처:** arXiv (https://arxiv.org/abs/2605.15152)
+> **발행:** 2026-05-14
+
+최근 논문은 대중적으로 쓰이는 고급 양자화 기법(AWQ, GPTQ, GGUF 등)에 대해 '아웃라이어 주입(outlier injection)' 공격을 제안합니다. 핵심 아이디어는 일부 큰 값(outlier)을 특정 블록에 주입하면 양자화 과정에서 다른 가중치가 0으로 반올림되어 예측 동작이 의도치 않게 변할 수 있다는 점입니다. 연구진은 다양한 시나리오에서 기존 공격이 실패하던 양자화 방식들에도 높은 성공률로 악성 행동을 유발할 수 있음을 보였습니다.
+
+이는 오픈소스 모델 배포·다운로드·로컬 양자화가 일반화된 현재의 생태계에서 실용적 위험을 제기합니다. 즉, '풀프리시전(원본)에서는 정상'해 보이지만 사용자가 로컬에서 변환·양자화하면 악성 행위가 드러나는 경우가 현실적 위협이 될 수 있습니다.
+
+**💡 핵심 포인트**
+- 아웃라이어 주입으로 양자화 결과를 조작해 악성 동작 유발 가능
+- AWQ/GPTQ/GGUF 등 널리 쓰이는 방법에서도 효과를 보임
+- 모델 호스팅·공유·다운로드 파이프라인의 신뢰성 재검토 필요
+
+**🤔 추가 인사이트**
+한국 기업은 배포용 모델에 대해 ‘양자화 전·후’ 동작 보증 테스트를 표준 절차로 도입해야 합니다. 모델 허브에서 내려받은 가중치를 그대로 신뢰하기보다, 서명·체크섬·사전/사후 검증(예: 특정 입력에 대한 예측 정상성 테스트)을 통해 서플라이체인 공격을 방지해야 합니다.
+
+출처: https://arxiv.org/abs/2605.15152
+
+---
+
+### 3. TechCrunch — OpenAI와 Apple의 제휴 균열 가능성: 법적 대응 검토
+
+> **원제:** OpenAI is reportedly preparing legal action against Apple; it wouldn't be the first partner to feel burned
+> **출처:** TechCrunch (https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/)
+> **발행:** 2026-05-14
+
+TechCrunch는 Bloomberg 보도를 인용해, OpenAI가 Apple과의 통합(시스템 내 ChatGPT 노출 등)에서 기대했던 구독·노출 효과가 나오지 않자 외부 법률사무소를 동원해 계약 위반 가능성을 검토하고 있다고 전했습니다. 보도에 따르면 OpenAI는 통합 기능이 숨겨져 있고 상호수익(구독) 유입이 목표에 못 미친다고 불만을 표하고 있으며, Apple은 개인정보·하드웨어 전략 우려 등을 이유로 다른 관점이 있다고 합니다.
+
+이 사안은 단순한 파트너십 갈등을 넘어 대형 플랫폼(Apple)과 AI 제공자(OpenAI) 간의 권력·노출·수익 배분 문제를 드러냅니다. 국내 앱·서비스 사업자들도 플랫폼 종속 리스크(검색·OS 네이티브 통합·가시성)를 다시 점검해야 합니다.
+
+**💡 핵심 포인트**
+- OpenAI가 Apple과의 통합 결과에 불만, 법적 조치 검토 보도
+- 플랫폼 통제권이 파트너 수익·노출에 결정적 영향
+- 계약상 가시성·성과 지표(SLA) 조항의 중요성 재확인
+
+**🤔 추가 인사이트**
+한국 기업은 글로벌 플랫폼과의 제휴 계약에서 가시성·성과(트래픽·구독 기여)와 관련한 명확한 측정·보고 조항을 포함시키고, 기술 통합 후의 KPI 검증 절차를 계약 초기부터 설계해야 합니다.
+
+출처: https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Hugging Face 트렌드 — Qwen3.6 변종·GGUF 배포 증가
+
+> **출처:** Hugging Face (https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF)
+
+Qwen3.6의 커뮤니티·유저 변종(unsloth 등)이 GGUF·MTP(다중 초안) 방식으로 활발히 배포되고 있습니다. 실사용자들은 MTP speculative decoding으로 로컬·경량화된 추론 속도를 얻는 것이 가능해졌고, 다양한 양자화·speculative 옵션으로 배포 유연성이 커졌습니다.
+
+왜 주목할까?
+- 모델 배포·로컬 서빙 도구가 성숙해지며, 기업의 온프레·에지 활용 가능성이 늘어남
+
+링크: https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF
+
+---
+
+### 2. Product Hunt — AI Browser: 브라우저 자동화 에이전트
+
+> **출처:** Product Hunt (https://www.producthunt.com/products/ai-browser)
+
+AI Browser는 ‘한 줄 프롬프트로 웹/브라우저 작업을 자동화’하는 툴입니다(로그인·클릭·폼 작성 등). 에이전트형 브라우저 자동화가 성장하면서 성장·운영 리스크(계정 보안, 캡차·로그인 차단) 관리가 핵심 과제로 떠오릅니다.
+
+왜 주목할까?
+- 노코드/로우코드 환경에서 에이전트 자동화가 빠르게 확산되고 있어 업무 자동화 채택 가속화 가능
+
+링크: https://www.producthunt.com/products/ai-browser
+
+---
+
+### 3. GitHub — Supertonic: 온디바이스 다국어 TTS 강화
+
+> **출처:** GitHub (https://github.com/supertone-inc/supertonic)
+
+Supertonic은 ONNX 기반의 경량·온디바이스 TTS로 Supertonic 3에서 31개 언어 지원을 발표했습니다. 로컬·프라이버시 민감한 TTS 적용(읽기·접근성·앱 내 음성 기능)에 유용합니다.
+
+왜 주목할까?
+- 온디바이스 TTS로 서버 비용·프라이버시 이슈를 동시에 해결할 수 있어 모바일·임베디드 서비스에 적합
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+## 📊 오늘의 한마디
+
+생산성·배포·비용을 동시에 해결하는 ‘추론 단계(서빙) 혁신’과 플랫폼·서플라이체인 신뢰성(양자화·제휴)이 2026년 중·단기 AI 경쟁의 핵심 변수가 될 것이다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 수집·작성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-05-16 15:05 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Orthrus — 병렬·무손실 생성으로 LLM 추론 속도 띄우기
+
+> **원제:** Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion
+> **출처:** GitHub / 논문(ArXiv) (https://github.com/chiennv2000/orthrus, https://arxiv.org/abs/2605.12825)
+> **발행:** 2026-05 (레포/리드미 업데이트)
+
+Orthrus는 ‘듀얼 뷰(diffusion + autoregressive)를 이용한 병렬 토큰 생성’로, 기존 순차적 디코딩 병목을 깨고 LLM 생성 속도를 크게 올리면서도 원본 모델의 출력 분포와 일치하도록 설계됐습니다. 구현체와 모델 체크포인트(Orthrus-Qwen3 계열)가 공개되었고, HuggingFace에 여러 경량·실험적 체크포인트가 올라와 빠른 실험·검증이 가능합니다. 핵심은 두 뷰가 동일한 KV 캐시를 공유해 메모리 오버헤드를 거의 늘리지 않고도 병렬 검증(acceptance) 구조를 유지한다는 점입니다.
+
+이 기술은 긴 컨텍스트·실시간 스트리밍·에지 배포 시 큰 이점을 줍니다. 논문·리포지토리에서 제시한 벤치마크는 Qwen3 기반 모델에서 수배에서 수십배(예: 4–7×) 속도 향상을 보고하며, 생성의 ‘무손실(lossless)’ 보장을 강조합니다. 다만 실제 서비스 적용시에는 안정성·보안(투표·합의 메커니즘의 취약성), 그리고 다양한 하드웨어·서빙 스택(vLLM, SGLang 등)과의 통합 비용을 검증해야 합니다.
+
+**💡 핵심 포인트**
+- 병렬 토큰 생성으로 순차 디코딩 한계 극복(실험상 4–7× 속도 향상)
+- 동일 KV 캐시 공유로 메모리 오버헤드 최소화
+- 무손실 생성(원본 모델 분포 일치)을 목표로 설계
+
+**🤔 추가 인사이트**
+한국 기업·연구팀은 Orthrus 같은 ‘inference-side’ 혁신을 통해 클라우드 비용을 줄이면서도 응답성 요구가 높은 서비스(챗봇·실시간 요약·문서 에이전트)에 빠르게 적용해볼 만합니다. 그러나 운영 안정성 검증(acceptance 실패율, 롤백 전략)과 라이선스·배포(허깅페이스 모델 사용 조건)를 조기 점검해야 합니다.
+
+![Orthrus 이미지](https://raw.githubusercontent.com/chiennv2000/orthrus/main/assets/orthrus.png)
+*출처: https://github.com/chiennv2000/orthrus*
+
+---
+
+### 2. arXiv: "Widening the Gap" — 양자화(quantization) 악용 가능성 경고
+
+> **원제:** Widening the Gap: Exploiting LLM Quantization via Outlier Injection
+> **출처:** arXiv (https://arxiv.org/abs/2605.15152)
+> **발행:** 2026-05-14
+
+최근 논문은 대중적으로 쓰이는 고급 양자화 기법(AWQ, GPTQ, GGUF 등)에 대해 '아웃라이어 주입(outlier injection)' 공격을 제안합니다. 핵심 아이디어는 일부 큰 값(outlier)을 특정 블록에 주입하면 양자화 과정에서 다른 가중치가 0으로 반올림되어 예측 동작이 의도치 않게 변할 수 있다는 점입니다. 연구진은 다양한 시나리오에서 기존 공격이 실패하던 양자화 방식들에도 높은 성공률로 악성 행동을 유발할 수 있음을 보였습니다.
+
+이는 오픈소스 모델 배포·다운로드·로컬 양자화가 일반화된 현재의 생태계에서 실용적 위험을 제기합니다. 즉, '풀프리시전(원본)에서는 정상'해 보이지만 사용자가 로컬에서 변환·양자화하면 악성 행위가 드러나는 경우가 현실적 위협이 될 수 있습니다.
+
+**💡 핵심 포인트**
+- 아웃라이어 주입으로 양자화 결과를 조작해 악성 동작 유발 가능
+- AWQ/GPTQ/GGUF 등 널리 쓰이는 방법에서도 효과를 보임
+- 모델 호스팅·공유·다운로드 파이프라인의 신뢰성 재검토 필요
+
+**🤔 추가 인사이트**
+한국 기업은 배포용 모델에 대해 ‘양자화 전·후’ 동작 보증 테스트를 표준 절차로 도입해야 합니다. 모델 허브에서 내려받은 가중치를 그대로 신뢰하기보다, 서명·체크섬·사전/사후 검증(예: 특정 입력에 대한 예측 정상성 테스트)을 통해 서플라이체인 공격을 방지해야 합니다.
+
+출처: https://arxiv.org/abs/2605.15152
+
+---
+
+### 3. TechCrunch — OpenAI와 Apple의 제휴 균열 가능성: 법적 대응 검토
+
+> **원제:** OpenAI is reportedly preparing legal action against Apple; it wouldn't be the first partner to feel burned
+> **출처:** TechCrunch (https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/)
+> **발행:** 2026-05-14
+
+TechCrunch는 Bloomberg 보도를 인용해, OpenAI가 Apple과의 통합(시스템 내 ChatGPT 노출 등)에서 기대했던 구독·노출 효과가 나오지 않자 외부 법률사무소를 동원해 계약 위반 가능성을 검토하고 있다고 전했습니다. 보도에 따르면 OpenAI는 통합 기능이 숨겨져 있고 상호수익(구독) 유입이 목표에 못 미친다고 불만을 표하고 있으며, Apple은 개인정보·하드웨어 전략 우려 등을 이유로 다른 관점이 있다고 합니다.
+
+이 사안은 단순한 파트너십 갈등을 넘어 대형 플랫폼(Apple)과 AI 제공자(OpenAI) 간의 권력·노출·수익 배분 문제를 드러냅니다. 국내 앱·서비스 사업자들도 플랫폼 종속 리스크(검색·OS 네이티브 통합·가시성)를 다시 점검해야 합니다.
+
+**💡 핵심 포인트**
+- OpenAI가 Apple과의 통합 결과에 불만, 법적 조치 검토 보도
+- 플랫폼 통제권이 파트너 수익·노출에 결정적 영향
+- 계약상 가시성·성과 지표(SLA) 조항의 중요성 재확인
+
+**🤔 추가 인사이트**
+한국 기업은 글로벌 플랫폼과의 제휴 계약에서 가시성·성과(트래픽·구독 기여)와 관련한 명확한 측정·보고 조항을 포함시키고, 기술 통합 후의 KPI 검증 절차를 계약 초기부터 설계해야 합니다.
+
+출처: https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. Hugging Face 트렌드 — Qwen3.6 변종·GGUF 배포 증가
+
+> **출처:** Hugging Face (https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF)
+
+Qwen3.6의 커뮤니티·유저 변종(unsloth 등)이 GGUF·MTP(다중 초안) 방식으로 활발히 배포되고 있습니다. 실사용자들은 MTP speculative decoding으로 로컬·경량화된 추론 속도를 얻는 것이 가능해졌고, 다양한 양자화·speculative 옵션으로 배포 유연성이 커졌습니다.
+
+왜 주목할까?
+- 모델 배포·로컬 서빙 도구가 성숙해지며, 기업의 온프레·에지 활용 가능성이 늘어남
+
+링크: https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF
+
+---
+
+### 2. Product Hunt — AI Browser: 브라우저 자동화 에이전트
+
+> **출처:** Product Hunt (https://www.producthunt.com/products/ai-browser)
+
+AI Browser는 ‘한 줄 프롬프트로 웹/브라우저 작업을 자동화’하는 툴입니다(로그인·클릭·폼 작성 등). 에이전트형 브라우저 자동화가 성장하면서 성장·운영 리스크(계정 보안, 캡차·로그인 차단) 관리가 핵심 과제로 떠오릅니다.
+
+왜 주목할까?
+- 노코드/로우코드 환경에서 에이전트 자동화가 빠르게 확산되고 있어 업무 자동화 채택 가속화 가능
+
+링크: https://www.producthunt.com/products/ai-browser
+
+---
+
+### 3. GitHub — Supertonic: 온디바이스 다국어 TTS 강화
+
+> **출처:** GitHub (https://github.com/supertone-inc/supertonic)
+
+Supertonic은 ONNX 기반의 경량·온디바이스 TTS로 Supertonic 3에서 31개 언어 지원을 발표했습니다. 로컬·프라이버시 민감한 TTS 적용(읽기·접근성·앱 내 음성 기능)에 유용합니다.
+
+왜 주목할까?
+- 온디바이스 TTS로 서버 비용·프라이버시 이슈를 동시에 해결할 수 있어 모바일·임베디드 서비스에 적합
+
+링크: https://github.com/supertone-inc/supertonic
+
+---
+
+## 📊 오늘의 한마디
+
+생산성·배포·비용을 동시에 해결하는 ‘추론 단계(서빙) 혁신’과 플랫폼·서플라이체인 신뢰성(양자화·제휴)이 2026년 중·단기 AI 경쟁의 핵심 변수가 될 것이다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 수집·작성되었습니다.*
+*🎨 썸네일 생성용 프롬프트는 reports/thumbnail_prompt.txt에 별도 저장되었습니다.*
+
+
+═══════════════════════════════════════════════════════════
