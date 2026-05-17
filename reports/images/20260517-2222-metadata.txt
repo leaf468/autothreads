@@ -1,0 +1,5 @@
+Generated: 2026-05-17T13:24:56.663158
+Method: PIL placeholder image
+Prompt: A vibrant, cinematic digital artwork showing a futuristic AI control room overlooking a Korean city skyline at night. Central focus: a glowing "Gemini 4" holographic neural-network sculpture, streams of data and vectors flowing around it, diverse engineers and agents interacting with floating AR/VR interfaces, neon teal and magenta color palette, ultra-detailed, high contrast, digital painting, 16:9 composition.
+Size: (1792, 1024)
+Cost: $0 (local generation)
