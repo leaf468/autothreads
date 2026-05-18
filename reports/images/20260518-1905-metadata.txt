@@ -1,0 +1,5 @@
+Generated: 2026-05-18T10:07:34.147184
+Method: PIL placeholder image
+Prompt: A vivid, futuristic collage showing: researchers reading papers, a secure shield overlay representing cybersecurity and secret protection, hands sketching CAD designs, and a local AI server rack with colorful neon accents. Include Korean city skyline subtly in the background, dynamic light streaks, and a clean modern digital-art style. High contrast, cinematic composition, 16:9.
+Size: (1792, 1024)
+Cost: $0 (local generation)
