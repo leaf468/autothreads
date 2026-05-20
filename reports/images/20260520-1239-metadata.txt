@@ -1,0 +1,5 @@
+Generated: 2026-05-20T03:40:40.606754
+Method: PIL placeholder image
+Prompt: A dynamic, futuristic collage: a Google-style search bar merging into a swirling neural network, glowing Gemini logo, floating arXiv paper pages, GitHub repo icons, and an AI voice assistant dialing a phone — vibrant neon palette, digital art, high detail, cinematic lighting, Korean skyline silhouette in background.
+Size: (1792, 1024)
+Cost: $0 (local generation)
