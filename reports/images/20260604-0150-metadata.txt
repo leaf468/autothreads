@@ -1,0 +1,5 @@
+Generated: 2026-06-03T16:52:48.001643
+Method: PIL placeholder image
+Prompt: A futuristic AI scene showing a laptop running a compact multimodal model (text, image, audio), a developer coding with an assistant overlay, and a glowing post-quantum lock (Merkle tree) symbol in the background — vibrant cyberpunk colors, digital art, wide-angle composition, high detail
+Size: (1792, 1024)
+Cost: $0 (local generation)
