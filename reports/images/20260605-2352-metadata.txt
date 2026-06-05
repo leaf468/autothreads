@@ -1,0 +1,5 @@
+Generated: 2026-06-05T14:54:53.377315
+Method: PIL placeholder image
+Prompt: A futuristic montage showing: (1) overflowing digital token counters and invoices, (2) massive AI data centers in a sunrise over India, (3) a secure government operations room with a stylized AI model hologram — vibrant, cinematic, modern cyberpunk-meets-corporate, high detail, wide aspect, digital art.
+Size: (1792, 1024)
+Cost: $0 (local generation)
