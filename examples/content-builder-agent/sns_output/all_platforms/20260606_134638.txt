@@ -1,0 +1,411 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 06월 06일 13:46
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-06 22:45 KST
+**수집 기간:** 최근 6시간 우선 (관련 최신 기사/논문/프로젝트 중심으로 수집)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. AI 비용 위기 — "The token bill comes due: Inside the industry scramble to manage AI’s runaway costs"
+
+> **원제:** The token bill comes due: Inside the industry scramble to manage AI’s runaway costs
+> **출처:** TechCrunch (Rebecca Bellan)
+> **URL:** https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/
+> **발행:** 2026-06-05
+
+기업들의 AI 토큰(모델 호출) 소비가 폭증하며 비용 관리가 산업의 핵심 과제로 떠올랐다는 심층 리포트입니다. Uber·Priceline 등 대기업에서 예산을 초과한 사례가 속속 보고되며, 모델·에이전트 사용의 확산이 전사적 비용 폭증으로 이어지고 있다는 점을 강조합니다. 결과적으로 FinOps의 AI 버전인 ‘Tokenomics Foundation’와 같은 표준화·모니터링 조직이 생겨나고, 토큰 단위의 측정·청구·효율화 도구 시장이 급성장하고 있습니다.
+
+기업들은 이제 ‘무엇을 할 수 있느냐’가 아니라 ‘얼마나 비용이 드는가’를 묻기 시작했고, 모델 라우팅·토큰 라우팅, 사용 제한, 비용 가시성·계정 정합성 확보가 실무 과제로 떠올랐습니다. 토큰 사용량은 단순 통계가 아니라 트리플-애니티(트릴리언 단위)의 로그를 다루는 데이터 문제로 확장되어 기존 회계·관제 도구로는 대응이 어렵습니다.
+
+**💡 핵심 포인트**
+- 에이전트·생성AI 채택 확산으로 토큰 사용량 급증 → 예산 초과·비용 불투명성 문제 발생
+- 토큰 단위 관측·표준화(예: Tokenomics Foundation)와 전문 툴 수요 증가
+- 모델 라우팅·효율화(cheaper model routing), 사용 한도·감시가 비용 통제의 핵심
+
+**🤔 추가 인사이트**
+한국 기업은 클라우드·AI 지출 관리 체계를 조속히 정비해야 합니다. 특히 개발자별·팀별 토큰 소비 추적, 모델 선택 정책(품질 대비 비용), 에이전트 자동화 워크플로우의 비용 알림·차단 규칙을 도입하면 조기 대응에 유리합니다.
+
+---
+
+### 2. 스마트TV가 ‘레지덴셜 프록시’가 된다 — "The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy"
+
+> **원제:** The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy
+> **출처:** Include Security Research Blog (Buchodi)
+> **URL:** https://blog.includesecurity.com/2026/06/the-smart-tv-in-your-livingroom-is-a-node-in-the-aiscraping-economy/
+> **발행:** 2026-06-05
+
+연구자는 Bright Data 등의 SDK가 스마트TV·모바일 앱 내에 포함되어, 사용자 동의(또는 모호한 동의)하에 기기를 웹 스크래핑의 출구 노드(레지덴셜 프록시)로 활용하는 사례를 기술했습니다. 특히 스마트TV는 24/7 연결·고대역폭·낮은 관찰성 때문에 이상적인 프록시 노드가 되며, SDK는 VPN 우회·네트워크 인터페이스 직접 바인딩 등으로 탐지를 어렵게 만든다고 보고합니다.
+
+연구는 SDK의 무인증 구성(fetch)·WebSocket 기반 피어 터널·디바이스 텔레메트리(배터리·CPU·네트워크 상태) 전송 등 기술적 세부를 공개하고, DNS/서버네임/인증서 지문 차단 등의 방어 기법을 제안합니다. 상업적·합법적 용도의 ‘레지덴셜 프록시’와 불법적·악성 활용(봇넷·트로이 목적으로 변용)이 혼재하는 현실을 지적합니다.
+
+**💡 핵심 포인트**
+- 스마트TV·앱의 SDK가 정상적 동작으로 위장해 레지덴셜 프록시로 동작할 수 있음
+- SDK는 VPN 우회·비가시성 설계로 네트워크·엔드포인트 통제의 사각지대를 노림
+- 방어: 라우터/기업 DNS 차단, TLS SNI 필터링, 앱 바이너리 스캐닝 권장
+
+**🤔 추가 인사이트**
+국내 기업·ISP는 고객 단말을 통한 트래픽 이상징후(비정상적인 외부 접속 패턴·특정 호스트 접속)를 탐지하는 정책을 재검토해야 합니다. 스마트TV·IoT를 대상으로 한 개인정보·네트워크 보안 거버넌스도 필수적입니다.
+
+![Include Security image](https://i0.wp.com/blog.includesecurity.com/wp-content/uploads/2026/05/proxynet.png)
+*출처: Include Security Research Blog*
+
+---
+
+### 3. Tangram — 멀티턴 LLM 서비스의 KV 캐시 효율화 연구 (arXiv)
+
+> **원제:** Tangram: Unlocking Non-Uniform KV Cache for Efficient Multi-turn LLM Serving
+> **출처:** arXiv (Hyungmin Kim et al.)
+> **URL:** https://arxiv.org/abs/2606.06302
+> **발행:** 2026-06-04 (arXiv)
+
+대화형 LLM 서비스에서 키-값(KV) 캐시는 멀티턴 대화의 문맥을 유지하는 핵심 자원입니다. Tangram 논문은 '비균일(Non-uniform) KV 압축'을 실무 수준에서 효율적으로 운영하기 위한 시스템 설계(메모리 파편화·스케줄링·커널 활용 문제 해결)를 제시합니다. 핵심 기법은 (1) 헤드별 정적 예산 할당(Deterministic Budget Allocation), (2) 유사 헤드 그룹의 페이지 테이블 관리(Head Group Page), (3) 사전 부하 균형(AOT Load Balancing)입니다.
+
+실험에서 Tangram은 기존 시스템 대비 최대 2.6배 처리량 개선을 보였고, 모델 정확도는 보존했다고 주장합니다. 논문은 시스템 구현 코드를 공개(깃허브)해 재현 가능성을 높였습니다.
+
+**💡 핵심 포인트**
+- Non-uniform KV 압축은 정보 보존을 높이지만 시스템적 비효율(파편화·스케줄링 비용)을 유발
+- Tangram은 구조적(헤드 그룹·정적 예산) 접근으로 런타임 오버헤드를 제거
+- 멀티턴 챗 서비스에서 GPU 메모리·대역폭 제약을 완화해 비용·지연 측면에서 이득
+
+**🤔 추가 인사이트**
+국내 LLM 서비스 운영팀은 KV 캐시 전략(균일 vs 비균일)과 GPU 메모리 정책을 재검토할 가치가 큽니다. Tangram 같은 시스템 기법을 도입하면 멀티턴 컨텍스트를 길게 유지하면서도 비용 효율을 개선할 수 있습니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. MemPalace — 오픈소스 AI 메모리 시스템 (GitHub)
+
+> **출처:** GitHub Trending — MemPalace (MemPalace/mempalace)
+> **URL:** https://github.com/MemPalace/mempalace
+
+간단 설명: 오픈소스 AI 메모리 스택으로, LLM 기반 에이전트·애플리케이션용 장기 기억(메모리) 설계 및 벤치마크를 제공합니다. 에셋: 메모리 인덱싱·조회·영속화 전략, 벤치마크 스위트.
+
+왜 주목할까?
+- 에이전트·개인화 서비스에서 ‘메모리’는 사용자 경험과 비용 효율을 동시에 좌우
+- 오픈스택으로 제공되면 국내 스타트업·연구팀이 빠르게 실험·적용 가능
+
+출처: GitHub Trending 페이지
+
+---
+
+### 2. Autogluon / Chronos-2 — 시계열 예측 플랫폼 업그레이드 (Hugging Face / Autogluon)
+
+> **출처:** Hugging Face (autogluon/chronos-2)
+> **URL:** https://huggingface.co/autogluon/chronos-2
+
+간단 설명: AutoGluon의 차세대 시계열(타임시리즈) 예측 라이브러리/모델군으로, 실무 중심의 예측 파이프라인과 통합이 강조됩니다. 최근 모델·패키지 업데이트로 산업 적용성이 개선되었다고 공지되었습니다.
+
+왜 주목할까?
+- 시계열은 제조·금융·공급망 등 산업 적용이 넓고, 자동화된 예측 파이프라인은 도입 장벽을 낮춤
+- LLM·생성AI와 결합한 ‘설명 가능 예측’ 등 하이브리드 애플리케이션 가능
+
+출처: Hugging Face 모델 페이지
+
+---
+
+### 3. CopilotKit — 에이전트 UI/프론트엔드 스택 (GitHub)
+
+> **출처:** GitHub Trending — CopilotKit/CopilotKit
+> **URL:** https://github.com/CopilotKit/CopilotKit
+
+간단 설명: 에이전트·생성 UI를 위한 프론트엔드 스택으로, 에이전트 상호작용·워크플로우를 빠르게 구성할 수 있게 돕습니다. 에이전트 기반 제품을 만드는 팀에게 유용한 프론트엔드 템플릿과 패턴을 제공합니다.
+
+왜 주목할까?
+- 에이전트 상용화에서 UX(대화 흐름·툴 연동)가 경쟁력의 핵심
+- 빠른 프로토타이핑·제품화에 유용해 스타트업의 데모·PoC 속도를 높임
+
+출처: GitHub Trending 페이지
+
+---
+
+## 📊 오늘의 한마디
+
+토큰(사용량)·데이터(접근)·시스템(메모리·KV 캐시)의 세 축에서 비용·보안·성능 문제가 동시다발적으로 전개되고 있습니다. 비용 관리는 이제 기술적 문제이자 거버넌스 과제이며, 단기적으로는 토큰 관측·모델 라우팅·엔드포인트 보안이 운영 우선순위가 됩니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*출처: TechCrunch, Include Security, arXiv, GitHub, Hugging Face (각 항목에 원문 링크 포함)*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-06 22:45 KST
+**수집 기간:** 최근 6시간 우선 (관련 최신 기사/논문/프로젝트 중심으로 수집)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. AI 비용 위기 — "The token bill comes due: Inside the industry scramble to manage AI’s runaway costs"
+
+> **원제:** The token bill comes due: Inside the industry scramble to manage AI’s runaway costs
+> **출처:** TechCrunch (Rebecca Bellan)
+> **URL:** https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/
+> **발행:** 2026-06-05
+
+기업들의 AI 토큰(모델 호출) 소비가 폭증하며 비용 관리가 산업의 핵심 과제로 떠올랐다는 심층 리포트입니다. Uber·Priceline 등 대기업에서 예산을 초과한 사례가 속속 보고되며, 모델·에이전트 사용의 확산이 전사적 비용 폭증으로 이어지고 있다는 점을 강조합니다. 결과적으로 FinOps의 AI 버전인 ‘Tokenomics Foundation’와 같은 표준화·모니터링 조직이 생겨나고, 토큰 단위의 측정·청구·효율화 도구 시장이 급성장하고 있습니다.
+
+기업들은 이제 ‘무엇을 할 수 있느냐’가 아니라 ‘얼마나 비용이 드는가’를 묻기 시작했고, 모델 라우팅·토큰 라우팅, 사용 제한, 비용 가시성·계정 정합성 확보가 실무 과제로 떠올랐습니다. 토큰 사용량은 단순 통계가 아니라 트리플-애니티(트릴리언 단위)의 로그를 다루는 데이터 문제로 확장되어 기존 회계·관제 도구로는 대응이 어렵습니다.
+
+**💡 핵심 포인트**
+- 에이전트·생성AI 채택 확산으로 토큰 사용량 급증 → 예산 초과·비용 불투명성 문제 발생
+- 토큰 단위 관측·표준화(예: Tokenomics Foundation)와 전문 툴 수요 증가
+- 모델 라우팅·효율화(cheaper model routing), 사용 한도·감시가 비용 통제의 핵심
+
+**🤔 추가 인사이트**
+한국 기업은 클라우드·AI 지출 관리 체계를 조속히 정비해야 합니다. 특히 개발자별·팀별 토큰 소비 추적, 모델 선택 정책(품질 대비 비용), 에이전트 자동화 워크플로우의 비용 알림·차단 규칙을 도입하면 조기 대응에 유리합니다.
+
+---
+
+### 2. 스마트TV가 ‘레지덴셜 프록시’가 된다 — "The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy"
+
+> **원제:** The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy
+> **출처:** Include Security Research Blog (Buchodi)
+> **URL:** https://blog.includesecurity.com/2026/06/the-smart-tv-in-your-livingroom-is-a-node-in-the-aiscraping-economy/
+> **발행:** 2026-06-05
+
+연구자는 Bright Data 등의 SDK가 스마트TV·모바일 앱 내에 포함되어, 사용자 동의(또는 모호한 동의)하에 기기를 웹 스크래핑의 출구 노드(레지덴셜 프록시)로 활용하는 사례를 기술했습니다. 특히 스마트TV는 24/7 연결·고대역폭·낮은 관찰성 때문에 이상적인 프록시 노드가 되며, SDK는 VPN 우회·네트워크 인터페이스 직접 바인딩 등으로 탐지를 어렵게 만든다고 보고합니다.
+
+연구는 SDK의 무인증 구성(fetch)·WebSocket 기반 피어 터널·디바이스 텔레메트리(배터리·CPU·네트워크 상태) 전송 등 기술적 세부를 공개하고, DNS/서버네임/인증서 지문 차단 등의 방어 기법을 제안합니다. 상업적·합법적 용도의 ‘레지덴셜 프록시’와 불법적·악성 활용(봇넷·트로이 목적으로 변용)이 혼재하는 현실을 지적합니다.
+
+**💡 핵심 포인트**
+- 스마트TV·앱의 SDK가 정상적 동작으로 위장해 레지덴셜 프록시로 동작할 수 있음
+- SDK는 VPN 우회·비가시성 설계로 네트워크·엔드포인트 통제의 사각지대를 노림
+- 방어: 라우터/기업 DNS 차단, TLS SNI 필터링, 앱 바이너리 스캐닝 권장
+
+**🤔 추가 인사이트**
+국내 기업·ISP는 고객 단말을 통한 트래픽 이상징후(비정상적인 외부 접속 패턴·특정 호스트 접속)를 탐지하는 정책을 재검토해야 합니다. 스마트TV·IoT를 대상으로 한 개인정보·네트워크 보안 거버넌스도 필수적입니다.
+
+![Include Security image](https://i0.wp.com/blog.includesecurity.com/wp-content/uploads/2026/05/proxynet.png)
+*출처: Include Security Research Blog*
+
+---
+
+### 3. Tangram — 멀티턴 LLM 서비스의 KV 캐시 효율화 연구 (arXiv)
+
+> **원제:** Tangram: Unlocking Non-Uniform KV Cache for Efficient Multi-turn LLM Serving
+> **출처:** arXiv (Hyungmin Kim et al.)
+> **URL:** https://arxiv.org/abs/2606.06302
+> **발행:** 2026-06-04 (arXiv)
+
+대화형 LLM 서비스에서 키-값(KV) 캐시는 멀티턴 대화의 문맥을 유지하는 핵심 자원입니다. Tangram 논문은 '비균일(Non-uniform) KV 압축'을 실무 수준에서 효율적으로 운영하기 위한 시스템 설계(메모리 파편화·스케줄링·커널 활용 문제 해결)를 제시합니다. 핵심 기법은 (1) 헤드별 정적 예산 할당(Deterministic Budget Allocation), (2) 유사 헤드 그룹의 페이지 테이블 관리(Head Group Page), (3) 사전 부하 균형(AOT Load Balancing)입니다.
+
+실험에서 Tangram은 기존 시스템 대비 최대 2.6배 처리량 개선을 보였고, 모델 정확도는 보존했다고 주장합니다. 논문은 시스템 구현 코드를 공개(깃허브)해 재현 가능성을 높였습니다.
+
+**💡 핵심 포인트**
+- Non-uniform KV 압축은 정보 보존을 높이지만 시스템적 비효율(파편화·스케줄링 비용)을 유발
+- Tangram은 구조적(헤드 그룹·정적 예산) 접근으로 런타임 오버헤드를 제거
+- 멀티턴 챗 서비스에서 GPU 메모리·대역폭 제약을 완화해 비용·지연 측면에서 이득
+
+**🤔 추가 인사이트**
+국내 LLM 서비스 운영팀은 KV 캐시 전략(균일 vs 비균일)과 GPU 메모리 정책을 재검토할 가치가 큽니다. Tangram 같은 시스템 기법을 도입하면 멀티턴 컨텍스트를 길게 유지하면서도 비용 효율을 개선할 수 있습니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. MemPalace — 오픈소스 AI 메모리 시스템 (GitHub)
+
+> **출처:** GitHub Trending — MemPalace (MemPalace/mempalace)
+> **URL:** https://github.com/MemPalace/mempalace
+
+간단 설명: 오픈소스 AI 메모리 스택으로, LLM 기반 에이전트·애플리케이션용 장기 기억(메모리) 설계 및 벤치마크를 제공합니다. 에셋: 메모리 인덱싱·조회·영속화 전략, 벤치마크 스위트.
+
+왜 주목할까?
+- 에이전트·개인화 서비스에서 ‘메모리’는 사용자 경험과 비용 효율을 동시에 좌우
+- 오픈스택으로 제공되면 국내 스타트업·연구팀이 빠르게 실험·적용 가능
+
+출처: GitHub Trending 페이지
+
+---
+
+### 2. Autogluon / Chronos-2 — 시계열 예측 플랫폼 업그레이드 (Hugging Face / Autogluon)
+
+> **출처:** Hugging Face (autogluon/chronos-2)
+> **URL:** https://huggingface.co/autogluon/chronos-2
+
+간단 설명: AutoGluon의 차세대 시계열(타임시리즈) 예측 라이브러리/모델군으로, 실무 중심의 예측 파이프라인과 통합이 강조됩니다. 최근 모델·패키지 업데이트로 산업 적용성이 개선되었다고 공지되었습니다.
+
+왜 주목할까?
+- 시계열은 제조·금융·공급망 등 산업 적용이 넓고, 자동화된 예측 파이프라인은 도입 장벽을 낮춤
+- LLM·생성AI와 결합한 ‘설명 가능 예측’ 등 하이브리드 애플리케이션 가능
+
+출처: Hugging Face 모델 페이지
+
+---
+
+### 3. CopilotKit — 에이전트 UI/프론트엔드 스택 (GitHub)
+
+> **출처:** GitHub Trending — CopilotKit/CopilotKit
+> **URL:** https://github.com/CopilotKit/CopilotKit
+
+간단 설명: 에이전트·생성 UI를 위한 프론트엔드 스택으로, 에이전트 상호작용·워크플로우를 빠르게 구성할 수 있게 돕습니다. 에이전트 기반 제품을 만드는 팀에게 유용한 프론트엔드 템플릿과 패턴을 제공합니다.
+
+왜 주목할까?
+- 에이전트 상용화에서 UX(대화 흐름·툴 연동)가 경쟁력의 핵심
+- 빠른 프로토타이핑·제품화에 유용해 스타트업의 데모·PoC 속도를 높임
+
+출처: GitHub Trending 페이지
+
+---
+
+## 📊 오늘의 한마디
+
+토큰(사용량)·데이터(접근)·시스템(메모리·KV 캐시)의 세 축에서 비용·보안·성능 문제가 동시다발적으로 전개되고 있습니다. 비용 관리는 이제 기술적 문제이자 거버넌스 과제이며, 단기적으로는 토큰 관측·모델 라우팅·엔드포인트 보안이 운영 우선순위가 됩니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*출처: TechCrunch, Include Security, arXiv, GitHub, Hugging Face (각 항목에 원문 링크 포함)*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-06 22:45 KST
+**수집 기간:** 최근 6시간 우선 (관련 최신 기사/논문/프로젝트 중심으로 수집)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. AI 비용 위기 — "The token bill comes due: Inside the industry scramble to manage AI’s runaway costs"
+
+> **원제:** The token bill comes due: Inside the industry scramble to manage AI’s runaway costs
+> **출처:** TechCrunch (Rebecca Bellan)
+> **URL:** https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/
+> **발행:** 2026-06-05
+
+기업들의 AI 토큰(모델 호출) 소비가 폭증하며 비용 관리가 산업의 핵심 과제로 떠올랐다는 심층 리포트입니다. Uber·Priceline 등 대기업에서 예산을 초과한 사례가 속속 보고되며, 모델·에이전트 사용의 확산이 전사적 비용 폭증으로 이어지고 있다는 점을 강조합니다. 결과적으로 FinOps의 AI 버전인 ‘Tokenomics Foundation’와 같은 표준화·모니터링 조직이 생겨나고, 토큰 단위의 측정·청구·효율화 도구 시장이 급성장하고 있습니다.
+
+기업들은 이제 ‘무엇을 할 수 있느냐’가 아니라 ‘얼마나 비용이 드는가’를 묻기 시작했고, 모델 라우팅·토큰 라우팅, 사용 제한, 비용 가시성·계정 정합성 확보가 실무 과제로 떠올랐습니다. 토큰 사용량은 단순 통계가 아니라 트리플-애니티(트릴리언 단위)의 로그를 다루는 데이터 문제로 확장되어 기존 회계·관제 도구로는 대응이 어렵습니다.
+
+**💡 핵심 포인트**
+- 에이전트·생성AI 채택 확산으로 토큰 사용량 급증 → 예산 초과·비용 불투명성 문제 발생
+- 토큰 단위 관측·표준화(예: Tokenomics Foundation)와 전문 툴 수요 증가
+- 모델 라우팅·효율화(cheaper model routing), 사용 한도·감시가 비용 통제의 핵심
+
+**🤔 추가 인사이트**
+한국 기업은 클라우드·AI 지출 관리 체계를 조속히 정비해야 합니다. 특히 개발자별·팀별 토큰 소비 추적, 모델 선택 정책(품질 대비 비용), 에이전트 자동화 워크플로우의 비용 알림·차단 규칙을 도입하면 조기 대응에 유리합니다.
+
+---
+
+### 2. 스마트TV가 ‘레지덴셜 프록시’가 된다 — "The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy"
+
+> **원제:** The Smart TV in Your LivingRoom Is a Node in the AIScraping Economy
+> **출처:** Include Security Research Blog (Buchodi)
+> **URL:** https://blog.includesecurity.com/2026/06/the-smart-tv-in-your-livingroom-is-a-node-in-the-aiscraping-economy/
+> **발행:** 2026-06-05
+
+연구자는 Bright Data 등의 SDK가 스마트TV·모바일 앱 내에 포함되어, 사용자 동의(또는 모호한 동의)하에 기기를 웹 스크래핑의 출구 노드(레지덴셜 프록시)로 활용하는 사례를 기술했습니다. 특히 스마트TV는 24/7 연결·고대역폭·낮은 관찰성 때문에 이상적인 프록시 노드가 되며, SDK는 VPN 우회·네트워크 인터페이스 직접 바인딩 등으로 탐지를 어렵게 만든다고 보고합니다.
+
+연구는 SDK의 무인증 구성(fetch)·WebSocket 기반 피어 터널·디바이스 텔레메트리(배터리·CPU·네트워크 상태) 전송 등 기술적 세부를 공개하고, DNS/서버네임/인증서 지문 차단 등의 방어 기법을 제안합니다. 상업적·합법적 용도의 ‘레지덴셜 프록시’와 불법적·악성 활용(봇넷·트로이 목적으로 변용)이 혼재하는 현실을 지적합니다.
+
+**💡 핵심 포인트**
+- 스마트TV·앱의 SDK가 정상적 동작으로 위장해 레지덴셜 프록시로 동작할 수 있음
+- SDK는 VPN 우회·비가시성 설계로 네트워크·엔드포인트 통제의 사각지대를 노림
+- 방어: 라우터/기업 DNS 차단, TLS SNI 필터링, 앱 바이너리 스캐닝 권장
+
+**🤔 추가 인사이트**
+국내 기업·ISP는 고객 단말을 통한 트래픽 이상징후(비정상적인 외부 접속 패턴·특정 호스트 접속)를 탐지하는 정책을 재검토해야 합니다. 스마트TV·IoT를 대상으로 한 개인정보·네트워크 보안 거버넌스도 필수적입니다.
+
+![Include Security image](https://i0.wp.com/blog.includesecurity.com/wp-content/uploads/2026/05/proxynet.png)
+*출처: Include Security Research Blog*
+
+---
+
+### 3. Tangram — 멀티턴 LLM 서비스의 KV 캐시 효율화 연구 (arXiv)
+
+> **원제:** Tangram: Unlocking Non-Uniform KV Cache for Efficient Multi-turn LLM Serving
+> **출처:** arXiv (Hyungmin Kim et al.)
+> **URL:** https://arxiv.org/abs/2606.06302
+> **발행:** 2026-06-04 (arXiv)
+
+대화형 LLM 서비스에서 키-값(KV) 캐시는 멀티턴 대화의 문맥을 유지하는 핵심 자원입니다. Tangram 논문은 '비균일(Non-uniform) KV 압축'을 실무 수준에서 효율적으로 운영하기 위한 시스템 설계(메모리 파편화·스케줄링·커널 활용 문제 해결)를 제시합니다. 핵심 기법은 (1) 헤드별 정적 예산 할당(Deterministic Budget Allocation), (2) 유사 헤드 그룹의 페이지 테이블 관리(Head Group Page), (3) 사전 부하 균형(AOT Load Balancing)입니다.
+
+실험에서 Tangram은 기존 시스템 대비 최대 2.6배 처리량 개선을 보였고, 모델 정확도는 보존했다고 주장합니다. 논문은 시스템 구현 코드를 공개(깃허브)해 재현 가능성을 높였습니다.
+
+**💡 핵심 포인트**
+- Non-uniform KV 압축은 정보 보존을 높이지만 시스템적 비효율(파편화·스케줄링 비용)을 유발
+- Tangram은 구조적(헤드 그룹·정적 예산) 접근으로 런타임 오버헤드를 제거
+- 멀티턴 챗 서비스에서 GPU 메모리·대역폭 제약을 완화해 비용·지연 측면에서 이득
+
+**🤔 추가 인사이트**
+국내 LLM 서비스 운영팀은 KV 캐시 전략(균일 vs 비균일)과 GPU 메모리 정책을 재검토할 가치가 큽니다. Tangram 같은 시스템 기법을 도입하면 멀티턴 컨텍스트를 길게 유지하면서도 비용 효율을 개선할 수 있습니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. MemPalace — 오픈소스 AI 메모리 시스템 (GitHub)
+
+> **출처:** GitHub Trending — MemPalace (MemPalace/mempalace)
+> **URL:** https://github.com/MemPalace/mempalace
+
+간단 설명: 오픈소스 AI 메모리 스택으로, LLM 기반 에이전트·애플리케이션용 장기 기억(메모리) 설계 및 벤치마크를 제공합니다. 에셋: 메모리 인덱싱·조회·영속화 전략, 벤치마크 스위트.
+
+왜 주목할까?
+- 에이전트·개인화 서비스에서 ‘메모리’는 사용자 경험과 비용 효율을 동시에 좌우
+- 오픈스택으로 제공되면 국내 스타트업·연구팀이 빠르게 실험·적용 가능
+
+출처: GitHub Trending 페이지
+
+---
+
+### 2. Autogluon / Chronos-2 — 시계열 예측 플랫폼 업그레이드 (Hugging Face / Autogluon)
+
+> **출처:** Hugging Face (autogluon/chronos-2)
+> **URL:** https://huggingface.co/autogluon/chronos-2
+
+간단 설명: AutoGluon의 차세대 시계열(타임시리즈) 예측 라이브러리/모델군으로, 실무 중심의 예측 파이프라인과 통합이 강조됩니다. 최근 모델·패키지 업데이트로 산업 적용성이 개선되었다고 공지되었습니다.
+
+왜 주목할까?
+- 시계열은 제조·금융·공급망 등 산업 적용이 넓고, 자동화된 예측 파이프라인은 도입 장벽을 낮춤
+- LLM·생성AI와 결합한 ‘설명 가능 예측’ 등 하이브리드 애플리케이션 가능
+
+출처: Hugging Face 모델 페이지
+
+---
+
+### 3. CopilotKit — 에이전트 UI/프론트엔드 스택 (GitHub)
+
+> **출처:** GitHub Trending — CopilotKit/CopilotKit
+> **URL:** https://github.com/CopilotKit/CopilotKit
+
+간단 설명: 에이전트·생성 UI를 위한 프론트엔드 스택으로, 에이전트 상호작용·워크플로우를 빠르게 구성할 수 있게 돕습니다. 에이전트 기반 제품을 만드는 팀에게 유용한 프론트엔드 템플릿과 패턴을 제공합니다.
+
+왜 주목할까?
+- 에이전트 상용화에서 UX(대화 흐름·툴 연동)가 경쟁력의 핵심
+- 빠른 프로토타이핑·제품화에 유용해 스타트업의 데모·PoC 속도를 높임
+
+출처: GitHub Trending 페이지
+
+---
+
+## 📊 오늘의 한마디
+
+토큰(사용량)·데이터(접근)·시스템(메모리·KV 캐시)의 세 축에서 비용·보안·성능 문제가 동시다발적으로 전개되고 있습니다. 비용 관리는 이제 기술적 문제이자 거버넌스 과제이며, 단기적으로는 토큰 관측·모델 라우팅·엔드포인트 보안이 운영 우선순위가 됩니다.
+
+---
+
+*🤖 이 보고서는 .deepagents/skills/ai-trends-reporter 지침에 따라 자동 생성되었습니다.*
+*출처: TechCrunch, Include Security, arXiv, GitHub, Hugging Face (각 항목에 원문 링크 포함)*
+
+
+═══════════════════════════════════════════════════════════
