@@ -1,0 +1,5 @@
+Generated: 2026-06-16T11:13:39.466849
+Method: PIL placeholder image
+Prompt: A dramatic editorial-style illustration showing two halves: left side — an overcrowded office with empty desks and a billboard reading "AI layoffs", muted cold colors; right side — a futuristic AI lab and a developer at a laptop running local models with neon accents. Include visual motifs: data center racks, neural network wires, a developer silhouette with a laptop, and a balance scale symbolizing society vs. tech wealth. Cinematic lighting, high detail, vector+digital paint, 3:2 aspect ratio.
+Size: (1792, 1024)
+Cost: $0 (local generation)
