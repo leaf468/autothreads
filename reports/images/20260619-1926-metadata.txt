@@ -1,0 +1,5 @@
+Generated: 2026-06-19T10:28:48.444917
+Method: PIL placeholder image
+Prompt: A dramatic, futuristic illustration showing geopolitical tension around AI: a stylized globe split between digital networks, a glowing neural-network core in the center, corporate logos (stylized, abstract) and government seals as silhouettes, high-contrast neon colors, cinematic lighting, digital art, 16:9 composition
+Size: (1792, 1024)
+Cost: $0 (local generation)
