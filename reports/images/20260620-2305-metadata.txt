@@ -1,0 +1,5 @@
+Generated: 2026-06-20T14:08:09.586425
+Method: PIL placeholder image
+Prompt: A dramatic, futuristic collage showing AI policy and research: a stylized government gavel shadowing a glowing AI model, long-context transformer tokens flowing like ribbons, and a scientist tuning hardware kernels on a GPU — vibrant neon blues and oranges, high-detail digital art, cinematic lighting, 3:2 aspect ratio, clean typography space for headline.
+Size: (1792, 1024)
+Cost: $0 (local generation)
