@@ -1,0 +1,5 @@
+Generated: 2026-06-23T14:52:36.173983
+Method: PIL placeholder image
+Prompt: A futuristic control room displaying AI monitoring dashboards: an alarmed status panel showing elevated error rates, visualized OCR bounding boxes and parsed documents, GitHub-style code tiles and open-source badges, researchers and agents collaborating, vibrant neon colors, digital art, cinematic lighting, high detail
+Size: (1792, 1024)
+Cost: $0 (local generation)
