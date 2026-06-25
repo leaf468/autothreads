@@ -1,0 +1,423 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 06월 25일 14:36
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-25 23:34 KST
+**수집 기간:** 최근 6시간(우선 수집: Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Anthropic, Alibaba에 Claude 능력 유출 혐의 제기
+
+> **원제:** Anthropic says Alibaba illicitly extracted Claude AI model capabilities
+> **출처:** Reuters (https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)  
+> **발행:** 2026-06-24
+
+Anthropic가 자사 Claude 모델의 능력을 불법적으로 추출했다는 취지의 주장을 제기하며 대형 클라우드/기업 간 신뢰 문제가 다시 불거졌습니다. 이번 사건은 모델 접근 정책·API 사용 규약을 넘어서, 상업적 파트너십과 클라우드 제공자의 데이터·모델 보안 책임에 대한 논의를 촉발하고 있습니다. 기업들은 모델 가중치·프롬프트와 같은 지적재산 보호 방안을 재검토할 가능성이 큽니다.
+
+이 문제는 규제·계약 관점에서 복잡한 선례를 남길 수 있으며, 특히 중국계 클라우드 사업자와의 협업을 고려하는 서구 기업들에 대해 거버넌스·컴플라이언스 리스크를 상기시킵니다. 한국 기업 또한 글로벌 파트너 선택 시 법적·기술적 안전장치(데이터 접근 로그, IP 보호, 샘플링 제한 등)를 강화해야 합니다.
+
+**💡 핵심 포인트**
+- Anthropic의 주장: 제3자가 Claude의 능력을 불법 추출했다고 보고
+- 파트너·클라우드 신뢰성, 계약상 책임 문제가 재부각
+- 기업은 모델 접근과 IP 보호를 위한 기술·계약적 수단 강화 필요
+
+**🤔 추가 인사이트**
+법적 소송으로 비화할 경우 클라우드 사업자와 모델 개발자 간의 계약 표준이 바뀔 수 있습니다. 한국의 클라우드·AI 서비스 사업자는 글로벌 계약 템플릿과 기술적 감시(감사로그, 제한된 샘플링) 체계를 점검할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)
+*출처: Reuters*
+
+---
+
+### 2. OpenAI, Broadcom과 함께 자체 추론 칩 'Jalapeño' 공개
+
+> **원제:** OpenAI unveils its first custom chip, built by Broadcom
+> **출처:** TechCrunch (https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)  
+> **발행:** 2026-06-24
+
+OpenAI가 추론(인퍼런스) 전용 커스텀 칩 'Jalapeño'를 공개했습니다. Broadcom과 협업해 설계한 이 칩은 실사용 환경에서 전력 대비 성능(Perf-per-watt)을 대폭 개선하는 것을 목표로 하며, 특히 실시간 코딩·대화형 모델 운영에서 운영비용 절감을 기대하고 있습니다. 사전학습 같은 고강도 훈련 작업은 여전히 GPU 생태계 의존이 지속될 가능성이 높습니다.
+
+인프라 레이어에서의 수직 통합(모델·소프트웨어·하드웨어)의 가속은 비용구조와 경쟁구도에 큰 영향을 미칩니다. OpenAI가 자체 하드웨어를 확보하면 데이터센터 설계·운영 최적화와 함께 클라우드 벤더와의 관계 재정립 가능성도 있습니다.
+
+**💡 핵심 포인트**
+- 'Jalapeño'는 인퍼런스 최적화 칩으로 전력 효율 향상 목표
+- 커스텀 칩은 장기적으로 인퍼런스 비용 하락과 제품 확장성에 기여
+- 경쟁사(구글 TPU, AWS Trainium 등)와의 차별화 및 공급망 확보가 관건
+
+**🤔 추가 인사이트**
+한국의 클라우드·AI 인프라 업체는 커스텀 하드웨어 동향을 모니터링하고, 특정 워크로드(실시간 응답형 서비스)에 맞춘 비용-성능 분석을 통해 투자 우선순위를 재설정해야 합니다.
+
+![이미지](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)
+*출처: TechCrunch*
+
+---
+
+### 3. Qualcomm, AI 스타트업 Modular 인수 보도
+
+> **원제:** Qualcomm to Acquire Modular
+> **출처:** Reuters (https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)  
+> **발행:** 2026-06-24
+
+모바일·엣지 칩셋 선두인 Qualcomm이 AI 소프트웨어 스타트업 Modular 인수를 추진한다는 보도가 나왔습니다. 이 거래는 칩셋 제조사들이 소프트웨어·플랫폼 역량을 보강해 엣지 AI·온디바이스 AI 경쟁력을 확보하려는 전략의 연장선에 있습니다. Modular이 가진 소프트웨어·툴체인·모델 관리 역량은 칩-소프트웨어 통합을 통해 제품 가치 제고에 활용될 가능성이 큽니다.
+
+엣지·모바일 시장에서의 AI 기능 고도화는 데이터 프라이버시와 저지연 서비스 확대에 기여하며, 국내 스마트폰·IoT 제조사에도 기술 파트너십 기회가 생깁니다.
+
+**💡 핵심 포인트**
+- 칩 제조사의 AI 소프트웨어 역량 확보 움직임 가속
+- 엣지·온디바이스 AI 기능 강화로 새로운 제품·서비스 창출 기대
+- 인수 시 통합 전략(탑재 툴체인·SDK 제공)이 성공의 관건
+
+**🤔 추가 인사이트**
+한국 하드웨어·소프트웨어 기업은 엣지 AI 통합 전략을 재검토하고, 필요 시 파트너십 또는 기술 라이선스 전략을 통해 경쟁력을 확보할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)
+*출처: Reuters*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. OpenMontage — 에이전트 기반 비디오 제작 파이프라인 (GitHub Trending)
+
+> **출처:** GitHub — calesthio/OpenMontage (https://github.com/calesthio/OpenMontage)
+
+OpenMontage는 에이전트·툴체인으로 구성된 오픈 소스 비디오 제작 시스템으로, 여러 파이프라인(스크립트→씬→렌더→편집)을 자동화하는 예제를 담고 있습니다. AI로 콘텐츠 파이프라인을 자동화하면 제작 비용과 시간을 줄이는 동시에 작은 팀도 고품질 비디오를 만들 수 있게 합니다.
+
+왜 주목할까?
+- 에이전트 중심의 제작 파이프라인은 미디어 제작 산업의 민주화를 촉진
+- 한국의 콘텐츠 스타트업·제작사는 프로덕션 자동화를 통해 경쟁력 확보 가능
+
+---
+
+### 2. Kog Laneformer 2B — 지연(latency)-우선 모델 (Hugging Face)
+
+> **출처:** Hugging Face Blog — Kog Laneformer 2B (https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model)  
+> **발행:** 약 22시간 전
+
+Kog의 Laneformer 2B는 지연시간을 최우선으로 설계된 경량 모델로, 실시간 응답이 중요한 서비스(예: 에지·임베디드, 대화형 UI)에 적합합니다. 모델 아키텍처와 연산 최적화를 통해 낮은 레이턴시를 실현한 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 실제 서비스 적용 시 사용자 경험 개선에 직접 연결되는 성능 속성
+- 한국의 실시간 서비스(모바일·IoT) 분야에 바로 적용 가능한 모델 옵션 제공
+
+---
+
+### 3. google-labs-code/DEISGN.md — 에이전트용 디자인 명세(트렌딩 GitHub)
+
+> **출처:** GitHub Trending — google-labs-code/design.md (https://github.com/google-labs-code/design.md)
+
+Google Labs의 design.md는 에이전트에게 시각·UI·디자인 시스템을 코딩 가능한 형식으로 전달하기 위한 명세를 제시합니다. 이는 에이전트가 디자인 규칙을 지속적으로 이해하고 재사용할 수 있게 하는 시도입니다.
+
+왜 주목할까?
+- 디자인·엔지니어링 협업에서 에이전트의 역할을 표준화할 잠재력
+- 한국의 제품팀이 에이전트를 디자인 시스템에 통합할 때 참고 가능한 실무 템플릿 제공
+
+---
+
+## 📊 오늘의 한마디
+
+인프라(칩·인수 합병)와 신뢰(모델·클라우드 관계)가 AI 생태계의 두 축으로 부상하고 있으며, 동시에 오픈 소스 툴·에이전트가 생산성 혁신을 주도하고 있습니다.
+
+---
+
+*이 리포트는 Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending 등 공개 출처를 바탕으로 작성되었으며 .deepagents/skills/ai-trends-reporter 지침을 따랐습니다.*
+
+### 원문·참고 링크
+- Reuters — Anthropic claim: https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/
+- TechCrunch — OpenAI custom chip (Jalapeño): https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/
+- Reuters — Qualcomm to Acquire Modular: https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/
+- GitHub — OpenMontage: https://github.com/calesthio/OpenMontage
+- Hugging Face — Kog Laneformer 2B: https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model
+- GitHub Trending — google-labs-code/design.md: https://github.com/google-labs-code/design.md
+
+*Generated by DeepAgents skill: ai-trends-reporter*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-25 23:34 KST
+**수집 기간:** 최근 6시간(우선 수집: Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Anthropic, Alibaba에 Claude 능력 유출 혐의 제기
+
+> **원제:** Anthropic says Alibaba illicitly extracted Claude AI model capabilities
+> **출처:** Reuters (https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)  
+> **발행:** 2026-06-24
+
+Anthropic가 자사 Claude 모델의 능력을 불법적으로 추출했다는 취지의 주장을 제기하며 대형 클라우드/기업 간 신뢰 문제가 다시 불거졌습니다. 이번 사건은 모델 접근 정책·API 사용 규약을 넘어서, 상업적 파트너십과 클라우드 제공자의 데이터·모델 보안 책임에 대한 논의를 촉발하고 있습니다. 기업들은 모델 가중치·프롬프트와 같은 지적재산 보호 방안을 재검토할 가능성이 큽니다.
+
+이 문제는 규제·계약 관점에서 복잡한 선례를 남길 수 있으며, 특히 중국계 클라우드 사업자와의 협업을 고려하는 서구 기업들에 대해 거버넌스·컴플라이언스 리스크를 상기시킵니다. 한국 기업 또한 글로벌 파트너 선택 시 법적·기술적 안전장치(데이터 접근 로그, IP 보호, 샘플링 제한 등)를 강화해야 합니다.
+
+**💡 핵심 포인트**
+- Anthropic의 주장: 제3자가 Claude의 능력을 불법 추출했다고 보고
+- 파트너·클라우드 신뢰성, 계약상 책임 문제가 재부각
+- 기업은 모델 접근과 IP 보호를 위한 기술·계약적 수단 강화 필요
+
+**🤔 추가 인사이트**
+법적 소송으로 비화할 경우 클라우드 사업자와 모델 개발자 간의 계약 표준이 바뀔 수 있습니다. 한국의 클라우드·AI 서비스 사업자는 글로벌 계약 템플릿과 기술적 감시(감사로그, 제한된 샘플링) 체계를 점검할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)
+*출처: Reuters*
+
+---
+
+### 2. OpenAI, Broadcom과 함께 자체 추론 칩 'Jalapeño' 공개
+
+> **원제:** OpenAI unveils its first custom chip, built by Broadcom
+> **출처:** TechCrunch (https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)  
+> **발행:** 2026-06-24
+
+OpenAI가 추론(인퍼런스) 전용 커스텀 칩 'Jalapeño'를 공개했습니다. Broadcom과 협업해 설계한 이 칩은 실사용 환경에서 전력 대비 성능(Perf-per-watt)을 대폭 개선하는 것을 목표로 하며, 특히 실시간 코딩·대화형 모델 운영에서 운영비용 절감을 기대하고 있습니다. 사전학습 같은 고강도 훈련 작업은 여전히 GPU 생태계 의존이 지속될 가능성이 높습니다.
+
+인프라 레이어에서의 수직 통합(모델·소프트웨어·하드웨어)의 가속은 비용구조와 경쟁구도에 큰 영향을 미칩니다. OpenAI가 자체 하드웨어를 확보하면 데이터센터 설계·운영 최적화와 함께 클라우드 벤더와의 관계 재정립 가능성도 있습니다.
+
+**💡 핵심 포인트**
+- 'Jalapeño'는 인퍼런스 최적화 칩으로 전력 효율 향상 목표
+- 커스텀 칩은 장기적으로 인퍼런스 비용 하락과 제품 확장성에 기여
+- 경쟁사(구글 TPU, AWS Trainium 등)와의 차별화 및 공급망 확보가 관건
+
+**🤔 추가 인사이트**
+한국의 클라우드·AI 인프라 업체는 커스텀 하드웨어 동향을 모니터링하고, 특정 워크로드(실시간 응답형 서비스)에 맞춘 비용-성능 분석을 통해 투자 우선순위를 재설정해야 합니다.
+
+![이미지](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)
+*출처: TechCrunch*
+
+---
+
+### 3. Qualcomm, AI 스타트업 Modular 인수 보도
+
+> **원제:** Qualcomm to Acquire Modular
+> **출처:** Reuters (https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)  
+> **발행:** 2026-06-24
+
+모바일·엣지 칩셋 선두인 Qualcomm이 AI 소프트웨어 스타트업 Modular 인수를 추진한다는 보도가 나왔습니다. 이 거래는 칩셋 제조사들이 소프트웨어·플랫폼 역량을 보강해 엣지 AI·온디바이스 AI 경쟁력을 확보하려는 전략의 연장선에 있습니다. Modular이 가진 소프트웨어·툴체인·모델 관리 역량은 칩-소프트웨어 통합을 통해 제품 가치 제고에 활용될 가능성이 큽니다.
+
+엣지·모바일 시장에서의 AI 기능 고도화는 데이터 프라이버시와 저지연 서비스 확대에 기여하며, 국내 스마트폰·IoT 제조사에도 기술 파트너십 기회가 생깁니다.
+
+**💡 핵심 포인트**
+- 칩 제조사의 AI 소프트웨어 역량 확보 움직임 가속
+- 엣지·온디바이스 AI 기능 강화로 새로운 제품·서비스 창출 기대
+- 인수 시 통합 전략(탑재 툴체인·SDK 제공)이 성공의 관건
+
+**🤔 추가 인사이트**
+한국 하드웨어·소프트웨어 기업은 엣지 AI 통합 전략을 재검토하고, 필요 시 파트너십 또는 기술 라이선스 전략을 통해 경쟁력을 확보할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)
+*출처: Reuters*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. OpenMontage — 에이전트 기반 비디오 제작 파이프라인 (GitHub Trending)
+
+> **출처:** GitHub — calesthio/OpenMontage (https://github.com/calesthio/OpenMontage)
+
+OpenMontage는 에이전트·툴체인으로 구성된 오픈 소스 비디오 제작 시스템으로, 여러 파이프라인(스크립트→씬→렌더→편집)을 자동화하는 예제를 담고 있습니다. AI로 콘텐츠 파이프라인을 자동화하면 제작 비용과 시간을 줄이는 동시에 작은 팀도 고품질 비디오를 만들 수 있게 합니다.
+
+왜 주목할까?
+- 에이전트 중심의 제작 파이프라인은 미디어 제작 산업의 민주화를 촉진
+- 한국의 콘텐츠 스타트업·제작사는 프로덕션 자동화를 통해 경쟁력 확보 가능
+
+---
+
+### 2. Kog Laneformer 2B — 지연(latency)-우선 모델 (Hugging Face)
+
+> **출처:** Hugging Face Blog — Kog Laneformer 2B (https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model)  
+> **발행:** 약 22시간 전
+
+Kog의 Laneformer 2B는 지연시간을 최우선으로 설계된 경량 모델로, 실시간 응답이 중요한 서비스(예: 에지·임베디드, 대화형 UI)에 적합합니다. 모델 아키텍처와 연산 최적화를 통해 낮은 레이턴시를 실현한 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 실제 서비스 적용 시 사용자 경험 개선에 직접 연결되는 성능 속성
+- 한국의 실시간 서비스(모바일·IoT) 분야에 바로 적용 가능한 모델 옵션 제공
+
+---
+
+### 3. google-labs-code/DEISGN.md — 에이전트용 디자인 명세(트렌딩 GitHub)
+
+> **출처:** GitHub Trending — google-labs-code/design.md (https://github.com/google-labs-code/design.md)
+
+Google Labs의 design.md는 에이전트에게 시각·UI·디자인 시스템을 코딩 가능한 형식으로 전달하기 위한 명세를 제시합니다. 이는 에이전트가 디자인 규칙을 지속적으로 이해하고 재사용할 수 있게 하는 시도입니다.
+
+왜 주목할까?
+- 디자인·엔지니어링 협업에서 에이전트의 역할을 표준화할 잠재력
+- 한국의 제품팀이 에이전트를 디자인 시스템에 통합할 때 참고 가능한 실무 템플릿 제공
+
+---
+
+## 📊 오늘의 한마디
+
+인프라(칩·인수 합병)와 신뢰(모델·클라우드 관계)가 AI 생태계의 두 축으로 부상하고 있으며, 동시에 오픈 소스 툴·에이전트가 생산성 혁신을 주도하고 있습니다.
+
+---
+
+*이 리포트는 Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending 등 공개 출처를 바탕으로 작성되었으며 .deepagents/skills/ai-trends-reporter 지침을 따랐습니다.*
+
+### 원문·참고 링크
+- Reuters — Anthropic claim: https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/
+- TechCrunch — OpenAI custom chip (Jalapeño): https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/
+- Reuters — Qualcomm to Acquire Modular: https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/
+- GitHub — OpenMontage: https://github.com/calesthio/OpenMontage
+- Hugging Face — Kog Laneformer 2B: https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model
+- GitHub Trending — google-labs-code/design.md: https://github.com/google-labs-code/design.md
+
+*Generated by DeepAgents skill: ai-trends-reporter*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-06-25 23:34 KST
+**수집 기간:** 최근 6시간(우선 수집: Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending)
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Anthropic, Alibaba에 Claude 능력 유출 혐의 제기
+
+> **원제:** Anthropic says Alibaba illicitly extracted Claude AI model capabilities
+> **출처:** Reuters (https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)  
+> **발행:** 2026-06-24
+
+Anthropic가 자사 Claude 모델의 능력을 불법적으로 추출했다는 취지의 주장을 제기하며 대형 클라우드/기업 간 신뢰 문제가 다시 불거졌습니다. 이번 사건은 모델 접근 정책·API 사용 규약을 넘어서, 상업적 파트너십과 클라우드 제공자의 데이터·모델 보안 책임에 대한 논의를 촉발하고 있습니다. 기업들은 모델 가중치·프롬프트와 같은 지적재산 보호 방안을 재검토할 가능성이 큽니다.
+
+이 문제는 규제·계약 관점에서 복잡한 선례를 남길 수 있으며, 특히 중국계 클라우드 사업자와의 협업을 고려하는 서구 기업들에 대해 거버넌스·컴플라이언스 리스크를 상기시킵니다. 한국 기업 또한 글로벌 파트너 선택 시 법적·기술적 안전장치(데이터 접근 로그, IP 보호, 샘플링 제한 등)를 강화해야 합니다.
+
+**💡 핵심 포인트**
+- Anthropic의 주장: 제3자가 Claude의 능력을 불법 추출했다고 보고
+- 파트너·클라우드 신뢰성, 계약상 책임 문제가 재부각
+- 기업은 모델 접근과 IP 보호를 위한 기술·계약적 수단 강화 필요
+
+**🤔 추가 인사이트**
+법적 소송으로 비화할 경우 클라우드 사업자와 모델 개발자 간의 계약 표준이 바뀔 수 있습니다. 한국의 클라우드·AI 서비스 사업자는 글로벌 계약 템플릿과 기술적 감시(감사로그, 제한된 샘플링) 체계를 점검할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/)
+*출처: Reuters*
+
+---
+
+### 2. OpenAI, Broadcom과 함께 자체 추론 칩 'Jalapeño' 공개
+
+> **원제:** OpenAI unveils its first custom chip, built by Broadcom
+> **출처:** TechCrunch (https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)  
+> **발행:** 2026-06-24
+
+OpenAI가 추론(인퍼런스) 전용 커스텀 칩 'Jalapeño'를 공개했습니다. Broadcom과 협업해 설계한 이 칩은 실사용 환경에서 전력 대비 성능(Perf-per-watt)을 대폭 개선하는 것을 목표로 하며, 특히 실시간 코딩·대화형 모델 운영에서 운영비용 절감을 기대하고 있습니다. 사전학습 같은 고강도 훈련 작업은 여전히 GPU 생태계 의존이 지속될 가능성이 높습니다.
+
+인프라 레이어에서의 수직 통합(모델·소프트웨어·하드웨어)의 가속은 비용구조와 경쟁구도에 큰 영향을 미칩니다. OpenAI가 자체 하드웨어를 확보하면 데이터센터 설계·운영 최적화와 함께 클라우드 벤더와의 관계 재정립 가능성도 있습니다.
+
+**💡 핵심 포인트**
+- 'Jalapeño'는 인퍼런스 최적화 칩으로 전력 효율 향상 목표
+- 커스텀 칩은 장기적으로 인퍼런스 비용 하락과 제품 확장성에 기여
+- 경쟁사(구글 TPU, AWS Trainium 등)와의 차별화 및 공급망 확보가 관건
+
+**🤔 추가 인사이트**
+한국의 클라우드·AI 인프라 업체는 커스텀 하드웨어 동향을 모니터링하고, 특정 워크로드(실시간 응답형 서비스)에 맞춘 비용-성능 분석을 통해 투자 우선순위를 재설정해야 합니다.
+
+![이미지](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/)
+*출처: TechCrunch*
+
+---
+
+### 3. Qualcomm, AI 스타트업 Modular 인수 보도
+
+> **원제:** Qualcomm to Acquire Modular
+> **출처:** Reuters (https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)  
+> **발행:** 2026-06-24
+
+모바일·엣지 칩셋 선두인 Qualcomm이 AI 소프트웨어 스타트업 Modular 인수를 추진한다는 보도가 나왔습니다. 이 거래는 칩셋 제조사들이 소프트웨어·플랫폼 역량을 보강해 엣지 AI·온디바이스 AI 경쟁력을 확보하려는 전략의 연장선에 있습니다. Modular이 가진 소프트웨어·툴체인·모델 관리 역량은 칩-소프트웨어 통합을 통해 제품 가치 제고에 활용될 가능성이 큽니다.
+
+엣지·모바일 시장에서의 AI 기능 고도화는 데이터 프라이버시와 저지연 서비스 확대에 기여하며, 국내 스마트폰·IoT 제조사에도 기술 파트너십 기회가 생깁니다.
+
+**💡 핵심 포인트**
+- 칩 제조사의 AI 소프트웨어 역량 확보 움직임 가속
+- 엣지·온디바이스 AI 기능 강화로 새로운 제품·서비스 창출 기대
+- 인수 시 통합 전략(탑재 툴체인·SDK 제공)이 성공의 관건
+
+**🤔 추가 인사이트**
+한국 하드웨어·소프트웨어 기업은 엣지 AI 통합 전략을 재검토하고, 필요 시 파트너십 또는 기술 라이선스 전략을 통해 경쟁력을 확보할 필요가 있습니다.
+
+![이미지](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)
+*출처: Reuters*
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. OpenMontage — 에이전트 기반 비디오 제작 파이프라인 (GitHub Trending)
+
+> **출처:** GitHub — calesthio/OpenMontage (https://github.com/calesthio/OpenMontage)
+
+OpenMontage는 에이전트·툴체인으로 구성된 오픈 소스 비디오 제작 시스템으로, 여러 파이프라인(스크립트→씬→렌더→편집)을 자동화하는 예제를 담고 있습니다. AI로 콘텐츠 파이프라인을 자동화하면 제작 비용과 시간을 줄이는 동시에 작은 팀도 고품질 비디오를 만들 수 있게 합니다.
+
+왜 주목할까?
+- 에이전트 중심의 제작 파이프라인은 미디어 제작 산업의 민주화를 촉진
+- 한국의 콘텐츠 스타트업·제작사는 프로덕션 자동화를 통해 경쟁력 확보 가능
+
+---
+
+### 2. Kog Laneformer 2B — 지연(latency)-우선 모델 (Hugging Face)
+
+> **출처:** Hugging Face Blog — Kog Laneformer 2B (https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model)  
+> **발행:** 약 22시간 전
+
+Kog의 Laneformer 2B는 지연시간을 최우선으로 설계된 경량 모델로, 실시간 응답이 중요한 서비스(예: 에지·임베디드, 대화형 UI)에 적합합니다. 모델 아키텍처와 연산 최적화를 통해 낮은 레이턴시를 실현한 사례로 주목받고 있습니다.
+
+왜 주목할까?
+- 실제 서비스 적용 시 사용자 경험 개선에 직접 연결되는 성능 속성
+- 한국의 실시간 서비스(모바일·IoT) 분야에 바로 적용 가능한 모델 옵션 제공
+
+---
+
+### 3. google-labs-code/DEISGN.md — 에이전트용 디자인 명세(트렌딩 GitHub)
+
+> **출처:** GitHub Trending — google-labs-code/design.md (https://github.com/google-labs-code/design.md)
+
+Google Labs의 design.md는 에이전트에게 시각·UI·디자인 시스템을 코딩 가능한 형식으로 전달하기 위한 명세를 제시합니다. 이는 에이전트가 디자인 규칙을 지속적으로 이해하고 재사용할 수 있게 하는 시도입니다.
+
+왜 주목할까?
+- 디자인·엔지니어링 협업에서 에이전트의 역할을 표준화할 잠재력
+- 한국의 제품팀이 에이전트를 디자인 시스템에 통합할 때 참고 가능한 실무 템플릿 제공
+
+---
+
+## 📊 오늘의 한마디
+
+인프라(칩·인수 합병)와 신뢰(모델·클라우드 관계)가 AI 생태계의 두 축으로 부상하고 있으며, 동시에 오픈 소스 툴·에이전트가 생산성 혁신을 주도하고 있습니다.
+
+---
+
+*이 리포트는 Hacker News, TechCrunch, Reuters, Hugging Face, GitHub Trending 등 공개 출처를 바탕으로 작성되었으며 .deepagents/skills/ai-trends-reporter 지침을 따랐습니다.*
+
+### 원문·참고 링크
+- Reuters — Anthropic claim: https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/
+- TechCrunch — OpenAI custom chip (Jalapeño): https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/
+- Reuters — Qualcomm to Acquire Modular: https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/
+- GitHub — OpenMontage: https://github.com/calesthio/OpenMontage
+- Hugging Face — Kog Laneformer 2B: https://huggingface.co/blog/kogai/kog-laneformer-2b-the-latency-first-model
+- GitHub Trending — google-labs-code/design.md: https://github.com/google-labs-code/design.md
+
+*Generated by DeepAgents skill: ai-trends-reporter*
+
+
+═══════════════════════════════════════════════════════════
