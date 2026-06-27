@@ -1,0 +1,5 @@
+Generated: 2026-06-27T13:46:46.578325
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic newsroom collage visualizing AI trends: interconnected large language models, research papers, and open-source project logos floating around a glowing Korean headline text. Neon gradients, cinematic lighting, data streams and code fragments, high-detail digital art, wide aspect ratio.
+Size: (1792, 1024)
+Cost: $0 (local generation)
