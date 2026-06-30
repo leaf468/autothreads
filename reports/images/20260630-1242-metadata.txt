@@ -1,0 +1,5 @@
+Generated: 2026-06-30T03:44:28.332217
+Method: PIL placeholder image
+Prompt: A futuristic, dynamic Korean tech landscape montage: towering green data centers and neon-lit memory chip fabs, assembly lines with humanoid robots, and a holographic open-source model (code streams and agent icons). Vibrant colors, cinematic wide-angle, digital-art, high detail.
+Size: (1792, 1024)
+Cost: $0 (local generation)
