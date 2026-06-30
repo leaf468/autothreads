@@ -1,0 +1,5 @@
+Generated: 2026-06-30T09:39:40.422055
+Method: PIL placeholder image
+Prompt: A dynamic digital thumbnail showing a developer workstation with a glowing GPU, terminal windows running local LLMs (labels: Qwen 3.6 27B, LongCat-2.0), neural-network visualizations and news headline overlays. Futuristic, vibrant colors, cinematic lighting, isometric perspective, high-detail digital art.
+Size: (1792, 1024)
+Cost: $0 (local generation)
