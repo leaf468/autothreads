@@ -1,0 +1,5 @@
+Generated: 2026-07-06T10:25:47.326289
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic control room showing AI agents as glowing modular blocks connected by neon threads; a central CEO silhouette (back view) observing cost graphs and chip schematics on holographic screens; dynamic color palette with electric blues and warm oranges; digital art, cinematic lighting, high detail, 16:9
+Size: (1792, 1024)
+Cost: $0 (local generation)
