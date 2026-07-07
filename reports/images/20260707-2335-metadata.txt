@@ -1,0 +1,5 @@
+Generated: 2026-07-07T14:36:57.615312
+Method: PIL placeholder image
+Prompt: A cinematic, futuristic AI control room overlooking a Korean city skyline at night; neon blue and magenta lighting, holographic neural network graphs and glass screens, diverse engineers collaborating, ultra-detailed digital art, high contrast, 3:2 composition, modern tech editorial style
+Size: (1792, 1024)
+Cost: $0 (local generation)
