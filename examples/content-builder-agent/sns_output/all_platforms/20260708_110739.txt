@@ -1,0 +1,402 @@
+═══════════════════════════════════════════════════════════
+SNS 콘텐츠 모음 (전문 기술 정리 스타일)
+생성일시: 2026년 07월 08일 11:07
+═══════════════════════════════════════════════════════════
+
+============================================================
+Instagram
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-07-08 20:04 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Kokoro — 로컬 CPU에서 고품질 TTS 실현
+
+> **원제:** Local, CPU-Friendly, High-Quality TTS (Text-to-Speech) with Kokoro
+> **출처:** Ariya Hidayat (ariya.io) — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/  · 접근일: 2026-07-08
+> **발행:** 2026-03-31
+
+Kokoro(모델 페이지: https://huggingface.co/hexgrad/Kokoro-82M)는 단지 82M 파라미터에도 불구하고 다국어 지원과 비교적 자연스러운 발화 품질을 제공하면서, 특히 CPU 환경에서도 실용적 성능을 보이는 TTS 솔루션으로 주목받고 있습니다. 저널/블로그 실험에서는 전통적 GPU 의존 방식을 깨고 CPU만으로도 실시간에 가까운 합성이 가능함을 보였고, Docker 컨테이너(ghcr.io/remsky/kokoro-fastapi-cpu)로 빠르게 배포해 로컬 서버에서 OpenAI 호환 API로 동작시키는 활용법을 제시했습니다.
+
+이 접근은 개인정보·지연(latency)·운영비 효율 측면에서 의미가 큽니다. 음성 데이터가 클라우드에 올라가지 않도록 온프레미스 또는 엣지 환경에서 TTS를 운영하면 규제 민감 산업(콜센터, 의료, 금융 등)에 적합하며, 비용 대비 음성 합성의 총소유비용(TCO)을 낮출 수 있습니다. 다만 상용 서비스 수준의 음성 품질·발음 다양성·언어별 자연성은 추가 튜닝·음성 데이터 확보로 보완해야 합니다.
+
+**💡 핵심 포인트**
+- Kokoro는 소형(82M) 모델로 CPU 환경에서도 높은 실용성을 보임
+- 로컬 TTS로 개인정보 보호·지연·비용 문제를 완화 가능
+- 상용 서비스 적용 전 음색 다양성·한국어 품질 검증 필요
+
+**🤔 추가 인사이트**
+한국 시장에서는 콜센터 음성, 내비게이션/단말 음성 안내, 오프라인 키오스크 등에서 Kokoro 계열 로컬 TTS를 PoC해 볼 만합니다. 특히 개인정보 규제가 엄격한 분야는 온프레미스 TTS가 도입 장벽을 낮춰줄 수 있으며, 기업은 음성 합성 로그·모델 업데이트 정책을 규정해 책임성(거버넌스)을 확보해야 합니다.
+
+![Kokoro web UI screenshot](https://ariya.io/images/2026/03/kokoro.png)
+*출처: Ariya Hidayat — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/*
+
+---
+
+### 2. TechCrunch: 2026년 ‘AI’라는 이유로 이름 올린 대규모 정리해고 동향 정리
+
+> **원제:** Every major tech layoff in 2026 that has name-checked AI
+> **출처:** TechCrunch (Rebecca Bellan, Connie Loizos) — https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/  · 접근일: 2026-07-08
+> **발행:** 2026-07-06
+
+TechCrunch는 2026년 상반기부터 기업들이 조직 구조조정 과정에서 ‘AI’ 관련 사유를 언급하며 진행한 주요 해고 사례들을 정리했습니다. 보도는 단순한 감원 목록을 넘어, ‘AI 전환’이라는 명목으로 인력 재배치·역할 축소를 진행하는 기업들의 패턴(예: R&D 재구성, 에이전트·자동화 도입에 따른 직무 재정의)을 분석합니다.
+
+이런 흐름은 노동시장·채용·교육 측면에서 복합적 영향을 줍니다. 단기적으로는 특정 역할(반복적 데이터 라벨링, 단순 QA 등)의 수요 감소가 예상되지만, 모델 운영·데이터 거버넌스·디버깅·안전성 검증 등 새로운 역할 수요는 증가합니다. 정책 측면에서는 재교육·전환 지원, AI 도입의 정당성(투명한 근거) 확보가 논의 과제로 떠오르고 있습니다.
+
+**💡 핵심 포인트**
+- ‘AI’ 사유의 구조조정은 단순 비용 절감이 아닌 역할 재정의의 신호
+- 기업은 기술 도입과 인력 전환을 함께 설계해야 사회적 반발을 줄일 수 있음
+- 한국 기업·정책 당국은 재교육·전환 지원책과 투명성 규범을 마련할 필요
+
+**🤔 추가 인사이트**
+한국 스타트업·대기업 모두 기술 도입 의사결정에서 노동 영향 평가(impact assessment)를 선제적으로 수행해야 합니다. 내부적으로는 직무 재설계 로드맵—직무전환 교육—외부 커뮤니케이션 체계를 마련해 충격을 완화하는 것이 실무적 관건입니다.
+
+---
+
+### 3. IEEE Spectrum: LLM 실무 교육 프로그램 론칭 — 기술·보안·배포 실무 집중
+
+> **원제:** IEEE Rolls Out Large Language Models Virtual Training Course
+> **출처:** IEEE Spectrum (Angelique Parashis) — https://spectrum.ieee.org/large-language-models-ieee-course  · 접근일: 2026-07-08
+> **발행:** 2026-06-19
+
+IEEE가 ‘Large Language Models Demystified’라는 5개 코스 구성의 온라인 교육 프로그램을 통해 LLM 설계·최적화·보안·배포 실무를 가르치기 시작했습니다. 커리큘럼은 트랜스포머 아키텍처의 이론적 기반에서부터 PyTorch 기반 모델 트레이닝, 파라미터 효율적 튜닝(LoRA 등), RAG·RLHF·배포 아키텍처·검증성(auditability)까지 폭넓게 다룹니다.
+
+기업 현장에서는 ‘모델 이해’가 단순한 도구 사용을 넘어 설계·배포·감시 역량으로 연결되므로, 전문 인력 양성은 경쟁력의 핵심이 됩니다. IEEE 프로그램은 특히 엔지니어·아키텍트 대상의 실습 중심 교육이라는 점에서 기업 내부 교육·재교육 프로그램과의 연계성이 높습니다.
+
+**💡 핵심 포인트**
+- LLM은 엔지니어링 역량(설계·최적화·보안)이 경쟁력으로 전환되는 기술
+- 실무 교육(검증·배포·운영)은 조직의 책임성(거버넌스) 확보에 기여
+- 기업은 외부 교육과 내재화(온더잡 트레이닝)를 병행해 인력 역량을 빠르게 채워야 함
+
+**🤔 추가 인사이트**
+한국 기업과 학계는 IEEE 같은 국제 표준·교육 리소스를 활용해 내부 커리큘럼을 보완하면 시간·비용 효율적으로 전문 인력을 확보할 수 있습니다. 또한 교육 수료자에 대한 내부 포지셔닝(책임 분담·운영 권한 부여)이 실무 전환을 가속화합니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. bottlecapai/ThinkingCap — Qwen3.6 기반 에이전트용 모델 (Hugging Face Trending)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B  · 접근일: 2026-07-08
+
+ThinkingCap은 Qwen3.6(27B) 기반으로 에이전트적 활용에 최적화된 설정과 템플릿을 제공하는 모델 배포입니다. Hugging Face Trending에 올라 최근 업데이트(약 1시간 전)로 주목받고 있으며, 에이전트형 워크플로우에서 도구 호출·대화 관리 기능을 강화한 실험적 패키지로 보입니다.
+
+왜 주목할까?
+- 에이전트-친화적 튜닝은 실무 자동화·툴 연동 사례에 바로 응용 가능
+- 한국어 지원·현지화 토큰화 작업을 거치면 국내 서비스 적용 가능성이 큼
+
+*링크:* https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B
+
+---
+
+### 2. meituan-longcat/LongCat-2.0 — 대규모 텍스트 모델(다운로드·업데이트 활발)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/meituan-longcat/LongCat-2.0  · 접근일: 2026-07-08
+
+LongCat-2.0은 대형 컨텍스트(1.8T라고 표기된 특이 수치)를 지원하는 대형 모델로 최근 업데이트가 활발하며, 실무 적용을 위한 성능·효율성 개선이 진행 중입니다. 대화형·문서처리 시스템에서 긴 맥락을 다루는 응용에 주목됩니다.
+
+왜 주목할까?
+- 장문 컨텍스트 지원은 법률·연구·기록관리 등 분야에서 경쟁우위를 줄 수 있음
+- 대규모 모델의 대규모 다운로드·활용은 인프라 준비(스토리지·전송)를 요구
+
+*링크:* https://huggingface.co/meituan-longcat/LongCat-2.0
+
+---
+
+### 3. dekart-xyz/geosql — Claude/Codex용 지리공간 분석 에이전트 (GitHub)
+
+> **출처:** GitHub (dekart-xyz/geosql) — https://github.com/dekart-xyz/geosql  · 접근일: 2026-07-08
+
+GeoSQL은 Claude/Codex 계열 에이전트를 지리공간(지도) 분석 워크플로우에 연결해, SQL 생성·지도 렌더링·검증 루프를 통해 정확도를 높이는 툴킷입니다. HN에서도 주목받은 프로젝트로, 데이터 분석·빅쿼리·PostGIS 연동을 통해 실무형 지리공간 질의·시각화 파이프라인을 제공합니다.
+
+왜 주목할까?
+- 지도-피드백 루프(map-in-loop)는 에이전트의 공간적 실수를 교정해 실제 분석 정확도를 높임
+- 도시계획·물류·부동산 등에서 자동화된 지리분석 도구로 즉시 응용 가능
+
+*링크:* https://github.com/dekart-xyz/geosql
+
+---
+
+## 📊 오늘의 한마디
+
+"로컬(온프레미스)·교육·거버넌스에 대한 투자로 AI의 효용을 안전하게 확장하라."
+
+---
+
+*중복 체크:* reports 폴더의 최근 보고서(예: reports/20260708-1728.md, reports/20260708-1451.md, reports/20260708-1144.md)를 확인해 동일 주제(예: GitLost, GPT-5.6, Muse Image 등)와 중복되지 않도록 항목을 선정했습니다.
+
+---
+
+*🤖 본 보고서는 .deepagents/skills/ai-trends-reporter 지침(메이저·마이너 소스 선정, 한글 우선 번역, 출처 표기, thumbnail_prompt.txt 생성)을 따랐습니다.*
+
+
+============================================================
+Twitter/X 스레드
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-07-08 20:04 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Kokoro — 로컬 CPU에서 고품질 TTS 실현
+
+> **원제:** Local, CPU-Friendly, High-Quality TTS (Text-to-Speech) with Kokoro
+> **출처:** Ariya Hidayat (ariya.io) — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/  · 접근일: 2026-07-08
+> **발행:** 2026-03-31
+
+Kokoro(모델 페이지: https://huggingface.co/hexgrad/Kokoro-82M)는 단지 82M 파라미터에도 불구하고 다국어 지원과 비교적 자연스러운 발화 품질을 제공하면서, 특히 CPU 환경에서도 실용적 성능을 보이는 TTS 솔루션으로 주목받고 있습니다. 저널/블로그 실험에서는 전통적 GPU 의존 방식을 깨고 CPU만으로도 실시간에 가까운 합성이 가능함을 보였고, Docker 컨테이너(ghcr.io/remsky/kokoro-fastapi-cpu)로 빠르게 배포해 로컬 서버에서 OpenAI 호환 API로 동작시키는 활용법을 제시했습니다.
+
+이 접근은 개인정보·지연(latency)·운영비 효율 측면에서 의미가 큽니다. 음성 데이터가 클라우드에 올라가지 않도록 온프레미스 또는 엣지 환경에서 TTS를 운영하면 규제 민감 산업(콜센터, 의료, 금융 등)에 적합하며, 비용 대비 음성 합성의 총소유비용(TCO)을 낮출 수 있습니다. 다만 상용 서비스 수준의 음성 품질·발음 다양성·언어별 자연성은 추가 튜닝·음성 데이터 확보로 보완해야 합니다.
+
+**💡 핵심 포인트**
+- Kokoro는 소형(82M) 모델로 CPU 환경에서도 높은 실용성을 보임
+- 로컬 TTS로 개인정보 보호·지연·비용 문제를 완화 가능
+- 상용 서비스 적용 전 음색 다양성·한국어 품질 검증 필요
+
+**🤔 추가 인사이트**
+한국 시장에서는 콜센터 음성, 내비게이션/단말 음성 안내, 오프라인 키오스크 등에서 Kokoro 계열 로컬 TTS를 PoC해 볼 만합니다. 특히 개인정보 규제가 엄격한 분야는 온프레미스 TTS가 도입 장벽을 낮춰줄 수 있으며, 기업은 음성 합성 로그·모델 업데이트 정책을 규정해 책임성(거버넌스)을 확보해야 합니다.
+
+![Kokoro web UI screenshot](https://ariya.io/images/2026/03/kokoro.png)
+*출처: Ariya Hidayat — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/*
+
+---
+
+### 2. TechCrunch: 2026년 ‘AI’라는 이유로 이름 올린 대규모 정리해고 동향 정리
+
+> **원제:** Every major tech layoff in 2026 that has name-checked AI
+> **출처:** TechCrunch (Rebecca Bellan, Connie Loizos) — https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/  · 접근일: 2026-07-08
+> **발행:** 2026-07-06
+
+TechCrunch는 2026년 상반기부터 기업들이 조직 구조조정 과정에서 ‘AI’ 관련 사유를 언급하며 진행한 주요 해고 사례들을 정리했습니다. 보도는 단순한 감원 목록을 넘어, ‘AI 전환’이라는 명목으로 인력 재배치·역할 축소를 진행하는 기업들의 패턴(예: R&D 재구성, 에이전트·자동화 도입에 따른 직무 재정의)을 분석합니다.
+
+이런 흐름은 노동시장·채용·교육 측면에서 복합적 영향을 줍니다. 단기적으로는 특정 역할(반복적 데이터 라벨링, 단순 QA 등)의 수요 감소가 예상되지만, 모델 운영·데이터 거버넌스·디버깅·안전성 검증 등 새로운 역할 수요는 증가합니다. 정책 측면에서는 재교육·전환 지원, AI 도입의 정당성(투명한 근거) 확보가 논의 과제로 떠오르고 있습니다.
+
+**💡 핵심 포인트**
+- ‘AI’ 사유의 구조조정은 단순 비용 절감이 아닌 역할 재정의의 신호
+- 기업은 기술 도입과 인력 전환을 함께 설계해야 사회적 반발을 줄일 수 있음
+- 한국 기업·정책 당국은 재교육·전환 지원책과 투명성 규범을 마련할 필요
+
+**🤔 추가 인사이트**
+한국 스타트업·대기업 모두 기술 도입 의사결정에서 노동 영향 평가(impact assessment)를 선제적으로 수행해야 합니다. 내부적으로는 직무 재설계 로드맵—직무전환 교육—외부 커뮤니케이션 체계를 마련해 충격을 완화하는 것이 실무적 관건입니다.
+
+---
+
+### 3. IEEE Spectrum: LLM 실무 교육 프로그램 론칭 — 기술·보안·배포 실무 집중
+
+> **원제:** IEEE Rolls Out Large Language Models Virtual Training Course
+> **출처:** IEEE Spectrum (Angelique Parashis) — https://spectrum.ieee.org/large-language-models-ieee-course  · 접근일: 2026-07-08
+> **발행:** 2026-06-19
+
+IEEE가 ‘Large Language Models Demystified’라는 5개 코스 구성의 온라인 교육 프로그램을 통해 LLM 설계·최적화·보안·배포 실무를 가르치기 시작했습니다. 커리큘럼은 트랜스포머 아키텍처의 이론적 기반에서부터 PyTorch 기반 모델 트레이닝, 파라미터 효율적 튜닝(LoRA 등), RAG·RLHF·배포 아키텍처·검증성(auditability)까지 폭넓게 다룹니다.
+
+기업 현장에서는 ‘모델 이해’가 단순한 도구 사용을 넘어 설계·배포·감시 역량으로 연결되므로, 전문 인력 양성은 경쟁력의 핵심이 됩니다. IEEE 프로그램은 특히 엔지니어·아키텍트 대상의 실습 중심 교육이라는 점에서 기업 내부 교육·재교육 프로그램과의 연계성이 높습니다.
+
+**💡 핵심 포인트**
+- LLM은 엔지니어링 역량(설계·최적화·보안)이 경쟁력으로 전환되는 기술
+- 실무 교육(검증·배포·운영)은 조직의 책임성(거버넌스) 확보에 기여
+- 기업은 외부 교육과 내재화(온더잡 트레이닝)를 병행해 인력 역량을 빠르게 채워야 함
+
+**🤔 추가 인사이트**
+한국 기업과 학계는 IEEE 같은 국제 표준·교육 리소스를 활용해 내부 커리큘럼을 보완하면 시간·비용 효율적으로 전문 인력을 확보할 수 있습니다. 또한 교육 수료자에 대한 내부 포지셔닝(책임 분담·운영 권한 부여)이 실무 전환을 가속화합니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. bottlecapai/ThinkingCap — Qwen3.6 기반 에이전트용 모델 (Hugging Face Trending)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B  · 접근일: 2026-07-08
+
+ThinkingCap은 Qwen3.6(27B) 기반으로 에이전트적 활용에 최적화된 설정과 템플릿을 제공하는 모델 배포입니다. Hugging Face Trending에 올라 최근 업데이트(약 1시간 전)로 주목받고 있으며, 에이전트형 워크플로우에서 도구 호출·대화 관리 기능을 강화한 실험적 패키지로 보입니다.
+
+왜 주목할까?
+- 에이전트-친화적 튜닝은 실무 자동화·툴 연동 사례에 바로 응용 가능
+- 한국어 지원·현지화 토큰화 작업을 거치면 국내 서비스 적용 가능성이 큼
+
+*링크:* https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B
+
+---
+
+### 2. meituan-longcat/LongCat-2.0 — 대규모 텍스트 모델(다운로드·업데이트 활발)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/meituan-longcat/LongCat-2.0  · 접근일: 2026-07-08
+
+LongCat-2.0은 대형 컨텍스트(1.8T라고 표기된 특이 수치)를 지원하는 대형 모델로 최근 업데이트가 활발하며, 실무 적용을 위한 성능·효율성 개선이 진행 중입니다. 대화형·문서처리 시스템에서 긴 맥락을 다루는 응용에 주목됩니다.
+
+왜 주목할까?
+- 장문 컨텍스트 지원은 법률·연구·기록관리 등 분야에서 경쟁우위를 줄 수 있음
+- 대규모 모델의 대규모 다운로드·활용은 인프라 준비(스토리지·전송)를 요구
+
+*링크:* https://huggingface.co/meituan-longcat/LongCat-2.0
+
+---
+
+### 3. dekart-xyz/geosql — Claude/Codex용 지리공간 분석 에이전트 (GitHub)
+
+> **출처:** GitHub (dekart-xyz/geosql) — https://github.com/dekart-xyz/geosql  · 접근일: 2026-07-08
+
+GeoSQL은 Claude/Codex 계열 에이전트를 지리공간(지도) 분석 워크플로우에 연결해, SQL 생성·지도 렌더링·검증 루프를 통해 정확도를 높이는 툴킷입니다. HN에서도 주목받은 프로젝트로, 데이터 분석·빅쿼리·PostGIS 연동을 통해 실무형 지리공간 질의·시각화 파이프라인을 제공합니다.
+
+왜 주목할까?
+- 지도-피드백 루프(map-in-loop)는 에이전트의 공간적 실수를 교정해 실제 분석 정확도를 높임
+- 도시계획·물류·부동산 등에서 자동화된 지리분석 도구로 즉시 응용 가능
+
+*링크:* https://github.com/dekart-xyz/geosql
+
+---
+
+## 📊 오늘의 한마디
+
+"로컬(온프레미스)·교육·거버넌스에 대한 투자로 AI의 효용을 안전하게 확장하라."
+
+---
+
+*중복 체크:* reports 폴더의 최근 보고서(예: reports/20260708-1728.md, reports/20260708-1451.md, reports/20260708-1144.md)를 확인해 동일 주제(예: GitLost, GPT-5.6, Muse Image 등)와 중복되지 않도록 항목을 선정했습니다.
+
+---
+
+*🤖 본 보고서는 .deepagents/skills/ai-trends-reporter 지침(메이저·마이너 소스 선정, 한글 우선 번역, 출처 표기, thumbnail_prompt.txt 생성)을 따랐습니다.*
+
+
+============================================================
+Threads
+============================================================
+# 🤖 AI 트렌드 리포트
+
+**발행 시각:** 2026-07-08 20:04 KST
+**수집 기간:** 최근 6시간
+
+---
+
+## 📰 주요 뉴스 (3개)
+
+### 1. Kokoro — 로컬 CPU에서 고품질 TTS 실현
+
+> **원제:** Local, CPU-Friendly, High-Quality TTS (Text-to-Speech) with Kokoro
+> **출처:** Ariya Hidayat (ariya.io) — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/  · 접근일: 2026-07-08
+> **발행:** 2026-03-31
+
+Kokoro(모델 페이지: https://huggingface.co/hexgrad/Kokoro-82M)는 단지 82M 파라미터에도 불구하고 다국어 지원과 비교적 자연스러운 발화 품질을 제공하면서, 특히 CPU 환경에서도 실용적 성능을 보이는 TTS 솔루션으로 주목받고 있습니다. 저널/블로그 실험에서는 전통적 GPU 의존 방식을 깨고 CPU만으로도 실시간에 가까운 합성이 가능함을 보였고, Docker 컨테이너(ghcr.io/remsky/kokoro-fastapi-cpu)로 빠르게 배포해 로컬 서버에서 OpenAI 호환 API로 동작시키는 활용법을 제시했습니다.
+
+이 접근은 개인정보·지연(latency)·운영비 효율 측면에서 의미가 큽니다. 음성 데이터가 클라우드에 올라가지 않도록 온프레미스 또는 엣지 환경에서 TTS를 운영하면 규제 민감 산업(콜센터, 의료, 금융 등)에 적합하며, 비용 대비 음성 합성의 총소유비용(TCO)을 낮출 수 있습니다. 다만 상용 서비스 수준의 음성 품질·발음 다양성·언어별 자연성은 추가 튜닝·음성 데이터 확보로 보완해야 합니다.
+
+**💡 핵심 포인트**
+- Kokoro는 소형(82M) 모델로 CPU 환경에서도 높은 실용성을 보임
+- 로컬 TTS로 개인정보 보호·지연·비용 문제를 완화 가능
+- 상용 서비스 적용 전 음색 다양성·한국어 품질 검증 필요
+
+**🤔 추가 인사이트**
+한국 시장에서는 콜센터 음성, 내비게이션/단말 음성 안내, 오프라인 키오스크 등에서 Kokoro 계열 로컬 TTS를 PoC해 볼 만합니다. 특히 개인정보 규제가 엄격한 분야는 온프레미스 TTS가 도입 장벽을 낮춰줄 수 있으며, 기업은 음성 합성 로그·모델 업데이트 정책을 규정해 책임성(거버넌스)을 확보해야 합니다.
+
+![Kokoro web UI screenshot](https://ariya.io/images/2026/03/kokoro.png)
+*출처: Ariya Hidayat — https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/*
+
+---
+
+### 2. TechCrunch: 2026년 ‘AI’라는 이유로 이름 올린 대규모 정리해고 동향 정리
+
+> **원제:** Every major tech layoff in 2026 that has name-checked AI
+> **출처:** TechCrunch (Rebecca Bellan, Connie Loizos) — https://techcrunch.com/2026/07/06/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/  · 접근일: 2026-07-08
+> **발행:** 2026-07-06
+
+TechCrunch는 2026년 상반기부터 기업들이 조직 구조조정 과정에서 ‘AI’ 관련 사유를 언급하며 진행한 주요 해고 사례들을 정리했습니다. 보도는 단순한 감원 목록을 넘어, ‘AI 전환’이라는 명목으로 인력 재배치·역할 축소를 진행하는 기업들의 패턴(예: R&D 재구성, 에이전트·자동화 도입에 따른 직무 재정의)을 분석합니다.
+
+이런 흐름은 노동시장·채용·교육 측면에서 복합적 영향을 줍니다. 단기적으로는 특정 역할(반복적 데이터 라벨링, 단순 QA 등)의 수요 감소가 예상되지만, 모델 운영·데이터 거버넌스·디버깅·안전성 검증 등 새로운 역할 수요는 증가합니다. 정책 측면에서는 재교육·전환 지원, AI 도입의 정당성(투명한 근거) 확보가 논의 과제로 떠오르고 있습니다.
+
+**💡 핵심 포인트**
+- ‘AI’ 사유의 구조조정은 단순 비용 절감이 아닌 역할 재정의의 신호
+- 기업은 기술 도입과 인력 전환을 함께 설계해야 사회적 반발을 줄일 수 있음
+- 한국 기업·정책 당국은 재교육·전환 지원책과 투명성 규범을 마련할 필요
+
+**🤔 추가 인사이트**
+한국 스타트업·대기업 모두 기술 도입 의사결정에서 노동 영향 평가(impact assessment)를 선제적으로 수행해야 합니다. 내부적으로는 직무 재설계 로드맵—직무전환 교육—외부 커뮤니케이션 체계를 마련해 충격을 완화하는 것이 실무적 관건입니다.
+
+---
+
+### 3. IEEE Spectrum: LLM 실무 교육 프로그램 론칭 — 기술·보안·배포 실무 집중
+
+> **원제:** IEEE Rolls Out Large Language Models Virtual Training Course
+> **출처:** IEEE Spectrum (Angelique Parashis) — https://spectrum.ieee.org/large-language-models-ieee-course  · 접근일: 2026-07-08
+> **발행:** 2026-06-19
+
+IEEE가 ‘Large Language Models Demystified’라는 5개 코스 구성의 온라인 교육 프로그램을 통해 LLM 설계·최적화·보안·배포 실무를 가르치기 시작했습니다. 커리큘럼은 트랜스포머 아키텍처의 이론적 기반에서부터 PyTorch 기반 모델 트레이닝, 파라미터 효율적 튜닝(LoRA 등), RAG·RLHF·배포 아키텍처·검증성(auditability)까지 폭넓게 다룹니다.
+
+기업 현장에서는 ‘모델 이해’가 단순한 도구 사용을 넘어 설계·배포·감시 역량으로 연결되므로, 전문 인력 양성은 경쟁력의 핵심이 됩니다. IEEE 프로그램은 특히 엔지니어·아키텍트 대상의 실습 중심 교육이라는 점에서 기업 내부 교육·재교육 프로그램과의 연계성이 높습니다.
+
+**💡 핵심 포인트**
+- LLM은 엔지니어링 역량(설계·최적화·보안)이 경쟁력으로 전환되는 기술
+- 실무 교육(검증·배포·운영)은 조직의 책임성(거버넌스) 확보에 기여
+- 기업은 외부 교육과 내재화(온더잡 트레이닝)를 병행해 인력 역량을 빠르게 채워야 함
+
+**🤔 추가 인사이트**
+한국 기업과 학계는 IEEE 같은 국제 표준·교육 리소스를 활용해 내부 커리큘럼을 보완하면 시간·비용 효율적으로 전문 인력을 확보할 수 있습니다. 또한 교육 수료자에 대한 내부 포지셔닝(책임 분담·운영 권한 부여)이 실무 전환을 가속화합니다.
+
+---
+
+## 🔍 마이너 발견 (3개)
+
+### 1. bottlecapai/ThinkingCap — Qwen3.6 기반 에이전트용 모델 (Hugging Face Trending)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B  · 접근일: 2026-07-08
+
+ThinkingCap은 Qwen3.6(27B) 기반으로 에이전트적 활용에 최적화된 설정과 템플릿을 제공하는 모델 배포입니다. Hugging Face Trending에 올라 최근 업데이트(약 1시간 전)로 주목받고 있으며, 에이전트형 워크플로우에서 도구 호출·대화 관리 기능을 강화한 실험적 패키지로 보입니다.
+
+왜 주목할까?
+- 에이전트-친화적 튜닝은 실무 자동화·툴 연동 사례에 바로 응용 가능
+- 한국어 지원·현지화 토큰화 작업을 거치면 국내 서비스 적용 가능성이 큼
+
+*링크:* https://huggingface.co/bottlecapai/ThinkingCap-Qwen3.6-27B
+
+---
+
+### 2. meituan-longcat/LongCat-2.0 — 대규모 텍스트 모델(다운로드·업데이트 활발)
+
+> **출처:** Hugging Face Models (Trending) — https://huggingface.co/meituan-longcat/LongCat-2.0  · 접근일: 2026-07-08
+
+LongCat-2.0은 대형 컨텍스트(1.8T라고 표기된 특이 수치)를 지원하는 대형 모델로 최근 업데이트가 활발하며, 실무 적용을 위한 성능·효율성 개선이 진행 중입니다. 대화형·문서처리 시스템에서 긴 맥락을 다루는 응용에 주목됩니다.
+
+왜 주목할까?
+- 장문 컨텍스트 지원은 법률·연구·기록관리 등 분야에서 경쟁우위를 줄 수 있음
+- 대규모 모델의 대규모 다운로드·활용은 인프라 준비(스토리지·전송)를 요구
+
+*링크:* https://huggingface.co/meituan-longcat/LongCat-2.0
+
+---
+
+### 3. dekart-xyz/geosql — Claude/Codex용 지리공간 분석 에이전트 (GitHub)
+
+> **출처:** GitHub (dekart-xyz/geosql) — https://github.com/dekart-xyz/geosql  · 접근일: 2026-07-08
+
+GeoSQL은 Claude/Codex 계열 에이전트를 지리공간(지도) 분석 워크플로우에 연결해, SQL 생성·지도 렌더링·검증 루프를 통해 정확도를 높이는 툴킷입니다. HN에서도 주목받은 프로젝트로, 데이터 분석·빅쿼리·PostGIS 연동을 통해 실무형 지리공간 질의·시각화 파이프라인을 제공합니다.
+
+왜 주목할까?
+- 지도-피드백 루프(map-in-loop)는 에이전트의 공간적 실수를 교정해 실제 분석 정확도를 높임
+- 도시계획·물류·부동산 등에서 자동화된 지리분석 도구로 즉시 응용 가능
+
+*링크:* https://github.com/dekart-xyz/geosql
+
+---
+
+## 📊 오늘의 한마디
+
+"로컬(온프레미스)·교육·거버넌스에 대한 투자로 AI의 효용을 안전하게 확장하라."
+
+---
+
+*중복 체크:* reports 폴더의 최근 보고서(예: reports/20260708-1728.md, reports/20260708-1451.md, reports/20260708-1144.md)를 확인해 동일 주제(예: GitLost, GPT-5.6, Muse Image 등)와 중복되지 않도록 항목을 선정했습니다.
+
+---
+
+*🤖 본 보고서는 .deepagents/skills/ai-trends-reporter 지침(메이저·마이너 소스 선정, 한글 우선 번역, 출처 표기, thumbnail_prompt.txt 생성)을 따랐습니다.*
+
+
+═══════════════════════════════════════════════════════════
