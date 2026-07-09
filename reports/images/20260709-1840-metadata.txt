@@ -1,0 +1,5 @@
+Generated: 2026-07-09T09:42:08.640000
+Method: PIL placeholder image
+Prompt: A vibrant, futuristic thumbnail showing: a stylized waveform turning into a neural network, a shield symbolizing safety/simulation, and engineers analyzing code on screens — neon blues and magentas, digital-art, cinematic lighting, high detail, 16:9.
+Size: (1792, 1024)
+Cost: $0 (local generation)
